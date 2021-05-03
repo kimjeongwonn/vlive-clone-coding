@@ -10,6 +10,16 @@ body {
 [class] {
   box-sizing: border-box;
 }
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+  &:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
+}
 
 // 정원 시작
 // 정원 끝
