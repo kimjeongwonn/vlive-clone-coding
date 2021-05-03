@@ -1,3 +1,23 @@
+@mixin buttonBox($isCircle: false, $size: rem(30px), $bg: transparent) {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: rem(8px);
+  appearance: none;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  background-color: $bg;
+  @if $size {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+  &:hover {
+    background-color: $dark-gray;
+  }
+}
+
 // 정원 시작
 // 정원 끝
 
