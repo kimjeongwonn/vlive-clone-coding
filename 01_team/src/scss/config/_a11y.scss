@@ -1,3 +1,17 @@
+@mixin a11yHidden() {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.a11y-hidden {
+  @include a11yHidden();
+}
+
 // 정원 시작
 // 정원 끝
 
