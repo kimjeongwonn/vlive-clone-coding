@@ -1,5 +1,18 @@
 @import 'grid';
+@import 'channel';
+@import 'board';
+@import 'write-modal';
+
 // 정원 시작
+.black-fade {
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: rgba($black, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
 // 정원 끝
 
 // 영종 시작
@@ -14,10 +27,6 @@
   background-color: $white;
 }
 
-.board {
-  @include box;
-  grid-area: board;
-}
 .video {
   @include box;
   grid-area: video;
@@ -26,15 +35,7 @@
   @include box;
   grid-area: comments;
 }
-.channel {
-  @include box;
-  @include mobile {
-    position: fixed;
-  }
-  @include desktop {
-    grid-area: channel;
-  }
-}
+
 .related {
   @include box;
   grid-area: related;

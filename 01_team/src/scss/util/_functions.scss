@@ -7,7 +7,7 @@
 // 두영 시작
 // 두영 끝
 
-$defaultUnit: 50;
+$defaultUnit: 16;
 
 @function rem($value) {
   $unUnit: ($value / ($value * 0 + 1));
