@@ -1,13 +1,14 @@
-@import 'a11y';
-@import 'nomalize';
-@import 'asset';
+@import "a11y";
+@import "nomalize";
+@import "asset";
 
 body {
-  background-color: $background-color;
-  font-family: sans-serif;
+	background-color: $background-color;
+	font-family: sans-serif;
 }
+
 [class] {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 // 정원 시작
