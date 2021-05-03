@@ -1,42 +1,7 @@
-@import 'grid';
-@import 'channel';
-@import 'board';
-@import 'write-modal';
-
-// 정원 시작
-.black-fade {
-  position: fixed;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: rgba($black, 0.5);
-  width: 100vw;
-  height: 100vh;
-}
-// 정원 끝
-
-// 영종 시작
-// 영종 끝
-
-// 두영 시작
-// 두영 끝
-
-.header {
-  width: 100%;
-  height: 60px;
-  background-color: $white;
-}
-
-.video {
-  @include box;
-  grid-area: video;
-}
-.comments {
-  @include box;
-  grid-area: comments;
-}
-
-.related {
-  @include box;
-  grid-area: related;
-}
+@import "grid";
+@import "header";
+@import "board";
+@import "video";
+@import "comment";
+@import "channel";
+@import "related";
