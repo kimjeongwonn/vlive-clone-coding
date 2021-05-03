@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn parcel ./src/index.html --no-cache",
-    "bulid": "yarn parcel build ./src/index.html"
+    "bulid": "yarn parcel build ./src/index.html",
+    "dev-w": "parcel ./src/index.html --no-cache",
+    "bulid-w": "parcel build ./src/index.html"
   },
   "dependencies": {
     "normalize-scss": "^7.0.1"

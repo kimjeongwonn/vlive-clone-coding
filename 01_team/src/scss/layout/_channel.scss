@@ -1,0 +1,9 @@
+.channel {
+  @include box;
+  @include mobile {
+    position: fixed;
+  }
+  @include desktop {
+    grid-area: channel;
+  }
+}

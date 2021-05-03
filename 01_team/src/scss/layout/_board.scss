@@ -1,0 +1,4 @@
+.board {
+  @include box;
+  grid-area: board;
+}
