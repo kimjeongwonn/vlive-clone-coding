@@ -1,22 +1,27 @@
 .video {
   @include box;
   grid-area: video;
+  // position: sticky;
+  // top: 0;
+  // width: 100%;
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: rem(64px);
+    padding: 0 rem(15px);
 
     &-channel {
-      background-color: lightgray;
       width: 60%;
       min-width: rem(200px);
     }
 
     &-btn {
-      @include buttonBox;
-      background-color: pink;
+      @include buttonBox($isCircle: true);
+      &:hover {
+        background-color: $gray;
+      }
     }
   }
 
@@ -25,21 +30,91 @@
       width: rem(29px);
       height: rem(29px);
       float: left;
-      background-color: pink;
-      background: url("../img/twice-logo.png") no-repeat center;
+      background: url("../img/twice_logo.png") no-repeat center;
       background-size: cover;
       border-radius: 50%;
+      border: 1px solid $gray;
       margin-right: rem(5px);
     }
 
     &-title {
       font-weight: 700;
+      margin-bottom: rem(2px);
       display: block;
     }
 
     &-time {
-      font-size: rem(11px);
+      font-size: rem(13px);
       display: block;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+
+  &__content {
+    order: -1;
+    width: 100%;
+    position: relative;
+    padding-top: calc(100% * (9 / 16));
+  }
+
+  &__player {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+
+  &__info {
+    padding: rem(15px);
+  }
+
+  &__title,
+  &__detail {
+    margin: 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    padding: rem(5px) 0;
+  }
+
+  &__detail {
+    font-size: rem(13px);
+    color: $dark-gray;
+  }
+
+  &__post {
+    // TODO: 삭제 - ul normalize
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-left: rem(15px);
+    }
+
+    &-list {
+      display: flex;
+      justify-content: flex-end;
+
+      &-item {
+        display: flex;
+        a {
+          display: inline-block;
+          padding: 0 rem(15px) rem(10px) 0;
+          margin-right: rem(2px);
+        }
+      }
+
+      // TODO: 최적화 nth-child
+      &-item:nth-child(3) {
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
     }
   }
 }
