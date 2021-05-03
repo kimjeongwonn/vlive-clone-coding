@@ -11,6 +11,10 @@
 		<div class="grid_wrapper">
 			<div class="board">
 				<!-- 정원 시작 -->
+				<a href="" class="button--hbg-menu"><div class="icon--hbg-menu"></div></a>
+				<h2 class="board__heading">스타 게시판</h2>
+				<p class="board__channel-name">TWICE</p>
+				<a href="">목록으로</a>
 				<!-- 정원 끝 -->
 			</div>
 			<main class="video">
@@ -51,7 +55,114 @@
 				<!-- 두영 끝 -->
 			</main>
 			<aside class="channel">
+				<!-- 글쓰기 모달 시작 -->
+				<div class="write-modal">
+					<header class="write-modal__haeder">
+						<h2 class="write-modal__heading">글쓰기</h2>
+						<span class="write-modal__channel-name">TWICE</span>
+					</header>
+					<section class="write-modal__content">
+						<form id="write-form" action="" method="POST">
+							<fieldset>
+								<legend class="a11y-hidden">글쓰기 폼</legend>
+								<label for="author"><span class="write-modal__author-avatar"></span>김정원</label>
+								<input type="hidden" name="author" id="author" value="김정원" />
+								<label class="write-modal__title" title="제목" for="title"></label>
+								<input type="text" placeholder="제목" name="title" id="title" />
+								<div class="write-modal__text-editor">
+									<textarea name="content" id="" placeholder="내용을 입력해주세요"></textarea>
+									<div class="write-modal__tools-group">
+										<button class="a11y-hidden only-focus">편집도구 사용하기</button>
+										<div class="write-modal__media-tools">
+											<button class="button--picture"><span class="icon--picture"></span></button>
+											<button class="button--video"><span class="icon--video"></span></button>
+										</div>
+										<div class="write-modal__pragraph-tools">
+											<button class="button--text-size"><span class="icon--text-size"></span></button>
+											<button class="button--text-bold"><span class="icon--text-bold"></span></button>
+											<button class="button--text-italic"><span class="icon--text-italic"></span></button>
+											<button class="button--text-underline"><span class="icon--text-underline"></span></button>
+											<button class="button--text-strike"><span class="icon--text-strike"></span></button>
+											<button class="button--text-color"><span class="icon--text-color"></span></button>
+										</div>
+									</div>
+								</div>
+								<footer class="write-modal__footer">
+									<button class="button--write-preview">
+										<span class="icon--write-preview"></span>
+									</button>
+									<div class="write-modal__hide">
+										<input type="checkbox" name="hide" id="hide" />
+										<label for="hide"><span class="icon--checkcircle"></span>스타에게 숨기기</label>
+									</div>
+									<button type="button" class="button--temp-save">임시저장<span class="icon--info"></span></button>
+									<button type="submit" class="button--submit">등록</button>
+								</footer>
+							</fieldset>
+						</form>
+					</section>
+					<button class="write-modal__button--close"><span class="icon--close"></span></button>
+				</div>
+				<!-- 글쓰기 모달 끝 -->
 				<!-- 정원 시작 -->
+				<div class="channel__container">
+					<h2 class="channel__heading a11y-hidden">채널 정보</h2>
+					<section class="channel__info">
+						<a href="#">
+							<img src="" alt="TWICE" />
+							<span class="channel__name">TWICE</span>
+						</a>
+						<div class="channel__member-count">
+							멤버 <span class="channel__member-count--number">8,360,660 <span class="a11y-hidden">명</span></span>
+						</div>
+						<div class="channel__signup">
+							<a href="#"><span class="icon--plus"></span>가입하기</a>
+						</div>
+					</section>
+					<div class="channel__menu">
+						<h3 class="a11y-hidden">채널 메뉴</h3>
+						<ul class="channel__menu-list">
+							<!-- A태그로 묶기 -->
+							<li class="channel__menu-item"><span class="icon--home"></span>홈</li>
+							<li class="channel__menu-item"><span class="icon--store"></span>스토어</li>
+							<li class="channel__menu-item"><span class="icon--schedule"></span>스케줄</li>
+							<li class="channel__menu-item"><span class="icon--my"></span>마이</li>
+						</ul>
+						<button class="channel__button--write"><span class="icon--write"></span>글쓰기</button>
+					</div>
+					<div class="channel__board">
+						<h2 class="channel__heading a11y-hidden">게시판 메뉴</h2>
+						<ul class="channel__board-list--l1">
+							<li class="channel__board-item--l1">
+								<h3 class="channel__board-header">Offcial</h3>
+								<ul class="channel__board-list--l2">
+									<li class="channel__board-item--l2"><span class="icon--notice">공지사항</span></li>
+									<li class="channel__board-item--l2"><span class="icon--star">스타 게시판</span></li>
+								</ul>
+							</li>
+							<li class="channel__board-item--l1">
+								<h3 class="channel__board-header">Fan</h3>
+								<ul class="channel__board-list--l2">
+									<li class="channel__board-item--l2"><span class="icon--list">팬 게시판</span></li>
+								</ul>
+							</li>
+							<li class="channel__board-item--l1">
+								<h3 class="channel__board-header">Special</h3>
+								<ul class="channel__board-list--l2">
+									<li class="channel__board-item--l2"><span class="icon--vlive-plus"></span>VLICE+ 게시판</li>
+								</ul>
+							</li>
+							<li class="channel__board-item--l1">
+								<h3 class="channel__board-header">[TWICE+] Only</h3>
+								<ul class="channel__board-list--l2">
+									<li class="channel__board-item--l2"><span class="icon--notice"></span>[TWICE+] 공지사항</li>
+									<li class="channel__board-item--l2"><span class="icon--star"></span>[TWICE+] 스타 게시판</li>
+									<li class="channel__board-item--l2"><span class="icon--list"></span>[TWICE+] 팬 게시판</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<!-- 정원 끝 -->
 			</aside>
 			<section class="related">
