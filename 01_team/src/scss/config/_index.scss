@@ -10,6 +10,14 @@ body {
 [class] {
   box-sizing: border-box;
 }
+a {
+  text-decoration: inherit;
+  color: inherit;
+  &:visited {
+    text-decoration: inherit;
+    color: inherit;
+  }
+}
 
 // 정원 시작
 // 정원 끝
