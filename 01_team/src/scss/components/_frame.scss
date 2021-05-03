@@ -1,0 +1,17 @@
+// 박스 생성
+@mixin box($color: $white, $width: auto) {
+  background-color: $white;
+  width: $width;
+  @include desktop {
+    border-radius: 15px;
+  }
+}
+
+// 정원 시작
+// 정원 끝
+
+// 영종 시작
+// 영종 끝
+
+// 두영 시작
+// 두영 끝

@@ -1,0 +1,42 @@
+$breakpoint: 1024px;
+
+// @mixin mobile {
+//   @media screen and (max-width: #{rem($breakpoint - 1px)}) {
+//     @content;
+//   }
+// }
+// @mixin tablet {
+//   @media screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(1280px)}) {
+//     @content;
+//   }
+// }
+// @mixin desktop {
+//   @media screen and (min-width: #{rem($breakpoint)}) {
+//     @content;
+//   }
+// }
+
+// 정원 시작
+// 정원 끝
+
+// 영종 시작
+// 영종 끝
+
+// 두영 시작
+// 두영 끝
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $breakpoint) and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

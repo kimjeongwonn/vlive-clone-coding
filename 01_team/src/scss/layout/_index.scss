@@ -1,0 +1,41 @@
+// 정원 시작
+// 정원 끝
+
+// 영종 시작
+// 영종 끝
+
+// 두영 시작
+// 두영 끝
+
+@import 'grid';
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: $white;
+}
+
+.board {
+  @include box;
+  grid-area: board;
+}
+.video {
+  @include box;
+  grid-area: video;
+}
+.comments {
+  @include box;
+  grid-area: comments;
+}
+.channel {
+  @include box;
+  @include mobile {
+    position: fixed;
+  }
+  @include desktop {
+    grid-area: channel;
+  }
+}
+.related {
+  @include box;
+  grid-area: related;
+}
