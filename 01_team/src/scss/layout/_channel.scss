@@ -1,5 +1,14 @@
 .channel {
-  @include box;
+  &__container {
+    @include box;
+    padding: rem(20px) rem(20px) rem(22px);
+  }
+
+  &__logo {
+    @include box($width: rem(76px));
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+  }
+
   @include mobile {
     position: fixed;
   }
