@@ -1,12 +1,67 @@
 .channel {
+  @at-root .icon {
+    &--plus {
+      @include spriteIcon(18px, 18px, 201px, 498px);
+    }
+    &--home {
+      @include spriteIcon(18px, 18px, 454px, 467px);
+    }
+  }
+
   &__container {
     @include box;
-    padding: rem(20px) rem(20px) rem(22px);
+    padding: rem(20px) 0 rem(22px);
+  }
+
+  &__info {
+    padding: 0 rem(20px);
+    > a {
+      display: block;
+    }
   }
 
   &__logo {
     @include box($width: rem(76px));
     box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+  }
+
+  &__name {
+    margin-top: rem(18px);
+    display: block;
+    font-weight: 800;
+    font-size: rem(23px);
+  }
+
+  &__member-count {
+    font-size: rem(14px);
+    color: $dark-gray;
+    margin-top: rem(8px);
+  }
+
+  &__signup {
+    position: relative;
+    margin-top: rem(16px);
+
+    margin-bottom: rem(15px);
+    padding-bottom: rem(27px);
+    border-bottom: 1px solid $gray;
+    a {
+      display: block;
+      font-size: rem(14px);
+      font-weight: 500;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__menu {
+    &-item {
+      a {
+        display: block;
+        padding: rem(10px) rem(20px);
+      }
+    }
   }
 
   @include mobile {
