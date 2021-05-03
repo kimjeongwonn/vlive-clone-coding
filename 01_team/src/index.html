@@ -1,36 +1,156 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header class="header">헤더</header>
-    <div class="grid_wrapper">
-      <div class="board">
-        <!-- 정원 시작 -->
-        <!-- 정원 끝 -->
-      </div>
-      <main class="video">
-        <video class="main-video"></video>
-        <!-- 두영 시작 -->
-        <!-- 두영 끝 -->
-      </main>
-      <aside class="channel">
-        <!-- 정원 시작 -->
-        <!-- 정원 끝 -->
-      </aside>
-      <section class="related">
-        <!-- 영종 시작 -->
-        <!-- 영종 끝 -->
-      </section>
-      <section class="comments">
-        <!-- 두영 시작 -->
-        <!-- 두영 끝 -->
-      </section>
-    </div>
-    <script src="./js/app.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="header">헤더</header>
+		<div class="grid_wrapper">
+			<div class="board">
+				<!-- 정원 시작 -->
+				<!-- 정원 끝 -->
+			</div>
+			<main class="video">
+				<!-- 두영 시작 -->
+				<h2 class="a11y-hidden">비디오</h2>
+				<header class="video__header">
+					<div class="video__header-channel">
+						<a href="#" class="video__channel-logo">아이콘</a>
+						<a href="#" class="video__channel-title">TWICE</a>
+						<time class="video__channel-time">2021.05.01. 18:10</time>
+					</div>
+					<button class="video__header-btn">버튼</button>
+				</header>
+
+				<div class="video__main">
+					<div class="video__info">
+						<p class="video__title"><span class="icon--replay">replay icon</span>ㅎㅎ</p>
+						<p class="video__detail">재생 370,791</p>
+					</div>
+					<div class="video__content">
+						<iframe class="video__player" src="https://vlive.tv/embed/234967?autoPlay=true" frameborder="no" scrolling="no" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+					</div>
+				</div>
+
+				<div class="video__post">
+					<ul class="video__post-list">
+						<li class="video__post-list-item">
+							<span class="icon--heart"><span class="a11y-hidden">좋아요 수</span>7,700,230</span>
+						</li>
+						<li class="video__post-list-item">
+							<span class="icon--comment"><span class="a11y-hidden">댓글 수</span>5,775</span>
+						</li>
+						<li class="a11y-hidden video__post-list-item"><a href="#">채널 보기</a></li>
+						<li class="a11y-hidden video__post-list-item"><a href="#">추천 동영상 보기</a></li>
+						<li class="video__post-list-item"><span class="icon--bookmark"></span><span class="a11y-hidden">북마크</span>북마크 이모티콘</li>
+					</ul>
+				</div>
+				<!-- 두영 끝 -->
+			</main>
+			<aside class="channel">
+				<!-- 정원 시작 -->
+				<!-- 정원 끝 -->
+			</aside>
+			<section class="related">
+				<!-- 영종 시작 -->
+				<!-- 영종 끝 -->
+			</section>
+			<section class="comments">
+				<!-- 두영 시작 -->
+				<h2 class="a11y-hidden">댓글 보기</h2>
+				<button class="comments__live">
+					라이브 채팅 다시보기
+					<span class="icon--down-arrow"
+						><svg width="12" height="12" viewbox="0 0 12 12">
+							<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+								<g stroke="#979797">
+									<g>
+										<g><path d="M.455.455L5 5M9.545.455L5 5" transform="translate(-209 -1709) translate(209 1709) translate(1 3)"></path></g>
+									</g>
+								</g>
+							</g></svg
+					></span>
+				</button>
+
+				<form action="#" method="post" class="comments__form">
+					<fieldset>
+						<legend></legend>
+						<label for="comment-text">🙂</label>
+						<input type="text" class="comments__form-input" id="comment-text" name="comment-text" placeholder="댓글을 입력하세요." />
+						<div class="comments__form-buttons">
+							<ul class="buttons">
+								<li class="buttons__item">
+									<button type="button" class="buttons__btn">😀</button>
+								</li>
+								<li class="buttons__item">
+									<button type="button" class="buttons__btn">취소</button>
+								</li>
+								<li class="buttons__item">
+									<button type="submit" class="buttons__btn">등록</button>
+								</li>
+							</ul>
+						</div>
+					</fieldset>
+				</form>
+
+				<section class="comments__container">
+					<header class="comments__header">
+						<p>댓글</p>
+						<p>
+							<button>
+								최신순
+								<span class="icon-down-arrow"
+									><svg width="12" height="12" viewbox="0 0 12 12">
+										<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+											<g stroke="#979797">
+												<g>
+													<g><path d="M.455.455L5 5M9.545.455L5 5" transform="translate(-209 -1709) translate(209 1709) translate(1 3)"></path></g>
+												</g>
+											</g>
+										</g></svg
+								></span>
+							</button>
+							<button>
+								전체 언어
+								<span class="icon-down-arrow"
+									><svg width="12" height="12" viewbox="0 0 12 12">
+										<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+											<g stroke="#979797">
+												<g>
+													<g><path d="M.455.455L5 5M9.545.455L5 5" transform="translate(-209 -1709) translate(209 1709) translate(1 3)"></path></g>
+												</g>
+											</g>
+										</g></svg
+								></span>
+							</button>
+						</p>
+					</header>
+
+					<ul class="comments__list">
+						<li class="comments__item">
+							<a href="#" class="comments__writer">Avery Li</a>
+							<span class="comments__time">35분 전</span>
+							<p class="comments__content">hello</p>
+							<div class="comments__buttons">
+								<button class="comments__button">
+									<span class="icon--heart">(하트) 0</span>
+								</button>
+								<button class="comments__button">답글 쓰기</button>
+							</div>
+							<a href="#" class="comments__avatar">아바타</a>
+							<div class="comments__more">
+								<button class="comments__button--circle"><span class="icon--global"></span><span class="a11y-hidden">언어 변경</span></button>
+								<button class="comments__button--circle"><span class="icon--more"></span><span class="a11y-hidden">답글, 신고 보기</span></button>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<!-- 두영 끝 -->
+			</section>
+		</div>
+		<script src="./js/app.js"></script>
+	</body>
 </html>
