@@ -1,3 +1,10 @@
+@mixin iconBox($w: 24px, $h: 24px, $url: "/") {
+  display: inline-block;
+  width: $w;
+  height: $h;
+  background: url($url) center / contain no-repeat;
+}
+
 // 정원 시작
 // 정원 끝
 
