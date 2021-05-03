@@ -22,7 +22,7 @@
         <a href="">목록으로</a>
         <!-- 정원 끝 -->
       </div>
-      <main class="video">
+      <main hidden class="video">
         <!-- 두영 시작 -->
         <h2 class="a11y-hidden">비디오</h2>
         <header class="video__header">
@@ -86,7 +86,7 @@
         <!-- 두영 끝 -->
       </main>
       <!-- 글쓰기 모달 시작 -->
-      <div class="write-modal">
+      <div hidden class="write-modal">
         <header class="write-modal__header">
           <h2 class="write-modal__heading">글쓰기</h2>
           <span class="write-modal__channel-name">TWICE</span>
@@ -173,7 +173,7 @@
       <!-- 글쓰기 모달 끝 -->
       <aside class="channel">
         <!-- 정원 시작 -->
-        <div class="channel__container">
+        <div hidden class="channel__container">
           <h2 class="channel__heading a11y-hidden">채널 정보</h2>
           <section class="channel__info">
             <a href="#">
@@ -300,9 +300,49 @@
                   </span>
                 </div>
               </div>
-              <div class="related__thumbnail">
-                <img src="#" alt="#" />
-                <span class="related__time">
+              <div class="related__thumbnail--wrapper">
+                <span
+                  role="img"
+                  class="related__thumbnail"
+                  aria-label="썸네일"
+                ></span>
+                <span class="related__play-time">
+                  <span class="a11y-hidden">재생시간</span>
+                  "02:55"
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="related__item">
+            <a class="related__link" href="#">
+              <div class="related__info">
+                <p class="related__title">제목</p>
+                <div class="related__detail">
+                  <em>그룹이름</em>
+                  <time>업로드 날짜</time>
+                </div>
+                <div class="related__reactions">
+                  <span class="icon-wrapper">
+                    <span class="icon--play"></span>
+                    42K
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--heart"></span>
+                    12.7M
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--comments"></span>
+                    댓글수
+                  </span>
+                </div>
+              </div>
+              <div class="related__thumbnail--wrapper">
+                <span
+                  role="img"
+                  class="related__thumbnail"
+                  aria-label="썸네일"
+                ></span>
+                <span class="related__play-time">
                   <span class="a11y-hidden">재생시간</span>
                   "02:55"
                 </span>

@@ -1,4 +1,22 @@
 .related {
+  border: 1px solid black;
   @include box;
   grid-area: related;
+  &__link{
+    display: flex;
+  }
+  &__thumbnail{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    &--wrapper{
+      order: -1;
+      @include mobile{
+        width: rem(138px);
+        height: rem(77px);
+      }
+    }
+    background: #ccc url("https://v-phinf.pstatic.net/20210206_256/16125772693953Dfqa_JPEG/upload_56656099035605451274a36f4-46da-4ff0-8a0c-3957253377b7.jpg?type=f276_154");
+    background-position: center;
+  }
 }
