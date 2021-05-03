@@ -100,13 +100,17 @@
     &-list {
       display: flex;
       justify-content: flex-end;
+      // align-items: center;
 
       &-item {
         display: flex;
+        align-items: center;
         a {
           display: inline-block;
-          padding: 0 rem(15px) rem(10px) 0;
-          margin-right: rem(2px);
+        }
+
+        svg {
+          vertical-align: middle;
         }
       }
 
