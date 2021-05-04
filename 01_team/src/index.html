@@ -22,7 +22,7 @@
         <a href="">목록으로</a>
         <!-- 정원 끝 -->
       </div>
-      <main hidden class="video">
+      <main class="video">
         <!-- 두영 시작 -->
         <h2 class="a11y-hidden">비디오</h2>
         <header class="video__header">
@@ -86,7 +86,7 @@
         <!-- 두영 끝 -->
       </main>
       <!-- 글쓰기 모달 시작 -->
-      <div hidden class="write-modal">
+      <div class="write-modal">
         <header class="write-modal__header">
           <h2 class="write-modal__heading">글쓰기</h2>
           <span class="write-modal__channel-name">TWICE</span>
@@ -173,7 +173,7 @@
       <!-- 글쓰기 모달 끝 -->
       <aside class="channel">
         <!-- 정원 시작 -->
-        <div hidden class="channel__container">
+        <div class="channel__container">
           <h2 class="channel__heading a11y-hidden">채널 정보</h2>
           <section class="channel__info">
             <a href="#">
@@ -275,14 +275,59 @@
       </aside>
       <section class="related">
         <!-- 영종 시작 -->
-        <h2>추천 영상</h2>
+        <h2 class="related__header">추천 영상</h2>
+        <div class="related__buttons">
+          <button class="related__button--prev is-disabled">
+            <svg
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+              class="icon_arrow---B-1C"
+            >
+              <title>이전 추천영상 리스트 보기</title>
+              <path
+                fill="none"
+                fill-rule="evenodd"
+                stroke="#2B2B2E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1.477 8.565L1.512 1.459 8.548 1.494"
+                transform="rotate(135 2.805 4.684)"
+              ></path>
+            </svg>
+          </button>
+          <button class="related__button--next">
+            <svg
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+              class="icon_arrow---B-1C"
+            >
+              <title>다음 추천영상 리스트 보기</title>
+              <path
+                fill="none"
+                fill-rule="evenodd"
+                stroke="#2B2B2E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1.477 8.565L1.512 1.459 8.548 1.494"
+                transform="rotate(135 2.805 4.684)"
+              ></path>
+            </svg>
+          </button>
+        </div>
         <ul class="related__list">
           <li class="related__item">
             <a class="related__link" href="#">
               <div class="related__info">
-                <strong class="related__title">TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2 TEASER</strong>
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
                 <div class="related__detail">
-                  <em class="related__group-name">Twice</em>
+                  <em class="related__group-name">TWICE</em>
                   <time class="related__upload-date">4.30.</time>
                 </div>
                 <div class="related__reactions">
@@ -300,12 +345,8 @@
                   </span>
                 </div>
               </div>
-              <div class="related__thumbnail--wrapper">
-                <span
-                  role="img"
-                  class="related__thumbnail"
-                  aria-label="썸네일"
-                >
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
                   <span class="related__play-time">
                     <span class="a11y-hidden">재생시간</span>
                     02:55
@@ -317,9 +358,12 @@
           <li class="related__item">
             <a class="related__link" href="#">
               <div class="related__info">
-                <strong class="related__title">TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2 TEASER</strong>
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
                 <div class="related__detail">
-                  <em class="related__group-name">Twice</em>
+                  <em class="related__group-name">TWICE</em>
                   <time class="related__upload-date">4.30.</time>
                 </div>
                 <div class="related__reactions">
@@ -337,12 +381,44 @@
                   </span>
                 </div>
               </div>
-              <div class="related__thumbnail--wrapper">
-                <span
-                  role="img"
-                  class="related__thumbnail"
-                  aria-label="썸네일"
-                >
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
+                  <span class="related__play-time">
+                    <span class="a11y-hidden">재생시간</span>
+                    02:55
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="related__item">
+            <a class="related__link" href="#">
+              <div class="related__info">
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
+                <div class="related__detail">
+                  <em class="related__group-name">TWICE</em>
+                  <time class="related__upload-date">4.30.</time>
+                </div>
+                <div class="related__reactions">
+                  <span class="icon-wrapper">
+                    <span class="icon--play"></span>
+                    42K
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--heart"></span>
+                    12.7M
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--comments"></span>
+                    댓글수
+                  </span>
+                </div>
+              </div>
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
                   <span class="related__play-time">
                     <span class="a11y-hidden">재생시간</span>
                     02:55
@@ -352,20 +428,6 @@
             </a>
           </li>
         </ul>
-        <div class="related__buttons">
-          <button class="related__button--prev is-disabled">
-            <svg>
-              <title>이전 추천영상 리스트 보기</title>
-              <path></path>
-            </svg>
-          </button>
-          <button class="related__button--next">
-            <svg>
-              <title>다음 추천영상 리스트 보기</title>
-              <path></path>
-            </svg>
-          </button>
-        </div>
         <!-- 영종 끝 -->
       </section>
       <section class="comments">

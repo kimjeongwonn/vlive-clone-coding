@@ -7,33 +7,41 @@ ul{
 .related {
   @include box;
   grid-area: related;
-  h2{
+  
+  // 공통
+  padding: rem(15px) rem(15px) rem(20px) rem(15px);
+  position: relative;
+  .is-disabled{
+    cursor: default !important;
+    path{
+      stroke: #ccc;
+    }
+    }
+    
+    // 헤더
+  &__header{
     font-size: rem(14px);
     margin: 0;
     padding-bottom: rem(18px);
   }
-  border: 1px solid black;
-
-  // 공통
-  padding: rem(15px) rem(15px) rem(20px) rem(15px);
+  // 아이템 레이아웃
   &__link{
     display: flex;
     cursor: pointer;
-  }
-  &__item:not(:last-child){
-    padding-bottom: rem(15px);
+    align-items: flex-start;
   }
   // 썸네일
   &__thumbnail{
+    &-wrapper{
+      order: -1;
+    }
     display: inline-block;
     position: relative;
+    vertical-align: middle;
     width: rem(138px);
     height: rem(77px);
     margin-right: rem(15px);
     border-radius: 8px;
-    &--wrapper{
-      order: -1;
-    }
     background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
     background-size: cover;
     background-position: center;
@@ -50,11 +58,15 @@ ul{
     height: 20px;
     line-height: 20px;
   }
-  // info
+  // 영상 디테일 정보
+  &__item:not(:last-child){
+    padding-bottom: rem(15px);
+  }
   &__title{
     text-overflow: ellipsis;
     font-size: rem(15px);
     font-weight: 400;
+    vertical-align: middle;
   }
   &__detail{
     color: #777 ;
@@ -67,7 +79,7 @@ ul{
       background-color:#e6e6e6;
       width: 3px;
       height: 3px;
-      margin: 0 5px;
+      margin: 0 rem(5px);
       border-radius: 50%;
     }
   }
@@ -76,7 +88,69 @@ ul{
     order: -1;
   }
   &__upload-date{
-    font-style: normal;
     vertical-align: center;
+  }
+  &__reactions{
+    font-size: rem(13px);
+  }
+
+  // 버튼
+  &__buttons{
+    float: right;
+    position: absolute;
+    top: 7px;
+    right: 4px;
+  }
+  &__button{
+    &--next,
+    &--prev{
+      @include buttonBox;
+      &:hover {
+        background: none;
+      }
+    }
+    &--prev{
+      svg{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  // 태블릿
+  @include tablet{
+    .related{
+      // 아이템 레이아웃
+      &__list{
+        display: flex;
+      }
+      &__item{
+        box-sizing: border-box;
+        width: 33.333%;
+        &:nth-child(3n+1),
+        &:nth-child(3n+2){
+          padding-right: rem(15px);
+        }
+      }
+      &__link{
+        flex-direction: column;
+      }
+      // 영상 디테일 정보
+      &__title{
+      }
+      &__thumbnail{
+        height: rem(120px);
+        width: 100%;
+        &-wrapper{
+          width: 100%;
+        }
+      }
+    }
+  }
+  // 모바일
+  @include desktop{
+    .related{
+      &__link{
+        flex-direction: column;
+      }
+    }
   }
 }
