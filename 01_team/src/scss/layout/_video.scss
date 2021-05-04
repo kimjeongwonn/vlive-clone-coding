@@ -40,12 +40,13 @@
     &-title {
       font-weight: 700;
       margin-bottom: rem(2px);
-      display: block;
+      display: inline;
     }
 
     &-time {
       font-size: rem(13px);
       display: block;
+      width: auto;
     }
   }
 
@@ -86,13 +87,19 @@
 
   &__detail {
     font-size: rem(13px);
+    padding: rem(5px) 0;
     color: $dark-gray;
   }
 
   &__post {
     padding: rem(10px);
+    padding-top: 0;
+    margin-bottom: rem(5px);
     &-button {
       @include buttonBox;
+      &:hover {
+        background: none;
+      }
       margin-right: rem(10px);
     }
 
