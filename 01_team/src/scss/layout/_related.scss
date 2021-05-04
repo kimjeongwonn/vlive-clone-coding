@@ -1,22 +1,82 @@
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .related {
-  border: 1px solid black;
   @include box;
   grid-area: related;
+  h2{
+    font-size: rem(14px);
+    margin: 0;
+    padding-bottom: rem(18px);
+  }
+  border: 1px solid black;
+
+  // 공통
+  padding: rem(15px) rem(15px) rem(20px) rem(15px);
   &__link{
     display: flex;
+    cursor: pointer;
   }
+  &__item:not(:last-child){
+    padding-bottom: rem(15px);
+  }
+  // 썸네일
   &__thumbnail{
-    display: block;
-    max-width: 100%;
-    height: auto;
+    display: inline-block;
+    position: relative;
+    width: rem(138px);
+    height: rem(77px);
+    margin-right: rem(15px);
+    border-radius: 8px;
     &--wrapper{
       order: -1;
-      @include mobile{
-        width: rem(138px);
-        height: rem(77px);
-      }
     }
-    background: #ccc url("https://v-phinf.pstatic.net/20210206_256/16125772693953Dfqa_JPEG/upload_56656099035605451274a36f4-46da-4ff0-8a0c-3957253377b7.jpg?type=f276_154");
+    background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
+    background-size: cover;
     background-position: center;
+  }
+  &__play-time{
+    position: absolute;
+    background-color: rgba(17,17,17,.7);
+    border-radius: 4px;
+    right: rem(5px);
+    bottom: rem(5px);
+    font-size: rem(11px);
+    color: #fff;
+    padding: 0 5px;
+    height: 20px;
+    line-height: 20px;
+  }
+  // info
+  &__title{
+    text-overflow: ellipsis;
+    font-size: rem(15px);
+    font-weight: 400;
+  }
+  &__detail{
+    color: #777 ;
+    font-size: rem(12px);
+    display: flex;
+    align-items: center;
+    &::before{
+      content: "";
+      display: inline-block;
+      background-color:#e6e6e6;
+      width: 3px;
+      height: 3px;
+      margin: 0 5px;
+      border-radius: 50%;
+    }
+  }
+  &__group-name{
+    font-style: normal;
+    order: -1;
+  }
+  &__upload-date{
+    font-style: normal;
+    vertical-align: center;
   }
 }
