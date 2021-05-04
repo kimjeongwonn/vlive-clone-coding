@@ -1,9 +1,179 @@
 .channel {
-  @include box;
+  @at-root .icon {
+    &--plus {
+      @include spriteIcon(18px, 18px, 201px, 498px);
+      margin-right: rem(5px);
+    }
+    &--home {
+      @include spriteIcon(18px, 18px, 473px, 467px);
+      margin-right: rem(10px);
+    }
+    &--store {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 277px, 498px);
+    }
+    &--schedule {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 239px, 498px);
+    }
+    &--my {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 182px, 498px);
+    }
+    &--write {
+      margin-right: rem(6px);
+      @include spriteIcon(15px, 15px, 465px, 498px);
+    }
+    &--star {
+      margin-right: rem(6px);
+      @include spriteIcon(15px, 15px, 465px, 498px);
+    }
+    &--vlive-plus {
+      @include spriteIcon(38px, 14px, 338px, 440px);
+    }
+  }
+
+  visibility: hidden;
+  transform: translateX(-101%);
+  transition: transform 1s, visibility 1s;
+  &.is-active {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 1s, visibility 1s;
+  }
+
+  &__container {
+    @include box;
+    padding: rem(20px) 0 rem(22px);
+  }
+
+  &__info {
+    padding: 0 rem(20px);
+    > a {
+      display: block;
+    }
+  }
+
+  &__logo {
+    @include box($width: rem(76px));
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+  }
+
+  &__name {
+    margin-top: rem(18px);
+    display: block;
+    font-weight: 700;
+    font-size: rem(23px);
+  }
+
+  &__member-count {
+    font-size: rem(14px);
+    color: $dark-gray;
+    margin-top: rem(8px);
+  }
+
+  &__signup {
+    position: relative;
+    display: none;
+    margin-top: rem(16px);
+
+    margin-bottom: rem(15px);
+    padding-bottom: rem(27px);
+    border-bottom: 1px solid $gray;
+    a {
+      display: block;
+      font-size: rem(14px);
+      font-weight: 500;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+    &-text {
+      vertical-align: middle;
+    }
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__menu {
+    $icon-list: (
+      home: -473px,
+      store: -277px,
+      schedule: -239px,
+      my: -182px,
+    );
+    &-link {
+      @each $name, $x in $icon-list {
+        &--#{$name}:hover {
+          color: $primary-color;
+          > .icon--#{$name} {
+            background-position-x: calc(#{$x} + 19px);
+          }
+        }
+      }
+    }
+    &-item {
+      a {
+        display: block;
+        padding: rem(10.5px) rem(20px);
+      }
+      &--middle {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__button--write {
+    @include buttonBox($bg: $primary-background-color);
+    width: calc(100% - 40px);
+    margin: rem(20px) rem(20px);
+    margin-bottom: 0;
+    padding: rem(15px);
+    color: $primary-color;
+    font-size: rem(14px);
+    font-weight: 500;
+  }
+
+  &__board {
+    margin-top: rem(30px);
+    &-header {
+      font-size: rem(14px);
+      padding: 0 rem(20px);
+      margin: 0 0 rem(10px);
+      &:not(:first-child) {
+        margin: rem(10px) 0;
+      }
+    }
+    &-item {
+      &--l1 {
+        margin-top: rem(20px);
+      }
+    }
+    &-link {
+      @include buttonBox;
+      display: inline-block;
+      width: 100%;
+      line-height: 20px;
+      font-size: rem(14px);
+      border-radius: rem(8px);
+      padding: rem(8px) rem(20px);
+      svg {
+        vertical-align: middle;
+      }
+    }
+    &-text {
+      margin-left: rem(8px);
+      vertical-align: middle;
+    }
+  }
+
   @include mobile {
     position: fixed;
   }
   @include desktop {
     grid-area: channel;
+    visibility: visible;
+    transform: translateX(0);
   }
 }

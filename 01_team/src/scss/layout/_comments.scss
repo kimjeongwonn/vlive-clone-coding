@@ -1,4 +1,148 @@
 .comments {
   @include box;
   grid-area: comments;
+  padding: 0 rem(25px);
+
+  &__live {
+    @include buttonBox;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: rem(18px);
+    padding: rem(30px) 0;
+    font-weight: 700;
+  }
+
+  &__field {
+    padding: rem(10px);
+    margin: 0fr;
+    border: none;
+    background-color: $light-gray;
+    border-radius: rem(20px);
+    height: rem(50px);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s;
+
+    &:focus-within {
+      box-shadow: 0 0 2px 0px $primary-color;
+      height: rem(100px);
+
+      & .comments__input-box svg {
+        display: none;
+      }
+    }
+  }
+
+  &__input-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(20px);
+  }
+
+  &__form-input {
+    flex-grow: 1;
+    border: none;
+    height: 100%;
+    background: none;
+    padding-left: rem(10px);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__default {
+    display: block;
+    width: rem(26px);
+    height: rem(26px);
+    background: url(../img/default.png) no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  &__form-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+
+    &__btn {
+      @include buttonBox;
+      padding: rem(5px) rem(10px);
+    }
+  }
+
+  &__container {
+    padding: 0 rem(15px);
+  }
+
+  &__header {
+    display: flex;
+    padding-top: rem(10px);
+
+    &-title {
+      font-weight: 700;
+      flex-grow: 1;
+    }
+
+    &-detail button {
+      @include buttonBox;
+      margin-left: rem(10px);
+    }
+  }
+
+  &__item {
+    padding-left: rem(40px);
+    position: relative;
+    margin-top: rem(30px);
+
+    &-avatar {
+      position: absolute;
+      width: rem(25px);
+      height: rem(25px);
+      background: url("../img/default.png") no-repeat center;
+      background-size: cover;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+
+    &-writer {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+
+    &-time {
+      font-size: 0.8rem;
+      color: $dark-gray;
+    }
+
+    &-content {
+      margin: 0;
+      padding: rem(15px) 0;
+    }
+
+    &-button {
+      @include buttonBox;
+    }
+
+    &-icon {
+      vertical-align: middle;
+      margin-right: rem(10px);
+    }
+
+    &-more {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__button--circle {
+    @include buttonBox;
+    margin-right: rem(10px);
+  }
 }

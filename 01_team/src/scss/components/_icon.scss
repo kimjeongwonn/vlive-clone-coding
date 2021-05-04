@@ -6,6 +6,15 @@
 }
 
 // 정원 시작
+@mixin spriteIcon($w, $h, $x, $y) {
+  display: inline-block;
+  vertical-align: middle;
+  width: rem($w);
+  height: rem($h);
+  background-image: url("/src/img/vlive_sprite.png");
+  background-size: 538px 518px;
+  background-position: ($x * -1) ($y * -1);
+}
 // 정원 끝
 
 // 영종 시작

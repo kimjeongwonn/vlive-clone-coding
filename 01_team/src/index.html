@@ -10,16 +10,58 @@
     <!-- 정원 백드롭 시작 -->
     <div class="backdrop"></div>
     <!-- 정원 백드롭 끝-->
-    <header class="header">헤더</header>
+    <header class="header">
+      <div class="logo">
+        <h1 class="a11y-hidden">
+          <img src="" alt="" />
+          <span class="a11y-hidden">VLIVE</span>
+        </h1>
+      </div>
+    </header>
     <div class="grid_wrapper">
       <div class="board">
         <!-- 정원 시작 -->
-        <a href="" class="button--hbg-menu">
-          <div class="icon--hbg-menu"></div>
-        </a>
-        <h2 class="board__heading">스타 게시판</h2>
-        <p class="board__channel-name">TWICE</p>
-        <a href="">목록으로</a>
+        <h2 class="board__heading">
+          스타 게시판
+          <p class="board__channel-name">TWICE</p>
+        </h2>
+
+        <button class="board__button--toggle-menu" id="menuToggle">
+          <svg width="20" height="20" viewBox="0 0 20 20" class="menu_icon">
+            <title>메뉴 버튼</title>
+            <g
+              fill="#2B2B2E"
+              fill-rule="evenodd"
+              transform="matrix(-1 0 0 1 19 3.1)"
+            >
+              <rect
+                width="18"
+                height="1.6"
+                rx="0.8"
+                transform="matrix(-1 0 0 1 18 0)"
+              ></rect>
+              <rect
+                width="12"
+                height="1.6"
+                x="6"
+                y="6"
+                rx="0.8"
+                transform="matrix(-1 0 0 1 24 0)"
+              ></rect>
+              <rect
+                width="14"
+                height="1.6"
+                x="4"
+                y="12"
+                rx="0.8"
+                transform="matrix(-1 0 0 1 22 0)"
+              ></rect>
+            </g>
+          </svg>
+        </button>
+
+        <a class="board__link--list" href="">목록으로</a>
+        <button class="board__link--signup" href="">가입</button>
         <!-- 정원 끝 -->
       </div>
       <main class="video">
@@ -83,97 +125,95 @@
         <div class="video__post">
           <ul class="video__post-list">
             <li class="video__post-list-item">
-              <svg width="24" height="24" viewbox="0 0 24 25">
-                <path
-                  fill="none"
-                  fill-rule="evenodd"
-                  stroke="#2B2B2E"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M20.9 6.13c-.944-.962-2.199-1.488-3.534-1.488-1.336 0-2.592.526-3.537 1.488L12.087 7.9l-1.748-1.77c-.945-.962-2.201-1.488-3.535-1.488s-2.59.526-3.533 1.487c-1.96 1.989-1.96 5.227-.002 7.219l8.163 8.165c.35.352.92.352 1.272 0 0 0 0 0 0 0l8.442-8.443h0c1.717-1.978 1.624-5.041-.246-6.94z"
-                ></path>
-              </svg>
-              <a href="#" class="icon--heart">
-                <span class="a11y-hidden">좋아요 수</span>
-
-                7,700,230
-              </a>
-            </li>
-            <li class="video__post-list-item">
-              <svg width="24" height="24" viewbox="0 0 24 25">
-                <g
-                  fill="none"
-                  fill-rule="evenodd"
-                  transform="translate(3.6 4.6)"
-                >
+              <button type="button" class="video__post-button">
+                <svg width="24" height="24" viewbox="0 0 24 25">
                   <path
+                    fill="none"
+                    fill-rule="evenodd"
                     stroke="#2B2B2E"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="1.5"
-                    d="M8.4-.75c2.527 0 4.814 1.024 6.47 2.68 1.656 1.656 2.68 3.943 2.68 6.47 0 2.527-1.024 4.814-2.68 6.47-1.656 1.656-3.943 2.68-6.47 2.68-1.749 0-3.383-.49-4.773-1.342-1.018.32-3.143 1.065-3.143 1.065s-.719.253-1.516.54c.302-.792.564-1.505.564-1.505s.753-2.054 1.082-3.1C-.251 11.81-.75 10.164-.75 8.4c0-2.527 1.024-4.814 2.68-6.47C3.586.274 5.873-.75 8.4-.75z"
+                    d="M20.9 6.13c-.944-.962-2.199-1.488-3.534-1.488-1.336 0-2.592.526-3.537 1.488L12.087 7.9l-1.748-1.77c-.945-.962-2.201-1.488-3.535-1.488s-2.59.526-3.533 1.487c-1.96 1.989-1.96 5.227-.002 7.219l8.163 8.165c.35.352.92.352 1.272 0 0 0 0 0 0 0l8.442-8.443h0c1.717-1.978 1.624-5.041-.246-6.94z"
                   ></path>
-                  <ellipse
-                    cx="11.865"
-                    cy="8.54"
-                    fill="#2B2B2E"
-                    rx="1.061"
-                    ry="1.073"
-                  ></ellipse>
-                  <ellipse
-                    cx="8.329"
-                    cy="8.54"
-                    fill="#2B2B2E"
-                    rx="1.061"
-                    ry="1.073"
-                  ></ellipse>
-                  <ellipse
-                    cx="4.794"
-                    cy="8.54"
-                    fill="#2B2B2E"
-                    rx="1.061"
-                    ry="1.073"
-                  ></ellipse>
-                </g>
-              </svg>
-              <a href="#" class="icon--comment">
-                <span class="a11y-hidden">댓글 수</span>
-
-                5,775
-              </a>
+                </svg>
+                <span class="a11y-hidden">좋아요 수</span>
+                <span>7,700,230</span>
+              </button>
             </li>
             <li class="video__post-list-item">
-              <svg width="24" height="24" viewbox="0 0 24 24">
-                <g fill="none" fill-rule="evenodd">
-                  <g stroke="#2B2B2E" stroke-width="1.5">
-                    <g>
+              <button type="button" class="video__post-button">
+                <svg width="24" height="24" viewbox="0 0 24 25">
+                  <g
+                    fill="none"
+                    fill-rule="evenodd"
+                    transform="translate(3.6 4.6)"
+                  >
+                    <path
+                      stroke="#2B2B2E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M8.4-.75c2.527 0 4.814 1.024 6.47 2.68 1.656 1.656 2.68 3.943 2.68 6.47 0 2.527-1.024 4.814-2.68 6.47-1.656 1.656-3.943 2.68-6.47 2.68-1.749 0-3.383-.49-4.773-1.342-1.018.32-3.143 1.065-3.143 1.065s-.719.253-1.516.54c.302-.792.564-1.505.564-1.505s.753-2.054 1.082-3.1C-.251 11.81-.75 10.164-.75 8.4c0-2.527 1.024-4.814 2.68-6.47C3.586.274 5.873-.75 8.4-.75z"
+                    ></path>
+                    <ellipse
+                      cx="11.865"
+                      cy="8.54"
+                      fill="#2B2B2E"
+                      rx="1.061"
+                      ry="1.073"
+                    ></ellipse>
+                    <ellipse
+                      cx="8.329"
+                      cy="8.54"
+                      fill="#2B2B2E"
+                      rx="1.061"
+                      ry="1.073"
+                    ></ellipse>
+                    <ellipse
+                      cx="4.794"
+                      cy="8.54"
+                      fill="#2B2B2E"
+                      rx="1.061"
+                      ry="1.073"
+                    ></ellipse>
+                  </g>
+                </svg>
+                <span class="a11y-hidden">댓글 수</span>
+                <span>5,775</span>
+              </button>
+            </li>
+            <li class="video__post-list-item">
+              <button type="button" class="video__post-button">
+                <span class="a11y-hidden">북마크</span>
+                <svg width="24" height="24" viewbox="0 0 24 24">
+                  <g fill="none" fill-rule="evenodd">
+                    <g stroke="#2B2B2E" stroke-width="1.5">
                       <g>
                         <g>
                           <g>
                             <g>
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M0 1.2v17.086h0l8-4.76 8 4.76V1.2c0-.663-.537-1.2-1.2-1.2H1.2C.537 0 0 .537 0 1.2z"
-                                transform="translate(-336 -596) translate(0 262) translate(15 319) translate(0 15) translate(321) translate(4 3)"
-                              ></path>
-                              <path
-                                stroke-linecap="square"
-                                d="M1.064 17.639L15.205 9.143"
-                                transform="translate(-336 -596) translate(0 262) translate(15 319) translate(0 15) translate(321) translate(4 3)"
-                              ></path>
+                              <g>
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M0 1.2v17.086h0l8-4.76 8 4.76V1.2c0-.663-.537-1.2-1.2-1.2H1.2C.537 0 0 .537 0 1.2z"
+                                  transform="translate(-336 -596) translate(0 262) translate(15 319) translate(0 15) translate(321) translate(4 3)"
+                                ></path>
+                                <path
+                                  stroke-linecap="square"
+                                  d="M1.064 17.639L15.205 9.143"
+                                  transform="translate(-336 -596) translate(0 262) translate(15 319) translate(0 15) translate(321) translate(4 3)"
+                                ></path>
+                              </g>
                             </g>
                           </g>
                         </g>
                       </g>
                     </g>
                   </g>
-                </g>
-              </svg>
-              <a href="#" class="icon--bookmark">
-                <span class="a11y-hidden">북마크</span>
-              </a>
+                </svg>
+              </button>
             </li>
             <li class="a11y-hidden video__post-list-item">
               <a href="#">채널 보기</a>
@@ -185,99 +225,18 @@
         </div>
         <!-- 두영 끝 -->
       </main>
-      <!-- 글쓰기 모달 시작 -->
-      <div class="write-modal">
-        <header class="write-modal__header">
-          <h2 class="write-modal__heading">글쓰기</h2>
-          <span class="write-modal__channel-name">TWICE</span>
-        </header>
-        <section class="write-modal__content">
-          <form id="write-form" action="" method="POST">
-            <fieldset>
-              <legend class="a11y-hidden">글쓰기 폼</legend>
-              <label for="author">
-                <span class="write-modal__author-avatar"></span>
-                김정원
-              </label>
-              <input type="hidden" name="author" id="author" value="김정원" />
-              <label
-                class="write-modal__title"
-                title="제목"
-                for="title"
-              ></label>
-              <input type="text" placeholder="제목" name="title" id="title" />
-              <div class="write-modal__text-editor">
-                <textarea
-                  name="content"
-                  id=""
-                  placeholder="내용을 입력해주세요"
-                ></textarea>
-                <div class="write-modal__tools-group">
-                  <button class="a11y-hidden only-focus">
-                    편집도구 사용하기
-                  </button>
-                  <div class="write-modal__media-tools">
-                    <button class="button--picture">
-                      <span class="icon--picture"></span>
-                    </button>
-                    <button class="button--video">
-                      <span class="icon--video"></span>
-                    </button>
-                  </div>
-                  <div class="write-modal__pragraph-tools">
-                    <button class="write-modal__button--text-size">
-                      <span class="icon--text-size"></span>
-                    </button>
-                    <button class="button--text-bold">
-                      <span class="icon--text-bold"></span>
-                    </button>
-                    <button class="button--text-italic">
-                      <span class="icon--text-italic"></span>
-                    </button>
-                    <button class="button--text-underline">
-                      <span class="icon--text-underline"></span>
-                    </button>
-                    <button class="button--text-strike">
-                      <span class="icon--text-strike"></span>
-                    </button>
-                    <button class="button--text-color">
-                      <span class="icon--text-color"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <footer class="write-modal__footer">
-                <button class="button--write-preview">
-                  <span class="icon--write-preview"></span>
-                </button>
-                <div class="write-modal__hide">
-                  <input type="checkbox" name="hide" id="hide" />
-                  <label for="hide">
-                    <span class="icon--checkcircle"></span>
-                    스타에게 숨기기
-                  </label>
-                </div>
-                <button type="button" class="button--temp-save">
-                  임시저장
-                  <span class="icon--info"></span>
-                </button>
-                <button type="submit" class="button--submit">등록</button>
-              </footer>
-            </fieldset>
-          </form>
-        </section>
-        <button class="write-modal__button--close">
-          <span class="icon--close"></span>
-        </button>
-      </div>
-      <!-- 글쓰기 모달 끝 -->
-      <aside hidden class="channel">
+
+      <aside class="channel">
         <!-- 정원 시작 -->
         <div class="channel__container">
           <h2 class="channel__heading a11y-hidden">채널 정보</h2>
-          <section class="channel__info">
+          <div class="channel__info">
             <a href="#">
-              <img src="" alt="TWICE" />
+              <img
+                class="channel__logo"
+                src="./img/twice_logo.png"
+                alt="TWICE"
+              />
               <span class="channel__name">TWICE</span>
             </a>
             <div class="channel__member-count">
@@ -290,100 +249,241 @@
             <div class="channel__signup">
               <a href="#">
                 <span class="icon--plus"></span>
-                가입하기
+                <span class="channel__signup-text">가입하기</span>
               </a>
             </div>
-          </section>
-          <div class="channel__menu">
+          </div>
+          <nav class="channel__menu">
             <h3 class="a11y-hidden">채널 메뉴</h3>
             <ul class="channel__menu-list">
               <!-- A태그로 묶기 -->
               <li class="channel__menu-item">
-                <span class="icon--home"></span>
-                홈
+                <a class="channel__menu-link--home" href="#">
+                  <span class="icon--home"></span>
+                  <span class="channel__menu-item--middle">홈</span>
+                </a>
               </li>
               <li class="channel__menu-item">
-                <span class="icon--store"></span>
-                스토어
+                <a class="channel__menu-link--store" href="#">
+                  <span class="icon--store"></span>
+                  <span class="channel__menu-item--middle">스토어</span>
+                </a>
               </li>
               <li class="channel__menu-item">
-                <span class="icon--schedule"></span>
-                스케줄
+                <a class="channel__menu-link--schedule" href="#">
+                  <span class="icon--schedule"></span>
+                  <span class="channel__menu-item--middle">스케줄</span>
+                </a>
               </li>
               <li class="channel__menu-item">
-                <span class="icon--my"></span>
-                마이
+                <a class="channel__menu-link--my" href="#">
+                  <span class="icon--my"></span>
+                  <span class="channel__menu-item--middle">마이</span>
+                </a>
               </li>
             </ul>
             <button class="channel__button--write">
               <span class="icon--write"></span>
               글쓰기
             </button>
-          </div>
-          <div class="channel__board">
-            <h2 class="channel__heading a11y-hidden">게시판 메뉴</h2>
-            <ul class="channel__board-list--l1">
-              <li class="channel__board-item--l1">
-                <h3 class="channel__board-header">Offcial</h3>
-                <ul class="channel__board-list--l2">
-                  <li class="channel__board-item--l2">
-                    <span class="icon--notice">공지사항</span>
-                  </li>
-                  <li class="channel__board-item--l2">
-                    <span class="icon--star">스타 게시판</span>
-                  </li>
-                </ul>
-              </li>
-              <li class="channel__board-item--l1">
-                <h3 class="channel__board-header">Fan</h3>
-                <ul class="channel__board-list--l2">
-                  <li class="channel__board-item--l2">
-                    <span class="icon--list">팬 게시판</span>
-                  </li>
-                </ul>
-              </li>
-              <li class="channel__board-item--l1">
-                <h3 class="channel__board-header">Special</h3>
-                <ul class="channel__board-list--l2">
-                  <li class="channel__board-item--l2">
-                    <span class="icon--vlive-plus"></span>
-                    VLICE+ 게시판
-                  </li>
-                </ul>
-              </li>
-              <li class="channel__board-item--l1">
-                <h3 class="channel__board-header">[TWICE+] Only</h3>
-                <ul class="channel__board-list--l2">
-                  <li class="channel__board-item--l2">
-                    <span class="icon--notice"></span>
-                    [TWICE+] 공지사항
-                  </li>
-                  <li class="channel__board-item--l2">
-                    <span class="icon--star"></span>
-                    [TWICE+] 스타 게시판
-                  </li>
-                  <li class="channel__board-item--l2">
-                    <span class="icon--list"></span>
-                    [TWICE+] 팬 게시판
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+          </nav>
         </div>
+
+        <nav class="channel__board">
+          <h2 class="channel__heading a11y-hidden">게시판 메뉴</h2>
+          <ul class="channel__board-list--l1">
+            <li class="channel__board-item--l1">
+              <h3 class="channel__board-header">Official</h3>
+              <ul class="channel__board-list--l2">
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zM8.349 11.01H6.296l-.256 1.276c-.008.042-.012.084-.012.126 0 .355.287.642.642.642h.744c.306 0 .57-.216.63-.516l.305-1.528zM11.95 5.2c-.071 0-.14.024-.196.067-1.002.778-2.171 1.166-3.51 1.166H6.043l-.095.007c-.31.046-.547.313-.547.635v2.711l.007.095c.046.31.313.547.635.547h2.203l.263.007c1.057.058 2.145.462 3.265 1.212.147.099.347.06.445-.088.036-.053.055-.115.055-.178l-.002-5.86-.006-.065c-.03-.146-.16-.256-.315-.256z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">공지사항</span>
+                  </a>
+                </li>
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zm-.66 10.303l-1.887 1.373.648.436 1.165.78c.11.075.248.096.376.06.24-.068.38-.319.31-.559l-.376-1.325-.236-.765zm-2.19-5.73c-.235-.082-.493.042-.576.277l-.872 2.48H4.897c-.138 0-.269.063-.354.171-.156.196-.123.48.073.636l2.156 1.711-.706 2.482c-.037.132-.012.275.068.387.146.203.429.25.632.104l6.496-4.671c.118-.085.188-.222.188-.367 0-.25-.202-.453-.452-.453h-2.699l-.871-2.48c-.046-.129-.148-.23-.277-.276z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">스타 게시판</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="channel__board-item--l1">
+              <h3 class="channel__board-header">Fan</h3>
+              <ul class="channel__board-list--l2">
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zm-.285 5h-5.39l-.114.007c-.446.056-.791.437-.791.898v6.19l.007.114c.056.446.437.791.898.791h4.045l.16-.006c1.168-.081 2.09-1.042 2.09-2.216V5.905l-.007-.114c-.056-.446-.437-.791-.898-.791zM9.47 9.5c.249 0 .45.201.45.45s-.201.45-.45.45H7.22l-.08-.007c-.21-.038-.37-.222-.37-.443 0-.249.201-.45.45-.45zm1.35-2.25c.249 0 .45.201.45.45s-.201.45-.45.45h-3.6l-.08-.007c-.21-.038-.37-.222-.37-.443 0-.249.201-.45.45-.45z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">팬 게시판</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="channel__board-item--l1">
+              <h3 class="channel__board-header">Special</h3>
+              <ul class="channel__board-list--l2">
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <span class="icon--vlive-plus">
+                      <span class="a11y-hidden">VLIVE PLUS</span>
+                    </span>
+                    <span class="channel__board-text">VLIVE+ 게시판</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="channel__board-item--l1">
+              <h3 class="channel__board-header">[TWICE+] Only</h3>
+              <ul class="channel__board-list--l2">
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zM8.349 11.01H6.296l-.256 1.276c-.008.042-.012.084-.012.126 0 .355.287.642.642.642h.744c.306 0 .57-.216.63-.516l.305-1.528zM11.95 5.2c-.071 0-.14.024-.196.067-1.002.778-2.171 1.166-3.51 1.166H6.043l-.095.007c-.31.046-.547.313-.547.635v2.711l.007.095c.046.31.313.547.635.547h2.203l.263.007c1.057.058 2.145.462 3.265 1.212.147.099.347.06.445-.088.036-.053.055-.115.055-.178l-.002-5.86-.006-.065c-.03-.146-.16-.256-.315-.256z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">[TWICE+] 공지사항</span>
+                  </a>
+                </li>
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zm-.66 10.303l-1.887 1.373.648.436 1.165.78c.11.075.248.096.376.06.24-.068.38-.319.31-.559l-.376-1.325-.236-.765zm-2.19-5.73c-.235-.082-.493.042-.576.277l-.872 2.48H4.897c-.138 0-.269.063-.354.171-.156.196-.123.48.073.636l2.156 1.711-.706 2.482c-.037.132-.012.275.068.387.146.203.429.25.632.104l6.496-4.671c.118-.085.188-.222.188-.367 0-.25-.202-.453-.452-.453h-2.699l-.871-2.48c-.046-.129-.148-.23-.277-.276z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">
+                      [TWICE+] 스타 게시판
+                    </span>
+                  </a>
+                </li>
+                <li class="channel__board-item--l2">
+                  <a href="" class="channel__board-link">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      class="board_icon--3B72f"
+                    >
+                      <path
+                        fill="#B5B5BD"
+                        fill-rule="evenodd"
+                        d="M12 0c3.314 0 6 2.686 6 6v6c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6h6zm-.285 5h-5.39l-.114.007c-.446.056-.791.437-.791.898v6.19l.007.114c.056.446.437.791.898.791h4.045l.16-.006c1.168-.081 2.09-1.042 2.09-2.216V5.905l-.007-.114c-.056-.446-.437-.791-.898-.791zM9.47 9.5c.249 0 .45.201.45.45s-.201.45-.45.45H7.22l-.08-.007c-.21-.038-.37-.222-.37-.443 0-.249.201-.45.45-.45zm1.35-2.25c.249 0 .45.201.45.45s-.201.45-.45.45h-3.6l-.08-.007c-.21-.038-.37-.222-.37-.443 0-.249.201-.45.45-.45z"
+                      ></path>
+                    </svg>
+                    <span class="channel__board-text">[TWICE+] 팬 게시판</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
         <!-- 정원 끝 -->
       </aside>
       <section class="related">
         <!-- 영종 시작 -->
-        <h2>추천 영상</h2>
+        <h2 class="related__header">추천 영상</h2>
+        <div class="related__buttons">
+          <button class="related__button--prev is-disabled">
+            <svg
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+              class="icon_arrow---B-1C"
+            >
+              <title>이전 추천영상 리스트 보기</title>
+              <path
+                fill="none"
+                fill-rule="evenodd"
+                stroke="#2B2B2E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1.477 8.565L1.512 1.459 8.548 1.494"
+                transform="rotate(135 2.805 4.684)"
+              ></path>
+            </svg>
+          </button>
+          <button class="related__button--next">
+            <svg
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+              class="icon_arrow---B-1C"
+            >
+              <title>다음 추천영상 리스트 보기</title>
+              <path
+                fill="none"
+                fill-rule="evenodd"
+                stroke="#2B2B2E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1.477 8.565L1.512 1.459 8.548 1.494"
+                transform="rotate(135 2.805 4.684)"
+              ></path>
+            </svg>
+          </button>
+        </div>
         <ul class="related__list">
           <li class="related__item">
             <a class="related__link" href="#">
               <div class="related__info">
-                <p class="related__title">제목</p>
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
                 <div class="related__detail">
-                  <em>그룹이름</em>
-                  <time>업로드 날짜</time>
+                  <em class="related__group-name">TWICE</em>
+                  <time class="related__upload-date">4.30.</time>
                 </div>
                 <div class="related__reactions">
                   <span class="icon-wrapper">
@@ -400,36 +500,95 @@
                   </span>
                 </div>
               </div>
-              <div class="related__thumbnail">
-                <img src="#" alt="#" />
-                <span class="related__time">
-                  <span class="a11y-hidden">재생시간</span>
-                  "02:55"
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
+                  <span class="related__play-time">
+                    <span class="a11y-hidden">재생시간</span>
+                    02:55
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="related__item">
+            <a class="related__link" href="#">
+              <div class="related__info">
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
+                <div class="related__detail">
+                  <em class="related__group-name">TWICE</em>
+                  <time class="related__upload-date">4.30.</time>
+                </div>
+                <div class="related__reactions">
+                  <span class="icon-wrapper">
+                    <span class="icon--play"></span>
+                    42K
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--heart"></span>
+                    12.7M
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--comments"></span>
+                    댓글수
+                  </span>
+                </div>
+              </div>
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
+                  <span class="related__play-time">
+                    <span class="a11y-hidden">재생시간</span>
+                    02:55
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="related__item">
+            <a class="related__link" href="#">
+              <div class="related__info">
+                <strong class="related__title">
+                  TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2
+                  TEASER
+                </strong>
+                <div class="related__detail">
+                  <em class="related__group-name">TWICE</em>
+                  <time class="related__upload-date">4.30.</time>
+                </div>
+                <div class="related__reactions">
+                  <span class="icon-wrapper">
+                    <span class="icon--play"></span>
+                    42K
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--heart"></span>
+                    12.7M
+                  </span>
+                  <span class="icon-wrapper">
+                    <span class="icon--comments"></span>
+                    댓글수
+                  </span>
+                </div>
+              </div>
+              <div class="related__thumbnail-wrapper">
+                <span role="img" class="related__thumbnail" aria-label="썸네일">
+                  <span class="related__play-time">
+                    <span class="a11y-hidden">재생시간</span>
+                    02:55
+                  </span>
                 </span>
               </div>
             </a>
           </li>
         </ul>
-        <div class="related__buttons">
-          <button class="related__button--prev is-disabled">
-            <svg>
-              <title>이전 추천영상 리스트 보기</title>
-              <path></path>
-            </svg>
-          </button>
-          <button class="related__button--next">
-            <svg>
-              <title>다음 추천영상 리스트</title>
-              <path></path>
-            </svg>
-          </button>
-        </div>
         <!-- 영종 끝 -->
       </section>
       <section class="comments">
         <!-- 두영 시작 -->
         <h2 class="a11y-hidden">댓글 보기</h2>
-        <button class="comments__live">
+        <button type="button" class="comments__live">
           라이브 채팅 다시보기
           <span class="icon--down-arrow">
             <svg width="12" height="12" viewbox="0 0 12 12">
@@ -455,20 +614,71 @@
         </button>
 
         <form action="#" method="post" class="comments__form">
-          <fieldset>
-            <legend></legend>
-            <label for="comment-text">🙂</label>
-            <input
-              type="text"
-              class="comments__form-input"
-              id="comment-text"
-              name="comment-text"
-              placeholder="댓글을 입력하세요."
-            />
+          <fieldset class="comments__field">
+            <legend class="a11y-hidden">댓글</legend>
+            <div class="comments__input-box">
+              <label class="comments__default" for="comment-text"></label>
+              <input
+                type="text"
+                class="comments__form-input"
+                id="comment-text"
+                name="comment-text"
+                placeholder="댓글을 입력하세요."
+                autocomplete="off"
+              />
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" fill-rule="evenodd" stroke="#90909C">
+                  <path
+                    stroke-width="1.5"
+                    d="M19.6 9.975c0 5.315-4.31 9.625-9.625 9.625C4.659 19.6.35 15.29.35 9.975S4.66.35 9.975.35 19.6 4.66 19.6 9.975z"
+                    transform="translate(2 2)"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                    d="M6 12c.878 1.269 2.341 2.1 4.003 2.1 1.657 0 3.118-.828 3.997-2.092"
+                    transform="translate(2 2)"
+                  ></path>
+                  <path
+                    fill="#90909C"
+                    stroke-width="0.538"
+                    d="M8.024 7.887c0 .545-.442.987-.987.987-.545 0-.987-.442-.987-.987 0-.545.442-.987.987-.987.545 0 .987.442.987.987M13.017 8.874c-.545 0-.987-.442-.987-.987 0-.545.442-.987.987-.987.545 0 .987.442.987.987 0 .545-.442.987-.987.987z"
+                    transform="translate(2 2)"
+                  ></path>
+                </g>
+              </svg>
+            </div>
             <div class="comments__form-buttons">
               <ul class="buttons">
                 <li class="buttons__item">
-                  <button type="button" class="buttons__btn">😀</button>
+                  <button type="button" class="buttons__btn">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      class="sticker_icon--2Deow"
+                    >
+                      <g fill="none" fill-rule="evenodd" stroke="#90909C">
+                        <path
+                          stroke-width="1.5"
+                          d="M19.6 9.975c0 5.315-4.31 9.625-9.625 9.625C4.659 19.6.35 15.29.35 9.975S4.66.35 9.975.35 19.6 4.66 19.6 9.975z"
+                          transform="translate(2 2)"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="1.5"
+                          d="M6 12c.878 1.269 2.341 2.1 4.003 2.1 1.657 0 3.118-.828 3.997-2.092"
+                          transform="translate(2 2)"
+                        ></path>
+                        <path
+                          fill="#90909C"
+                          stroke-width="0.538"
+                          d="M8.024 7.887c0 .545-.442.987-.987.987-.545 0-.987-.442-.987-.987 0-.545.442-.987.987-.987.545 0 .987.442.987.987M13.017 8.874c-.545 0-.987-.442-.987-.987 0-.545.442-.987.987-.987.545 0 .987.442.987.987 0 .545-.442.987-.987.987z"
+                          transform="translate(2 2)"
+                        ></path>
+                      </g>
+                    </svg>
+                  </button>
                 </li>
                 <li class="buttons__item">
                   <button type="button" class="buttons__btn">취소</button>
@@ -483,8 +693,8 @@
 
         <section class="comments__container">
           <header class="comments__header">
-            <p>댓글</p>
-            <p>
+            <p class="comments__header-title">댓글</p>
+            <p class="comments__header-detail">
               <button>
                 최신순
                 <span class="icon-down-arrow">
@@ -538,24 +748,363 @@
 
           <ul class="comments__list">
             <li class="comments__item">
-              <a href="#" class="comments__writer">Avery Li</a>
-              <span class="comments__time">35분 전</span>
-              <p class="comments__content">hello</p>
-              <div class="comments__buttons">
-                <button class="comments__button">
-                  <span class="icon--heart">(하트) 0</span>
+              <a href="#" class="comments__item-writer">Seuong Won</a>
+              <span class="comments__item-time">13분 전</span>
+              <p class="comments__item-content">
+                <img
+                  src="https://v-phinf.pstatic.net/itzy_01/10.png?type=m155_129"
+                  width="96"
+                  height="80"
+                  alt="vsticker"
+                />
+              </p>
+              <div class="comments__item-buttons">
+                <button class="comments__item-button">
+                  <span class="comments__item-icon">
+                    <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 16 15"
+                      class="like_icon--23WVj"
+                    >
+                      <path
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke="#464659"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.1"
+                        d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
+                      ></path>
+                    </svg>
+                    22
+                  </span>
                 </button>
-                <button class="comments__button">답글 쓰기</button>
+                <button class="comments__item-button">답글 쓰기</button>
               </div>
-              <a href="#" class="comments__avatar">아바타</a>
-              <div class="comments__more">
+              <a href="#" class="comments__item-avatar"></a>
+              <div class="comments__item-more">
                 <button class="comments__button--circle">
-                  <span class="icon--global"></span>
                   <span class="a11y-hidden">언어 변경</span>
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    class="icon_button--3uz1s -translation--2A3Jz"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      stroke="#BFBFC0"
+                      stroke-width="1.143"
+                    >
+                      <path
+                        d="M10.686 2.286h10.511c.822 0 1.489.661 1.489 1.478v10.758c0 .816-.667 1.478-1.489 1.478h-8.226L10.686 2.286zM12.571 13.714H2.061c-.823 0-1.49-.661-1.49-1.478V1.478C.571.662 1.238 0 2.061 0h8.225l2.285 13.714z"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <g stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M2.444 0L2.444 1.179M0 1.493L4.714 1.493M1.11 1.493c.286 1.394 1.27 2.502 2.955 3.324M3.671 1.493C3.385 2.887 2.4 3.995.716 4.817"
+                          transform="translate(.571 1) translate(14.857 6.286)"
+                        ></path>
+                      </g>
+                      <path
+                        fill-rule="nonzero"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 9.143L6.094 4.571 8.189 9.143"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <path
+                        fill-rule="nonzero"
+                        d="M4.454 8L7.821 8"
+                        transform="translate(.571 1)"
+                      ></path>
+                    </g>
+                  </svg>
                 </button>
                 <button class="comments__button--circle">
-                  <span class="icon--more"></span>
                   <span class="a11y-hidden">답글, 신고 보기</span>
+                  <svg
+                    width="3"
+                    height="13"
+                    viewBox="0 0 3 13"
+                    class="icon_button--3uz1s -more--2CaVp"
+                  >
+                    <g fill="#959597" fill-rule="evenodd" opacity="0.5">
+                      <circle cx="1.75" cy="1.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="6.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="11.25" r="1.25"></circle>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="comments__item">
+              <a href="#" class="comments__item-writer">Avery Li</a>
+              <span class="comments__item-time">35분 전</span>
+              <p class="comments__item-content">wink if yunji is real 💖</p>
+              <div class="comments__item-buttons">
+                <button class="comments__item-button">
+                  <span class="comments__item-icon">
+                    <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 16 15"
+                      class="like_icon--23WVj"
+                    >
+                      <path
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke="#464659"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.1"
+                        d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
+                      ></path>
+                    </svg>
+                    21
+                  </span>
+                </button>
+                <button class="comments__item-button">답글 쓰기</button>
+              </div>
+              <a href="#" class="comments__item-avatar"></a>
+              <div class="comments__item-more">
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">언어 변경</span>
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    class="icon_button--3uz1s -translation--2A3Jz"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      stroke="#BFBFC0"
+                      stroke-width="1.143"
+                    >
+                      <path
+                        d="M10.686 2.286h10.511c.822 0 1.489.661 1.489 1.478v10.758c0 .816-.667 1.478-1.489 1.478h-8.226L10.686 2.286zM12.571 13.714H2.061c-.823 0-1.49-.661-1.49-1.478V1.478C.571.662 1.238 0 2.061 0h8.225l2.285 13.714z"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <g stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M2.444 0L2.444 1.179M0 1.493L4.714 1.493M1.11 1.493c.286 1.394 1.27 2.502 2.955 3.324M3.671 1.493C3.385 2.887 2.4 3.995.716 4.817"
+                          transform="translate(.571 1) translate(14.857 6.286)"
+                        ></path>
+                      </g>
+                      <path
+                        fill-rule="nonzero"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 9.143L6.094 4.571 8.189 9.143"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <path
+                        fill-rule="nonzero"
+                        d="M4.454 8L7.821 8"
+                        transform="translate(.571 1)"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">답글, 신고 보기</span>
+                  <svg
+                    width="3"
+                    height="13"
+                    viewBox="0 0 3 13"
+                    class="icon_button--3uz1s -more--2CaVp"
+                  >
+                    <g fill="#959597" fill-rule="evenodd" opacity="0.5">
+                      <circle cx="1.75" cy="1.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="6.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="11.25" r="1.25"></circle>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="comments__item">
+              <a href="#" class="comments__item-writer">STEM 😖</a>
+              <span class="comments__item-time">52분 전</span>
+              <p class="comments__item-content">
+                hola estas bella q mal por mi por no poder acompañarte 😭😭😭 en
+                este vlive
+              </p>
+              <div class="comments__item-buttons">
+                <button class="comments__item-button">
+                  <span class="comments__item-icon">
+                    <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 16 15"
+                      class="like_icon--23WVj"
+                    >
+                      <path
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke="#464659"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.1"
+                        d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
+                      ></path>
+                    </svg>
+                    4
+                  </span>
+                </button>
+                <button class="comments__item-button">답글 쓰기</button>
+              </div>
+              <a href="#" class="comments__item-avatar"></a>
+              <div class="comments__item-more">
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">언어 변경</span>
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    class="icon_button--3uz1s -translation--2A3Jz"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      stroke="#BFBFC0"
+                      stroke-width="1.143"
+                    >
+                      <path
+                        d="M10.686 2.286h10.511c.822 0 1.489.661 1.489 1.478v10.758c0 .816-.667 1.478-1.489 1.478h-8.226L10.686 2.286zM12.571 13.714H2.061c-.823 0-1.49-.661-1.49-1.478V1.478C.571.662 1.238 0 2.061 0h8.225l2.285 13.714z"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <g stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M2.444 0L2.444 1.179M0 1.493L4.714 1.493M1.11 1.493c.286 1.394 1.27 2.502 2.955 3.324M3.671 1.493C3.385 2.887 2.4 3.995.716 4.817"
+                          transform="translate(.571 1) translate(14.857 6.286)"
+                        ></path>
+                      </g>
+                      <path
+                        fill-rule="nonzero"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 9.143L6.094 4.571 8.189 9.143"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <path
+                        fill-rule="nonzero"
+                        d="M4.454 8L7.821 8"
+                        transform="translate(.571 1)"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">답글, 신고 보기</span>
+                  <svg
+                    width="3"
+                    height="13"
+                    viewBox="0 0 3 13"
+                    class="icon_button--3uz1s -more--2CaVp"
+                  >
+                    <g fill="#959597" fill-rule="evenodd" opacity="0.5">
+                      <circle cx="1.75" cy="1.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="6.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="11.25" r="1.25"></circle>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="comments__item">
+              <a href="#" class="comments__item-writer">♡MIDZY❤︎</a>
+              <span class="comments__item-time">1시간 전</span>
+              <p class="comments__item-content">
+                <img
+                  src="https://v-phinf.pstatic.net/itzy_01/2.png?type=m155_129"
+                  width="96"
+                  height="80"
+                  alt="vsticker"
+                />
+              </p>
+              <div class="comments__item-buttons">
+                <button class="comments__item-button">
+                  <span class="comments__item-icon">
+                    <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 16 15"
+                      class="like_icon--23WVj"
+                    >
+                      <path
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke="#464659"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.1"
+                        d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
+                      ></path>
+                    </svg>
+                    2
+                  </span>
+                </button>
+                <button class="comments__item-button">답글 쓰기</button>
+              </div>
+              <a href="#" class="comments__item-avatar"></a>
+              <div class="comments__item-more">
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">언어 변경</span>
+                  <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 24 18"
+                    class="icon_button--3uz1s -translation--2A3Jz"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      stroke="#BFBFC0"
+                      stroke-width="1.143"
+                    >
+                      <path
+                        d="M10.686 2.286h10.511c.822 0 1.489.661 1.489 1.478v10.758c0 .816-.667 1.478-1.489 1.478h-8.226L10.686 2.286zM12.571 13.714H2.061c-.823 0-1.49-.661-1.49-1.478V1.478C.571.662 1.238 0 2.061 0h8.225l2.285 13.714z"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <g stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M2.444 0L2.444 1.179M0 1.493L4.714 1.493M1.11 1.493c.286 1.394 1.27 2.502 2.955 3.324M3.671 1.493C3.385 2.887 2.4 3.995.716 4.817"
+                          transform="translate(.571 1) translate(14.857 6.286)"
+                        ></path>
+                      </g>
+                      <path
+                        fill-rule="nonzero"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 9.143L6.094 4.571 8.189 9.143"
+                        transform="translate(.571 1)"
+                      ></path>
+                      <path
+                        fill-rule="nonzero"
+                        d="M4.454 8L7.821 8"
+                        transform="translate(.571 1)"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
+                <button class="comments__button--circle">
+                  <span class="a11y-hidden">답글, 신고 보기</span>
+                  <svg
+                    width="3"
+                    height="13"
+                    viewBox="0 0 3 13"
+                    class="icon_button--3uz1s -more--2CaVp"
+                  >
+                    <g fill="#959597" fill-rule="evenodd" opacity="0.5">
+                      <circle cx="1.75" cy="1.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="6.25" r="1.25"></circle>
+                      <circle cx="1.75" cy="11.25" r="1.25"></circle>
+                    </g>
+                  </svg>
                 </button>
               </div>
             </li>
