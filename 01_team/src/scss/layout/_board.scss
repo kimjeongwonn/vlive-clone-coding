@@ -1,4 +1,66 @@
 .board {
   @include box;
   grid-area: board;
+  display: flex;
+  padding: 0 rem(12px);
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  &__button {
+    &--toggle-menu {
+      order: -1;
+      @include buttonBox($isCircle: true);
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+  &__heading {
+    font-size: rem(17px);
+    margin: 0;
+    margin-left: 54.5px - 30px;
+    padding: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+  &__channel-name {
+    display: block;
+    margin: 0;
+    margin-top: rem(2px);
+    padding: 0;
+    font-size: rem(11px);
+    font-weight: 400;
+    color: $dark-gray;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    &--list {
+      @include buttonBox;
+      display: none;
+      @include desktop {
+        display: block;
+        font-size: rem(14px);
+        padding: rem(10px);
+      }
+    }
+    &--signup {
+      @include buttonBox($bg: $primary-background-color);
+      display: block;
+      font-size: rem(13px);
+      font-weight: 600;
+      padding: rem(8px) rem(16px);
+      color: $primary-color;
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+  @include desktop {
+    padding: 0 rem(10px) 0 rem(20px);
+    position: static;
+  }
 }
