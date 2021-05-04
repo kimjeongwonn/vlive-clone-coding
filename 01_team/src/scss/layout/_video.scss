@@ -90,6 +90,11 @@
   }
 
   &__post {
+    padding: rem(10px);
+    &-button {
+      @include buttonBox;
+      margin-right: rem(10px);
+    }
     // TODO: 삭제 - ul normalize
     ul {
       list-style: none;
