@@ -13,7 +13,7 @@
     border-radius: 50%;
   }
   &:hover {
-    background-color: $dark-gray;
+    background-color: mix($bg, rgba(0, 0, 0, 0.15));
   }
 }
 
