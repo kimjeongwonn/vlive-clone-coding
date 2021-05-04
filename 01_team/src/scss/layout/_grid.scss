@@ -23,7 +23,7 @@
     width: 1250px;
     margin-top: 30px;
     grid-template:
-      "channel board related" 60px
+      "channel board related" 54px
       "channel video related" auto
       "channel comments related" auto
       / 210px 1fr 260px;
@@ -32,10 +32,11 @@
   @include tablet {
     width: 964px;
     grid-template:
-      "channel board" 60px
+      "channel board" 54px
       "channel video" auto
       "channel related" auto
       "channel comments" auto
       / 210px 1fr;
+    gap: 15px 26px;
   }
 }

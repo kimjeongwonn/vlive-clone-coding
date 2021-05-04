@@ -4,17 +4,16 @@
   border: none;
   border-radius: rem(8px);
   appearance: none;
-  border-radius: 0;
   background: none;
   cursor: pointer;
   background-color: $bg;
-  @if $size {
+  @if $isCircle {
     width: $size;
     height: $size;
     border-radius: 50%;
   }
   &:hover {
-    background-color: $dark-gray;
+    background-color: mix($bg, rgba(0, 0, 0, 0.15));
   }
 }
 
