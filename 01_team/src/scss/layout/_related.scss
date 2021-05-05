@@ -34,14 +34,16 @@ ul{
     &-wrapper{
       order: -1;
       position: relative;
+      overflow: hidden;
+      border-radius: 8px;
     }
     display: inline-block;
     vertical-align: middle;
     width: rem(138px);
-    height: rem(77px);
-    border-radius: 8px;
+    min-height: rem(77px);
+    height: 100%;
     background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
-    background-size: 101%;
+    background-size: cover;
     background-position: center;
   }
   &__play-time{
@@ -188,7 +190,13 @@ ul{
 // 태블릿
 @include tablet{
   .related{
+    // 공통
     padding: rem(15px) rem(18px) rem(20px) rem(18px);
+    // 헤더
+    &__header{
+      padding-bottom: 0;
+      border: none;
+    }
     // 리스트 레이아웃
     &__list{
       display: flex;
@@ -201,32 +209,14 @@ ul{
       &:nth-child(3n+2){
         padding-right: rem(20px);
       }
-      &:nth-child(1){
-        .related__thumbnail{
-          border: 5px solid $primary-color;
-        }
-        .related__title{
-          font-weight: 700;
-        }
-      }
     }
     &__link{
       flex-direction: column;
-      &:hover{
-        .related__thumbnail{
-          background-size: 110%;
-          filter: blur(0.5px);
-        }
-        .related__title{
-          text-decoration: underline;
-        }
-      }
     }
     // 영상 정보 디테일
     &__thumbnail{
       height: rem(120px);
       width: 100%;
-      transition: background-size 0.2s ease-in;
       &-wrapper{
         width: 100%;
       }
@@ -254,6 +244,9 @@ ul{
     }
     // 자동 재생 체크박스
     &__check{
+      &box{
+        margin: 0;
+      }
       &-lb{
         &::before{
           right: rem(31px);
@@ -268,17 +261,26 @@ ul{
 // 데스크탑
 @include desktop{
   .related{
+    &__header{
+      padding-bottom: rem(16px);
+      border-bottom: 1px solid #f2f2f2;
+    }
     // 아이템 레이아웃 및 디자인
     &__item{
-      &:nth-child(1) .related__thumbnail{
-        border: 5px solid $primary-color;
+      &:nth-child(1){
+        .related__thumbnail-wrapper{
+          border: 5px solid $primary-color;
+        }
+        .related__title{
+          font-weight: 700;
+        }
       }
     }
     &__link{
       flex-direction: column;
-      &:hover{ 
+      &:hover{
         .related__thumbnail{
-          background-size: 110%;
+          transform: scale(1.05);
         }
         .related__title{
           text-decoration: underline;
@@ -287,11 +289,18 @@ ul{
     }
     // 썸네일
     &__thumbnail{
-      transition: background-size 0.2s ease-in;
+      transition: transform 0.2s ease-in;
+      min-height: rem(128px);
+      width: 100%;
     }
-    &__check-lb{
-      &::before{
-        right: rem(28px);
+    &__check{
+      &box{
+        margin-top: rem(13px);
+      }
+      &-lb{
+        &::before{
+          right: rem(28px);
+        }
       }
     }
   }
