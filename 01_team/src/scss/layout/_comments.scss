@@ -5,11 +5,15 @@
 
   &__live {
     @include buttonBox;
+    &:hover {
+      background: none;
+    }
     display: flex;
     width: 100%;
     justify-content: space-between;
     font-size: rem(18px);
-    padding: rem(30px) 0;
+    margin: rem(30px) 0;
+    padding: 0;
     font-weight: 700;
   }
 
@@ -25,8 +29,9 @@
     transition: all 0.3s;
 
     &:focus-within {
-      box-shadow: 0 0 2px 0px $primary-color;
+      box-shadow: 0 0 3px 1px $primary-color;
       height: rem(100px);
+      background: $white;
 
       & .comments__input-box svg {
         display: none;
@@ -72,6 +77,9 @@
 
     &__btn {
       @include buttonBox;
+      &:hover {
+        background: none;
+      }
       padding: rem(5px) rem(10px);
     }
   }
@@ -128,6 +136,9 @@
 
     &-button {
       @include buttonBox;
+      &:hover {
+        background: none;
+      }
     }
 
     &-icon {
@@ -143,6 +154,11 @@
   }
   &__button--circle {
     @include buttonBox;
-    margin-right: rem(10px);
+    width: rem(24px);
+    height: rem(24px);
+
+    &:hover {
+      background: none;
+    }
   }
 }
