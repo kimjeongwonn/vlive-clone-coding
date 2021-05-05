@@ -1,9 +1,12 @@
 import "../scss/main.scss";
-import "../js/dy";
+import "./dy";
 
 const menuToggle = document.getElementById("menuToggle");
-const menu = document.querySelector(".channel");
-const backdrop = document.querySelector(".backdrop");
+const menuCloseButton = document.getElementById("channelCloseButton");
+const menu = document.getElementsByClassName("channel")[0];
+const backdrop = document.getElementsByClassName("backdrop")[0];
+console.log(menu);
+console.log(backdrop);
 
 function classToggleHandler(e, element, className, method = "toggle") {
   switch (method) {
@@ -30,6 +33,11 @@ backdrop.addEventListener("click", (e) => {
 menuToggle.addEventListener("click", (e) => {
   classToggleHandler(e, menu, "is-active", "toggle");
   classToggleHandler(e, backdrop, "is-active", "toggle");
+});
+
+menuCloseButton.addEventListener("click", (e) => {
+  classToggleHandler(e, menu, "is-active", "off");
+  classToggleHandler(e, backdrop, "is-active", "off");
 });
 
 document.addEventListener("keydown", (e) => {

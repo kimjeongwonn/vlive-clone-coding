@@ -3,18 +3,17 @@
   grid-area: board;
   display: flex;
   padding: 0 rem(12px);
-  position: sticky;
-  top: 0;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  &__button {
-    &--toggle-menu {
-      order: -1;
-      @include buttonBox($isCircle: true);
-      @include desktop {
-        display: none;
-      }
+  &__button--toggle-menu {
+    order: -1;
+    @include buttonBox($isCircle: true);
+    @include desktop {
+      display: none;
+    }
+    &:hover {
+      background-color: initial;
     }
   }
   &__heading {
@@ -65,5 +64,9 @@
   @include desktop {
     padding: 0 rem(10px) 0 rem(20px);
     position: static;
+  }
+  @include sticky {
+    position: sticky;
+    top: 0;
   }
 }

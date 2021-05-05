@@ -16,7 +16,7 @@
   background-color: $black;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.3s;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
   &.is-active {
     visibility: visible;
