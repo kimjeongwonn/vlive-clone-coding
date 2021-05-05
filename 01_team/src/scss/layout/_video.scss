@@ -1,11 +1,25 @@
 .video {
+  $video-height: calc(100% * (9 / 16));
+  $header-height: rem(64px);
+
   @include box;
   grid-area: video;
-  // position: sticky;
-  // top: 0;
-  // width: 100%;
 
   &__header {
+    @include sticky {
+      &.is-fixed {
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        z-index: 2;
+
+        & + .video__main {
+          margin-top: $header-height;
+          padding-top: 100vw * (9/16);
+        }
+      }
+    }
+    background: $white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,12 +54,13 @@
     &-title {
       font-weight: 700;
       margin-bottom: rem(2px);
-      display: block;
+      display: inline;
     }
 
     &-time {
       font-size: rem(13px);
       display: block;
+      width: auto;
     }
   }
 
@@ -56,10 +71,18 @@
   }
 
   &__content {
+    @include sticky {
+      &.is-fixed {
+        position: fixed;
+        top: 114px;
+        width: 100%;
+        z-index: 2;
+      }
+    }
     order: -1;
     width: 100%;
     position: relative;
-    padding-top: calc(100% * (9 / 16));
+    padding-top: $video-height;
   }
 
   &__player {
@@ -86,13 +109,19 @@
 
   &__detail {
     font-size: rem(13px);
+    padding: rem(5px) 0;
     color: $dark-gray;
   }
 
   &__post {
     padding: rem(10px);
+    padding-top: 0;
+    margin-bottom: rem(5px);
     &-button {
       @include buttonBox;
+      &:hover {
+        background: none;
+      }
       margin-right: rem(10px);
     }
 

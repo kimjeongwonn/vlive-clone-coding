@@ -1,4 +1,5 @@
 import "../scss/main.scss";
+import "../js/dy";
 
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.querySelector(".channel");
