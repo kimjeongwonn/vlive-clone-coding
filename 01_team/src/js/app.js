@@ -1,32 +1,48 @@
 import "../scss/main.scss";
+import "./dy";
 
 const menuToggle = document.getElementById("menuToggle");
-const menu = document.querySelector(".channel");
-let isMenuToggle = false;
+const menuCloseButton = document.getElementById("channelCloseButton");
+const menu = document.getElementsByClassName("channel")[0];
+const backdrop = document.getElementsByClassName("backdrop")[0];
+console.log(menu);
+console.log(backdrop);
 
-function menuToggleHandler(e, method = "toggle") {
+function classToggleHandler(e, element, className, method = "toggle") {
   switch (method) {
     case "toggle":
-      menu.classList.toggle("is-active");
-      isMenuToggle = !isMenuToggle;
+      element.classList.toggle(className);
       break;
     case "on":
-      if (!menu.classList.contains("is-active")) {
-        menu.classList.add("is-active");
+      if (!element.classList.contains(className)) {
+        element.classList.add(className);
       }
       break;
     case "off":
-      if (menu.classList.contains("is-active")) {
-        menu.classList.remove("is-active");
+      if (element.classList.contains(className)) {
+        element.classList.remove(className);
       }
       break;
   }
 }
+backdrop.addEventListener("click", (e) => {
+  classToggleHandler(e, menu, "is-active", "off");
+  classToggleHandler(e, backdrop, "is-active", "off");
+});
 
-menuToggle.addEventListener("click", menuToggleHandler);
+menuToggle.addEventListener("click", (e) => {
+  classToggleHandler(e, menu, "is-active", "toggle");
+  classToggleHandler(e, backdrop, "is-active", "toggle");
+});
+
+menuCloseButton.addEventListener("click", (e) => {
+  classToggleHandler(e, menu, "is-active", "off");
+  classToggleHandler(e, backdrop, "is-active", "off");
+});
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "Escape") {
-    menuToggleHandler(null, "off");
+    classToggleHandler(null, menu, "is-active", "off");
+    classToggleHandler(null, backdrop, "is-active", "off");
   }
 });
