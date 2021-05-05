@@ -31,6 +31,7 @@
     &:focus-within {
       box-shadow: 0 0 3px 1px $primary-color;
       height: rem(100px);
+      background: $white;
 
       & .comments__input-box svg {
         display: none;
@@ -76,6 +77,9 @@
 
     &__btn {
       @include buttonBox;
+      &:hover {
+        background: none;
+      }
       padding: rem(5px) rem(10px);
     }
   }

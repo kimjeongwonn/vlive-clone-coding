@@ -40,3 +40,9 @@ $breakpoint: 1024px;
     @content;
   }
 }
+
+@mixin sticky {
+  @media screen and (max-width: 418px) {
+    @content;
+  }
+}
