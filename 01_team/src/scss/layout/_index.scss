@@ -5,3 +5,24 @@
 @import "comments";
 @import "channel";
 @import "related";
+
+.backdrop {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 2;
+  cursor: pointer;
+  &.is-active {
+    visibility: visible;
+    opacity: 0.3;
+  }
+  @include desktop {
+    display: none;
+  }
+}

@@ -7,6 +7,7 @@
   top: 0;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
   &__button {
     &--toggle-menu {
       order: -1;
@@ -21,8 +22,10 @@
     margin: 0;
     margin-left: 54.5px - 30px;
     padding: 0;
-    flex-grow: 1;
     text-align: center;
+    @include desktop {
+      margin-left: 0;
+    }
   }
   &__channel-name {
     display: block;
