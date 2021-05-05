@@ -60,11 +60,21 @@ ul{
   &__item{
     margin-top: rem(15px);
   }
+  &__info{
+    padding-top: rem(10px);
+  }
   &__title{
     text-overflow: ellipsis;
     font-size: rem(15px);
     font-weight: 400;
+    line-height: 19px;
     vertical-align: middle;
+    margin-bottom: 3px;
+    // 텍스트 생략
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &__detail{
     color: #777 ;
@@ -75,8 +85,8 @@ ul{
       content: "";
       display: inline-block;
       background-color:#e6e6e6;
-      width: 3px;
-      height: 3px;
+      width: rem(3px);
+      height: rem(3px);
       margin: 0 rem(5px);
       border-radius: 50%;
     }
@@ -90,15 +100,14 @@ ul{
   }
   &__reactions{
     font-size: rem(13px);
+    margin-top: rem(5px);
   }
 
   // 버튼
   &__buttons{
     position: absolute;
-    // display: flex;
     top: 7px;
     right: 4px;
-    // font-size: 0;
   }
   &__button{
     &--next,
@@ -116,6 +125,7 @@ ul{
       }
     }
   }
+  // 자동 재생 체크박스
   &__check{
     vertical-align: -4px;
     // padding-right: rem(5px);
@@ -123,32 +133,44 @@ ul{
       text-align: right;
       font-size: rem(14px);
     }
+    &:checked{
+      + label{
+        &::before{
+          transform: translateX(rem(13px));
+          background-color: $primary-color;
+        }
+        &::after{
+          background-color: $primary-sub-color;
+        }
+      }
+    }
     &-lb{
+      cursor: pointer;
+      user-select: none;
       vertical-align: middle;
-      // line-height: rem(18px);
-      color: $dark-gray;
+      color: #555;
       &::before{
         content: "";
         position:absolute;
         height: rem(18px);
         width: rem(18px);
-        right: rem(13px);
-        background: $dark-gray;
+        background: $light-gray;
         border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%);
+        transition: all 0.1s;
       }
       &::after{
         content: "";
         display: inline-block;
         width: rem(30px);
         height: rem(12px);
-        background-color: $gray;
+        background-color: $white-gray;
         vertical-align: -1px;
         border-radius: 6px;
+        transition: all 0.1s;
       }
     }
   }
-}
-on{
 }
 // 모바일
 @include mobile{
@@ -158,16 +180,20 @@ on{
         margin-right: rem(15px);
       }
     }
+    &__checkbox{
+      display: none;
+    }
   }
 }
 // 태블릿
 @include tablet{
   .related{
     padding: rem(15px) rem(18px) rem(20px) rem(18px);
-    // 아이템 레이아웃
+    // 리스트 레이아웃
     &__list{
       display: flex;
     }
+    // 영상 디테일 디자인
     &__item{
       box-sizing: content-box;
       width: 33.333%;
@@ -175,20 +201,28 @@ on{
       &:nth-child(3n+2){
         padding-right: rem(20px);
       }
-      &:nth-child(1) .related__thumbnail{
-        border: 5px solid $primary-color;
+      &:nth-child(1){
+        .related__thumbnail{
+          border: 5px solid $primary-color;
+        }
+        .related__title{
+          font-weight: 700;
+        }
       }
     }
     &__link{
       flex-direction: column;
-      &:hover .related__thumbnail{
-        background-size: 110%;
-        filter: blur(0.5px);
+      &:hover{
+        .related__thumbnail{
+          background-size: 110%;
+          filter: blur(0.5px);
+        }
+        .related__title{
+          text-decoration: underline;
+        }
       }
     }
-    // 영상 디테일 정보
-    &__title{
-    }
+    // 영상 정보 디테일
     &__thumbnail{
       height: rem(120px);
       width: 100%;
@@ -218,6 +252,14 @@ on{
         right: rem(-19px);
       }
     }
+    // 자동 재생 체크박스
+    &__check{
+      &-lb{
+        &::before{
+          right: rem(31px);
+        }
+      }
+    }
   }
   .is-disabled{
     display: none;
@@ -226,6 +268,7 @@ on{
 // 데스크탑
 @include desktop{
   .related{
+    // 아이템 레이아웃 및 디자인
     &__item{
       &:nth-child(1) .related__thumbnail{
         border: 5px solid $primary-color;
@@ -233,14 +276,23 @@ on{
     }
     &__link{
       flex-direction: column;
-      &:hover .related__thumbnail{
-        background-size: 110%;
-        filter: blur(0.5px);
+      &:hover{ 
+        .related__thumbnail{
+          background-size: 110%;
+        }
+        .related__title{
+          text-decoration: underline;
+        }
       }
     }
+    // 썸네일
     &__thumbnail{
       transition: background-size 0.2s ease-in;
-      // width: 100%;
+    }
+    &__check-lb{
+      &::before{
+        right: rem(28px);
+      }
     }
   }
 }
