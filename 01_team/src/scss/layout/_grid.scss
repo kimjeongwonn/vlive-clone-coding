@@ -7,12 +7,6 @@
 // 두영 시작
 // 두영 끝
 
-html {
-  @include sticky {
-    font-size: 14px;
-  }
-}
-
 .grid_wrapper {
   display: grid;
   width: 100%;
