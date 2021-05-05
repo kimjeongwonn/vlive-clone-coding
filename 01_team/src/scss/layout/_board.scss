@@ -15,6 +15,9 @@
     &:hover {
       background-color: initial;
     }
+    // &:focus:not(:focus-visible) {
+    //   outline: none;
+    // }
   }
   &__heading {
     font-size: rem(17px);

@@ -26,9 +26,12 @@
           <p class="board__channel-name">TWICE</p>
         </h2>
 
-        <button class="board__button--toggle-menu" id="menuToggle">
+        <button
+          class="board__button--toggle-menu"
+          id="menuToggle"
+          aria-label="메뉴 버튼"
+        >
           <svg width="20" height="20" viewBox="0 0 20 20" class="menu_icon">
-            <title>메뉴 버튼</title>
             <g
               fill="#2B2B2E"
               fill-rule="evenodd"
@@ -60,8 +63,8 @@
           </svg>
         </button>
 
-        <a class="board__link--list" href="">목록으로</a>
-        <button class="board__link--signup" href="">가입</button>
+        <a class="board__link--list" href="#">목록으로</a>
+        <button class="board__link--signup">가입</button>
         <!-- 정원 끝 -->
       </div>
       <main class="video">
@@ -228,10 +231,12 @@
         <!-- 두영 끝 -->
       </main>
 
-      <aside class="channel">
+      <aside class="channel" aria-labelledby="channelLabel">
         <!-- 정원 시작 -->
         <div class="channel__container">
-          <h2 class="channel__heading a11y-hidden">채널 정보</h2>
+          <h2 class="channel__heading a11y-hidden" id="channelLabel">
+            채널 정보
+          </h2>
           <div class="channel__info">
             <a href="#">
               <img
