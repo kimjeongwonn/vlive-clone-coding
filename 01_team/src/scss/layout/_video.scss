@@ -1,7 +1,6 @@
 .video {
   $video-height: calc(100% * (9 / 16));
   $header-height: rem(64px);
-
   @include box;
   grid-area: video;
 
@@ -20,13 +19,14 @@
       }
     }
     background: $white;
+    border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: rem(64px);
-    padding: 0 rem(15px);
 
     &-channel {
+      padding-left: rem(15px);
       width: 60%;
       min-width: rem(200px);
     }
@@ -36,6 +36,8 @@
       &:hover {
         background-color: $gray;
       }
+
+      padding-right: rem(15px);
     }
   }
 
@@ -74,7 +76,7 @@
     @include sticky {
       &.is-fixed {
         position: fixed;
-        top: 114px;
+        top: 106px;
         width: 100%;
         z-index: 2;
       }
@@ -128,7 +130,6 @@
     &-list {
       display: flex;
       justify-content: flex-end;
-      // align-items: center;
 
       &-item {
         display: flex;
@@ -142,7 +143,6 @@
         }
       }
 
-      // TODO: 최적화 nth-child
       &-item:nth-child(3) {
         flex-grow: 1;
         justify-content: flex-end;
