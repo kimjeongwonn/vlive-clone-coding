@@ -16,34 +16,32 @@ ul{
     path{
       stroke: #ccc;
     }
-    }
-    
+  }
     // 헤더
   &__header{
+    // display: inline-block;
     font-size: rem(14px);
     margin: 0;
-    padding-bottom: rem(18px);
+    margin-bottom: rem(3px);
   }
   // 아이템 레이아웃
   &__link{
     display: flex;
     cursor: pointer;
-    align-items: flex-start;
   }
   // 썸네일
   &__thumbnail{
     &-wrapper{
       order: -1;
+      position: relative;
     }
     display: inline-block;
-    position: relative;
     vertical-align: middle;
     width: rem(138px);
     height: rem(77px);
-    margin-right: rem(15px);
     border-radius: 8px;
     background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
-    background-size: cover;
+    background-size: 101%;
     background-position: center;
   }
   &__play-time{
@@ -59,8 +57,8 @@ ul{
     line-height: 20px;
   }
   // 영상 디테일 정보
-  &__item:not(:last-child){
-    padding-bottom: rem(15px);
+  &__item{
+    margin-top: rem(15px);
   }
   &__title{
     text-overflow: ellipsis;
@@ -96,15 +94,18 @@ ul{
 
   // 버튼
   &__buttons{
-    float: right;
     position: absolute;
+    // display: flex;
     top: 7px;
     right: 4px;
+    // font-size: 0;
   }
   &__button{
     &--next,
     &--prev{
       @include buttonBox;
+      width: rem(30px);
+      height: rem(30px);
       &:hover {
         background: none;
       }
@@ -115,42 +116,131 @@ ul{
       }
     }
   }
-  // 태블릿
-  @include tablet{
-    .related{
-      // 아이템 레이아웃
-      &__list{
-        display: flex;
+  &__check{
+    vertical-align: -4px;
+    // padding-right: rem(5px);
+    &box{
+      text-align: right;
+      font-size: rem(14px);
+    }
+    &-lb{
+      vertical-align: middle;
+      // line-height: rem(18px);
+      color: $dark-gray;
+      &::before{
+        content: "";
+        position:absolute;
+        height: rem(18px);
+        width: rem(18px);
+        right: rem(13px);
+        background: $dark-gray;
+        border-radius: 50%;
       }
-      &__item{
-        box-sizing: border-box;
-        width: 33.333%;
-        &:nth-child(3n+1),
-        &:nth-child(3n+2){
-          padding-right: rem(15px);
-        }
-      }
-      &__link{
-        flex-direction: column;
-      }
-      // 영상 디테일 정보
-      &__title{
-      }
-      &__thumbnail{
-        height: rem(120px);
-        width: 100%;
-        &-wrapper{
-          width: 100%;
-        }
+      &::after{
+        content: "";
+        display: inline-block;
+        width: rem(30px);
+        height: rem(12px);
+        background-color: $gray;
+        vertical-align: -1px;
+        border-radius: 6px;
       }
     }
   }
-  // 모바일
-  @include desktop{
-    .related{
-      &__link{
-        flex-direction: column;
+}
+on{
+}
+// 모바일
+@include mobile{
+  .related{
+    &__thumbnail{
+      &-wrapper{
+        margin-right: rem(15px);
       }
+    }
+  }
+}
+// 태블릿
+@include tablet{
+  .related{
+    padding: rem(15px) rem(18px) rem(20px) rem(18px);
+    // 아이템 레이아웃
+    &__list{
+      display: flex;
+    }
+    &__item{
+      box-sizing: content-box;
+      width: 33.333%;
+      &:nth-child(3n+1),
+      &:nth-child(3n+2){
+        padding-right: rem(20px);
+      }
+      &:nth-child(1) .related__thumbnail{
+        border: 5px solid $primary-color;
+      }
+    }
+    &__link{
+      flex-direction: column;
+      &:hover .related__thumbnail{
+        background-size: 110%;
+        filter: blur(0.5px);
+      }
+    }
+    // 영상 디테일 정보
+    &__title{
+    }
+    &__thumbnail{
+      height: rem(120px);
+      width: 100%;
+      transition: background-size 0.2s ease-in;
+      &-wrapper{
+        width: 100%;
+      }
+    }
+    // 버튼
+    &__buttons{
+      position: static;
+    }
+    &__button{
+      &--prev,
+      &--next{
+        @include buttonBox($isCircle:true, $size: 40px, $bg: #fff);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+        z-index: 1;
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+      &--next{
+        right: rem(-19px);
+      }
+    }
+  }
+  .is-disabled{
+    display: none;
+  }
+}
+// 데스크탑
+@include desktop{
+  .related{
+    &__item{
+      &:nth-child(1) .related__thumbnail{
+        border: 5px solid $primary-color;
+      }
+    }
+    &__link{
+      flex-direction: column;
+      &:hover .related__thumbnail{
+        background-size: 110%;
+        filter: blur(0.5px);
+      }
+    }
+    &__thumbnail{
+      transition: background-size 0.2s ease-in;
+      // width: 100%;
     }
   }
 }
