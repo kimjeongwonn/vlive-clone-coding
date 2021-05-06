@@ -4,21 +4,21 @@
   background-color: $white;
   display: flex;
   align-items: center;
-  padding: 0 rem(15px);
-
-  @include tablet {
-    height: 60px;
-  }
+  padding: 0 rem(10px) 0 rem(20px);
+  border-bottom: 1px solid $second-gray;
 
   @include desktop {
+    border-bottom: none;
     height: 60px;
   }
 
   &__logo {
-    &-img {
-      margin: 0;
-    }
+    margin: 0;
     flex-grow: 1;
+    line-height: rem(20px);
+    svg {
+      vertical-align: middle;
+    }
   }
 
   &__toggle {
@@ -39,6 +39,7 @@
   &__lang {
     @include buttonBox;
     padding: rem(14px) rem(10px);
+    font-size: rem(14px);
 
     svg {
       vertical-align: middle;
