@@ -120,6 +120,9 @@
 
       & button {
         @include buttonBox;
+        &:hover {
+          background: none;
+        }
         font-size: rem(12px);
         margin-left: rem(10px);
       }
@@ -171,6 +174,7 @@
 
     &-button {
       @include buttonBox;
+      border-radius: 0;
       &:hover {
         background: none;
       }
@@ -197,6 +201,7 @@
   }
   &__button--circle {
     @include buttonBox;
+    border-radius: 0;
     width: rem(24px);
     height: rem(24px);
 
