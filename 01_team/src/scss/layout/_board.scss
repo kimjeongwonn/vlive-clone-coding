@@ -19,15 +19,17 @@
     //   outline: none;
     // }
   }
-  &__heading {
-    font-size: rem(17px);
-    margin: 0;
-    margin-left: 54.5px - 30px;
-    padding: 0;
+  &__heading-wrapper {
     text-align: center;
+    margin-left: rem(54.5px - 30px);
     @include desktop {
       margin-left: 0;
     }
+  }
+  &__heading {
+    font-size: rem(17px);
+    margin: 0;
+    padding: 0;
   }
   &__channel-name {
     display: block;

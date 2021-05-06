@@ -5,6 +5,9 @@ const menuToggle = document.getElementById("menuToggle");
 const menuCloseButton = document.getElementById("channelCloseButton");
 const menu = document.getElementsByClassName("channel")[0];
 const backdrop = document.getElementsByClassName("backdrop")[0];
+const focusToChannel = document.getElementById("focusToChannel");
+const focusToRelated = document.getElementById("focusToRelated");
+const related = document.getElementsByClassName("related__header-wrapper")[0];
 
 function classToggleHandler(e, element, className, method = "toggle") {
   switch (method) {
@@ -67,5 +70,27 @@ document.addEventListener("keydown", (e) => {
     menu.removeAttribute("role");
     menu.removeAttribute("aria-labelledby");
     menuToggle.focus();
+  }
+});
+
+focusToChannel.addEventListener("click", () => {
+  menu.focus();
+});
+focusToRelated.addEventListener("click", () => {
+  related.focus();
+});
+
+const header = document.getElementsByClassName("video__header")[0];
+const video = document.getElementsByClassName("video__content")[0];
+
+document.addEventListener("scroll", (e) => {
+  const bodyRect = document.body.getBoundingClientRect();
+
+  if (bodyRect.y <= -60) {
+    header.classList.add("is-fixed");
+    video.classList.add("is-fixed");
+  } else {
+    header.classList.remove("is-fixed");
+    video.classList.remove("is-fixed");
   }
 });
