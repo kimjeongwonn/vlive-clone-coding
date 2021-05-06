@@ -7,9 +7,11 @@ ul{
 .related {
   @include box;
   grid-area: related;
-  
   // 공통
   padding: rem(15px) rem(15px) rem(20px) rem(15px);
+  @include tablet{
+    padding: rem(15px) 0 rem(20px) 0;
+  }
   position: relative;
   .is-disabled{
     cursor: default !important;
@@ -19,23 +21,58 @@ ul{
   }
     // 헤더
   &__header{
-    // display: inline-block;
     font-size: rem(14px);
     margin: 0;
     margin-bottom: rem(3px);
+    @include tablet{
+      padding-bottom: 0;
+      border: none;
+      &-wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding: 0 rem(18px);
+      }
+    }
+    @include desktop{
+      padding-bottom: rem(16px);
+      border-bottom: 1px solid #f2f2f2;
+      &-wrapper{
+        margin-bottom: 15px;
+      }
+    }
   }
   // 아이템 레이아웃
   &__link{
     display: flex;
     cursor: pointer;
+    @include desktop{
+      flex-direction: column;
+      &:hover{
+        .related__thumbnail{
+          background-size: 105%;
+        }
+        .related__title{
+          text-decoration: underline;
+        }
+      }
+    }
   }
   // 썸네일
   &__thumbnail{
     &-wrapper{
       order: -1;
       position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.05);
       border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      @include mobile{
+        margin-right: rem(15px);
+      }
+      @include desktop{
+        width: 100%;
+      }
     }
     display: inline-block;
     vertical-align: middle;
@@ -43,8 +80,16 @@ ul{
     min-height: rem(77px);
     height: 100%;
     background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
+    @include tablet{
+      min-height: rem(120px);
+    }
+    @include desktop{
+      min-height: rem(128px);
+      transition: background-size 0.2s ease-in;
+      width: 100%;
+    }
   }
   &__play-time{
     position: absolute;
@@ -60,10 +105,26 @@ ul{
   }
   // 영상 디테일 정보
   &__item{
-    margin-top: rem(15px);
-  }
-  &__info{
-    padding-top: rem(10px);
+    @include mobile{
+      margin-top: rem(18px);
+      &:nth-child(n+4){
+        display: none;
+      }
+    }
+    @include tablet{
+      box-sizing: content-box;
+      width: 30%;
+      margin-top: rem(25px);
+      &:nth-child(6){
+        display: block;
+      }
+    }
+    @include desktop{
+      margin-bottom: rem(20px);
+      &:nth-child(6){
+        display: none;
+      }
+    }
   }
   &__title{
     text-overflow: ellipsis;
@@ -102,7 +163,11 @@ ul{
   }
   &__reactions{
     font-size: rem(13px);
+    color: #444;
     margin-top: rem(5px);
+    > *:not(:last-child){
+      padding-right: 12px;
+    }
   }
 
   // 버튼
@@ -110,6 +175,10 @@ ul{
     position: absolute;
     top: 7px;
     right: 4px;
+    font-size: 0;
+    @include tablet{
+      position: static;
+    }
   }
   &__button{
     &--next,
@@ -119,11 +188,32 @@ ul{
       height: rem(30px);
       &:hover {
         background: none;
+        @include desktop{
+          background-color: mix(transparent, rgba(0, 0, 0, 0.15));
+          border-radius: 50%;
+        }
       }
     }
     &--prev{
       svg{
         transform: rotate(180deg);
+      }
+    }
+    @include tablet{
+      &--prev,
+      &--next{
+        @include buttonBox($isCircle:true, $size: 40px, $bg: #fff);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+        z-index: 1;
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+      &--next{
+        right: rem(-19px);
       }
     }
   }
@@ -134,6 +224,19 @@ ul{
     &box{
       text-align: right;
       font-size: rem(14px);
+      @include mobile{
+        display: none;
+      }
+      @include tablet{
+        margin: 0;
+      }
+      @include desktop{
+        margin-top: rem(13px);
+      }
+      &:focus-within{
+        outline: 2px solid black;
+        border-radius: 4px;
+      }
     }
     &:checked{
       + label{
@@ -156,17 +259,23 @@ ul{
         position:absolute;
         height: rem(18px);
         width: rem(18px);
-        background: $light-gray;
+        background: $third-gray;
         border-radius: 50%;
         box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%);
         transition: all 0.1s;
+        @include tablet{
+          right: rem(31px);
+        }
+        @include desktop{
+          right: rem(28px);
+        }
       }
       &::after{
         content: "";
         display: inline-block;
         width: rem(30px);
         height: rem(12px);
-        background-color: $white-gray;
+        background-color: $second-gray;
         vertical-align: -1px;
         border-radius: 6px;
         transition: all 0.1s;
@@ -174,83 +283,14 @@ ul{
     }
   }
 }
-// 모바일
-@include mobile{
-  .related{
-    &__thumbnail{
-      &-wrapper{
-        margin-right: rem(15px);
-      }
-    }
-    &__checkbox{
-      display: none;
-    }
-  }
-}
-// 태블릿
+
 @include tablet{
   .related{
-    // 공통
-    padding: rem(15px) rem(18px) rem(20px) rem(18px);
-    // 헤더
-    &__header{
-      padding-bottom: 0;
-      border: none;
-    }
-    // 리스트 레이아웃
     &__list{
       display: flex;
-    }
-    // 영상 디테일 디자인
-    &__item{
-      box-sizing: content-box;
-      width: 33.333%;
-      &:nth-child(3n+1),
-      &:nth-child(3n+2){
-        padding-right: rem(20px);
-      }
-    }
-    &__link{
-      flex-direction: column;
-    }
-    // 영상 정보 디테일
-    &__thumbnail{
-      height: rem(120px);
-      width: 100%;
-      &-wrapper{
-        width: 100%;
-      }
-    }
-    // 버튼
-    &__buttons{
-      position: static;
-    }
-    &__button{
-      &--prev,
-      &--next{
-        @include buttonBox($isCircle:true, $size: 40px, $bg: #fff);
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
-        z-index: 1;
-        &:hover {
-          background-color: #f2f2f2;
-        }
-      }
-      &--next{
-        right: rem(-19px);
-      }
-    }
-    // 자동 재생 체크박스
-    &__check{
-      &box{
-        margin: 0;
-      }
-      &-lb{
-        &::before{
-          right: rem(31px);
-        }
+      justify-content: space-evenly;
+      @include tablet {
+        flex-wrap: wrap;
       }
     }
   }
@@ -258,50 +298,10 @@ ul{
     display: none;
   }
 }
-// 데스크탑
 @include desktop{
   .related{
-    &__header{
-      padding-bottom: rem(16px);
-      border-bottom: 1px solid #f2f2f2;
-    }
-    // 아이템 레이아웃 및 디자인
-    &__item{
-      &:nth-child(1){
-        .related__thumbnail-wrapper{
-          border: 5px solid $primary-color;
-        }
-        .related__title{
-          font-weight: 700;
-        }
-      }
-    }
-    &__link{
-      flex-direction: column;
-      &:hover{
-        .related__thumbnail{
-          transform: scale(1.05);
-        }
-        .related__title{
-          text-decoration: underline;
-        }
-      }
-    }
-    // 썸네일
-    &__thumbnail{
-      transition: transform 0.2s ease-in;
-      min-height: rem(128px);
-      width: 100%;
-    }
-    &__check{
-      &box{
-        margin-top: rem(13px);
-      }
-      &-lb{
-        &::before{
-          right: rem(28px);
-        }
-      }
+    &__info{
+      padding-top: rem(10px);
     }
   }
 }
