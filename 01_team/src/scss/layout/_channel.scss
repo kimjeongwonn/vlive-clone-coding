@@ -99,12 +99,12 @@
     padding-bottom: rem(27px);
     border-bottom: 1px solid $light-gray;
     a {
-      display: block;
+      display: inline-block;
       font-size: rem(14px);
       font-weight: 500;
-    }
-    &:hover {
-      color: $primary-color;
+      &:hover {
+        color: $primary-color;
+      }
     }
     &-text {
       vertical-align: middle;
@@ -132,6 +132,7 @@
       }
     }
     &-item {
+      margin: 0 rem(2px);
       a {
         display: block;
         padding: rem(10.5px) rem(20px);
@@ -166,6 +167,9 @@
       &--l1 {
         margin-top: rem(20px);
       }
+      &--l2 {
+        margin: 0 rem(2px);
+      }
     }
     &-link {
       @include buttonBox;
@@ -174,7 +178,7 @@
       line-height: 20px;
       font-size: rem(14px);
       border-radius: rem(8px);
-      padding: rem(8px) rem(20px);
+      padding: rem(8px) rem(18px);
       svg {
         vertical-align: middle;
       }
