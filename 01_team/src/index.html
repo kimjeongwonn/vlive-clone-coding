@@ -45,7 +45,7 @@
           <span class="a11y-hidden">VLIVE</span>
         </h1>
       </div>
-      <button type="button" class="header__toggle">
+      <button aria-label="더보기" type="button" class="header__toggle">
         <svg
           width="25"
           height="25"
@@ -64,7 +64,7 @@
           </g>
         </svg>
       </button>
-      <button type="button" class="header__lang">
+      <button aria-label="언어 설정" type="button" class="header__lang">
         한국어
         <svg
           width="8"
@@ -131,14 +131,16 @@
         <h2 class="a11y-hidden">비디오</h2>
         <header class="video__header">
           <div class="video__header-channel">
-            <a href="#" class="video__channel-logo"></a>
+            <a href="#" class="video__channel-logo">
+              <span class="a11y-hidden">트와이스 썸네일</span>
+            </a>
             <a href="#" class="video__channel-title">TWICE</a>
-            <time class="video__channel-time" tabindex="0">
+            <time class="video__channel-time" datetime="2021-05-01T18:10">
               2021.05.01. 18:10
             </time>
           </div>
 
-          <button class="video__header-btn">
+          <button aria-label="동영상 추가 기능" class="video__header-btn">
             <svg
               width="5"
               height="17"
@@ -167,20 +169,14 @@
 
         <div class="video__main">
           <div class="video__info">
-            <p class="video__title">
-              <span hidden class="icon--replay">replay icon</span>
-              SANA’s TW-LOG with SECRET FRIEND
-            </p>
+            <p class="video__title">SANA’s TW-LOG with SECRET FRIEND</p>
             <p class="video__detail">재생 370,791</p>
           </div>
           <div class="video__content">
             <iframe
+              title="사나의 브이로그"
               class="video__player"
               src="https://vlive.tv/embed/247296?autoPlay=true"
-              frameborder="no"
-              scrolling="no"
-              marginwidth="0"
-              marginheight="0"
               allowfullscreen
             ></iframe>
           </div>
@@ -279,11 +275,13 @@
                 </svg>
               </button>
             </li>
-            <li class="a11y-hidden video__post-list-item">
-              <a href="#">채널 보기</a>
+            <li class="video__post-list-item--channel video__post-list-item">
+              <button type="button" id="focusToChannel">채널 보기</button>
             </li>
-            <li class="a11y-hidden video__post-list-item">
-              <a href="#">추천 동영상 보기</a>
+            <li class="video__post-list-item--related video__post-list-item">
+              <button type="button" id="focusToRelated">
+                추천 동영상 보기
+              </button>
             </li>
           </ul>
         </div>
@@ -687,7 +685,11 @@
       <section class="comments">
         <!-- 두영 시작 -->
         <h2 class="a11y-hidden">댓글 보기</h2>
-        <button type="button" class="comments__live">
+        <button
+          aria-label="라이브 채팅 보기"
+          type="button"
+          class="comments__live"
+        >
           라이브 채팅 다시보기
           <span class="icon--down-arrow">
             <svg width="12" height="12" viewbox="0 0 12 12">
@@ -750,7 +752,11 @@
             <div class="comments__form-buttons">
               <ul class="buttons">
                 <li class="buttons__item">
-                  <button type="button" class="buttons__btn">
+                  <button
+                    aria-label="이모티콘"
+                    type="button"
+                    class="buttons__btn"
+                  >
                     <svg
                       width="24"
                       height="24"
@@ -780,10 +786,22 @@
                   </button>
                 </li>
                 <li class="buttons__item">
-                  <button type="button" class="buttons__btn">취소</button>
+                  <button
+                    aria-label="댓글 쓰기 취소"
+                    type="button"
+                    class="buttons__btn"
+                  >
+                    취소
+                  </button>
                 </li>
                 <li class="buttons__item">
-                  <button type="submit" class="buttons__btn">등록</button>
+                  <button
+                    aria-label="댓글 등록"
+                    type="submit"
+                    class="buttons__btn"
+                  >
+                    등록
+                  </button>
                 </li>
               </ul>
             </div>
@@ -792,9 +810,9 @@
 
         <section class="comments__container">
           <header class="comments__header">
-            <p class="comments__header-title">댓글</p>
+            <h2 class="comments__header-title">댓글</h2>
             <p class="comments__header-detail">
-              <button>
+              <button aria-label="최신순 정렬">
                 최신순
                 <span class="icon-down-arrow">
                   <svg width="12" height="12" viewbox="0 0 12 12">
@@ -818,7 +836,7 @@
                   </svg>
                 </span>
               </button>
-              <button>
+              <button aria-label="언어 설정">
                 전체 언어
                 <span class="icon-down-arrow">
                   <svg width="12" height="12" viewbox="0 0 12 12">
@@ -858,7 +876,7 @@
                 />
               </p>
               <div class="comments__item-buttons">
-                <button class="comments__item-button">
+                <button aria-label="좋아요" class="comments__item-button">
                   <span class="comments__item-icon">
                     <svg
                       width="16"
@@ -876,14 +894,18 @@
                         d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
                       ></path>
                     </svg>
-                    22
+                    <span>22</span>
                   </span>
                 </button>
-                <button class="comments__item-button">답글 쓰기</button>
+                <button aria-label="답글 쓰기" class="comments__item-button">
+                  답글 쓰기
+                </button>
               </div>
-              <a href="#" class="comments__item-avatar"></a>
+              <a href="#" class="comments__item-avatar" tabindex="-1">
+                <span class="a11y-hidden">사용자 아바타</span>
+              </a>
               <div class="comments__item-more">
-                <button class="comments__button--circle">
+                <button aria-label="언어 설정" class="comments__button--circle">
                   <span class="a11y-hidden">언어 변경</span>
                   <svg
                     width="24"
@@ -922,7 +944,10 @@
                     </g>
                   </svg>
                 </button>
-                <button class="comments__button--circle">
+                <button
+                  aria-label="답글 및 신고"
+                  class="comments__button--circle"
+                >
                   <span class="a11y-hidden">답글, 신고 보기</span>
                   <svg
                     width="3"
@@ -944,7 +969,7 @@
               <span class="comments__item-time">35분 전</span>
               <p class="comments__item-content">wink if yunji is real 💖</p>
               <div class="comments__item-buttons">
-                <button class="comments__item-button">
+                <button aria-label="좋아요" class="comments__item-button">
                   <span class="comments__item-icon">
                     <svg
                       width="16"
@@ -962,14 +987,18 @@
                         d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
                       ></path>
                     </svg>
-                    21
+                    <span>21</span>
                   </span>
                 </button>
-                <button class="comments__item-button">답글 쓰기</button>
+                <button aria-label="답글 쓰기" class="comments__item-button">
+                  답글 쓰기
+                </button>
               </div>
-              <a href="#" class="comments__item-avatar"></a>
+              <a href="#" class="comments__item-avatar" tabindex="-1">
+                <span class="a11y-hidden">사용자 아바타</span>
+              </a>
               <div class="comments__item-more">
-                <button class="comments__button--circle">
+                <button aria-label="언어 설정" class="comments__button--circle">
                   <span class="a11y-hidden">언어 변경</span>
                   <svg
                     width="24"
@@ -1008,7 +1037,10 @@
                     </g>
                   </svg>
                 </button>
-                <button class="comments__button--circle">
+                <button
+                  aria-label="답글 및 신고"
+                  class="comments__button--circle"
+                >
                   <span class="a11y-hidden">답글, 신고 보기</span>
                   <svg
                     width="3"
@@ -1033,7 +1065,7 @@
                 este vlive
               </p>
               <div class="comments__item-buttons">
-                <button class="comments__item-button">
+                <button aria-label="좋아요" class="comments__item-button">
                   <span class="comments__item-icon">
                     <svg
                       width="16"
@@ -1054,11 +1086,15 @@
                     4
                   </span>
                 </button>
-                <button class="comments__item-button">답글 쓰기</button>
+                <button aria-label="답글 쓰기" class="comments__item-button">
+                  답글 쓰기
+                </button>
               </div>
-              <a href="#" class="comments__item-avatar"></a>
+              <a href="#" class="comments__item-avatar" tabindex="-1">
+                <span class="a11y-hidden">사용자 아바타</span>
+              </a>
               <div class="comments__item-more">
-                <button class="comments__button--circle">
+                <button aria-label="언어 설정" class="comments__button--circle">
                   <span class="a11y-hidden">언어 변경</span>
                   <svg
                     width="24"
@@ -1097,7 +1133,10 @@
                     </g>
                   </svg>
                 </button>
-                <button class="comments__button--circle">
+                <button
+                  aria-label="답글 및 신고"
+                  class="comments__button--circle"
+                >
                   <span class="a11y-hidden">답글, 신고 보기</span>
                   <svg
                     width="3"
@@ -1126,7 +1165,7 @@
                 />
               </p>
               <div class="comments__item-buttons">
-                <button class="comments__item-button">
+                <button aria-label="좋아요" class="comments__item-button">
                   <span class="comments__item-icon">
                     <svg
                       width="16"
@@ -1144,14 +1183,18 @@
                         d="M13.422 2.81c-.634-.638-1.476-.987-2.372-.987-.898 0-1.74.35-2.375.986l-1.17 1.174L6.334 2.81c-.635-.637-1.478-.986-2.374-.986-.895 0-1.738.35-2.372.986-1.316 1.318-1.316 3.465 0 4.785l5.501 5.435c.224.221.585.221.81 0l5.689-5.62h0c1.153-1.31 1.09-3.34-.165-4.6z"
                       ></path>
                     </svg>
-                    2
+                    <span>2</span>
                   </span>
                 </button>
-                <button class="comments__item-button">답글 쓰기</button>
+                <button aria-label="답글 쓰기" class="comments__item-button">
+                  답글 쓰기
+                </button>
               </div>
-              <a href="#" class="comments__item-avatar"></a>
+              <a href="#" class="comments__item-avatar" tabindex="-1">
+                <span class="a11y-hidden">사용자 아바타</span>
+              </a>
               <div class="comments__item-more">
-                <button class="comments__button--circle">
+                <button aria-label="언어 설정" class="comments__button--circle">
                   <span class="a11y-hidden">언어 변경</span>
                   <svg
                     width="24"
@@ -1190,7 +1233,10 @@
                     </g>
                   </svg>
                 </button>
-                <button class="comments__button--circle">
+                <button
+                  aria-label="답글 및 신고"
+                  class="comments__button--circle"
+                >
                   <span class="a11y-hidden">답글, 신고 보기</span>
                   <svg
                     width="3"
