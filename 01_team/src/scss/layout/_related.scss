@@ -224,6 +224,7 @@ ul {
     position: absolute;
     appearance: none;
     height: 19px;
+    cursor: pointer;
     &:focus {
       outline: 2px solid black;
     }
@@ -312,33 +313,41 @@ ul {
 }
 
 $items: (
-  (
     "id": 1,
     "link": "../img/thumbnail1.jpg",
-    "title":
-      "TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2 TEASER",
-    "group": "TWICE",
-    "date": "2020.4.30",
-    "playtimes": "42만",
-    "likes": "12.7만",
-    "comments": "14.5만",
   ),
   (
     "id": 2,
     "link": "../img/voice_only.jpg",
-    "title": "쯔모닝🌞💗",
-    "group": "TWICE",
-    "date": "2020.5.2",
-    "playtimes": "45.4만",
-    "likes": "1,511만",
-    "comments": "18.4만",
-  )
-);
+  ),
+  (
+    "id": 3,
+    "link": "../img/thumbnail2.jpg",
+  ),
+  (
+    "id": 4,
+    "link": "../img/thumbnail3.jpg",
+  ),
+  (
+    "id": 5,
+    "link": "../img/thumbnail4.png",
+  ),
+  (
+    "id": 6,
+    "link": "../img/thumbnail5.png",
+  );
 
 @each $item in $items {
   $id: map.get($item, "id");
   $bg: map.get($item, "link");
   .related__item:nth-child(#{$id}) .related__thumbnail {
     background: #ccc url($bg) no-repeat center / cover;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  /* IE10+ CSS styles go here */
+  .related__check {
+    @include a11yHidden;
   }
 }
