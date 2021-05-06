@@ -23,8 +23,9 @@
 
   &__toggle {
     @include buttonBox;
-    padding: rem(5px) rem(10px);
+    padding: rem(9px) rem(10px) rem(8px) rem(10px);
     display: none;
+    margin-right: rem(10px);
 
     @include tablet {
       display: block;
@@ -37,7 +38,7 @@
 
   &__lang {
     @include buttonBox;
-    padding: rem(5px) rem(10px);
+    padding: rem(14px) rem(10px);
 
     svg {
       vertical-align: middle;
