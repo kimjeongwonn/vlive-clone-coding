@@ -220,7 +220,16 @@ ul{
   // 자동 재생 체크박스
   &__check{
     vertical-align: -4px;
-    // padding-right: rem(5px);
+    width: 90px;
+    position: absolute;
+    appearance: none;
+    height: 19px;
+    &:focus{
+      outline: 2px solid black;
+    }
+    &:focus:not(:focus-visible){
+      outline: none;
+    }
     &box{
       text-align: right;
       font-size: rem(14px);
@@ -232,10 +241,6 @@ ul{
       }
       @include desktop{
         margin-top: rem(13px);
-      }
-      &:focus-within{
-        outline: 2px solid black;
-        border-radius: 4px;
       }
     }
     &:checked{
