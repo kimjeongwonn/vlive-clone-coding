@@ -22,3 +22,97 @@ CSS 전처리에는 SCSS(SASS), 후처리에는 PostCSS의 autoprefixer, postcss
 
 <img src="./img/md_responesive_layout.gif" alt=""/>
 구조가 변하면서 우측에 있던 추천 영상이 영상과 댓글 사이로 이동한다. 이런 구현은 flex만으로는 어렵다고 판단했다.
+
+그래서 나온 방법이 추천영상 부분을 Desktop 상태일 때만 float:right를 이용해서 오른쪽으로 뽑아내는 방법이었다. 하지만 팀원 중 한명이 적극적으로 레이아웃 구성에 float를 사용하는 것을 지양하자는 주장을 했었고, grid 레이아웃을 사용하는 것이 더 바람직하다는 의견이 통일되어 grid 레이아웃을 통해 레이아웃을 구성하기로 했다.
+
+그렇게 작성한 그리드 레이아웃은 아래와 같다
+
+```scss
+.grid_wrapper {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template:
+    "board" 50px
+    "video" auto
+    "related" auto
+    "comments" auto
+    / 100%;
+  gap: 10px;
+
+  @include desktop {
+    width: 1250px;
+    margin-top: rem(30px);
+    margin-bottom: rem(40px);
+    grid-template:
+      "channel board related" 54px
+      "channel video related" auto
+      "channel comments related" auto
+      / 210px 1fr 260px;
+    gap: 15px 26px;
+  }
+  @include tablet {
+    width: 964px;
+    grid-template:
+      "channel board" 54px
+      "channel video" auto
+      "channel related" auto
+      "channel comments" auto
+      / 210px 1fr;
+    gap: 15px 26px;
+  }
+}
+```
+
+Mobile-first 방식으로 미디어쿼리를 구성했기 때문에 기본적으로 행으로 쌓아 배치되다가 타블렛일 때, 데스크탑일 때 단계별로 변할 수 있도록 배치하였다.
+
+## SCSS
+
+공용으로 사용하는 `a11y-hidden` 클래스, 박스와 버튼에 사용되는 믹스인, 그리고 색상값 변수들을 미리 생성하여 작업하였다.
+
+또한 각자 BEM 컨벤션을 지키며 클래스 네이밍을 진행했다.
+
+## JS
+
+아주 기본적인 기능만 메뉴 토글, sticky 기능을 IE에서 사용하기 위해 사용되었다.
+
+## 접근성
+
+먼저 VLIVE 사이트의 접근성 점수를 LightHouse에서 확인 해 보니 다음과 같은 점수가 나왔다.
+<img src="./img/md_origin_lighthouse.png" alt=""/>
+
+하나씩 문제를 살펴보면
+
+1. `aria-hidden` 속성을 포커스가 가능한 요소에 넣지 말아야 한다.
+2. 버튼에 인식 가능한 텍스트가 존재하지 않는다.
+   - `aria-label`로 해결할 수 있다.
+3. 링크에 인식 가능한 텍스트가 존재하지 않는다.
+   - `aria-label`로 해결할 수 있다.
+4. 순서에 맞지 않는 헤딩이 설정되어 있다.
+5. 뷰포트 메타태그에 `user-scalable="no"`이 지정되어 있다.
+   WCAG 성공기준 1.4.4, 1.4.10의 기준에 부적합하다.
+
+위 문제는 처음 마크업을 할 때부터 접근성을 고려한다면 자연스럽게 해결 될 문제들이나 이 외에도 탭을 활용해 페이지를 탐색 할 때 원하는 위치까지 너무 많은 탭이 필요한 등 LightHouse와는 별개로 실제 사용을 하면서 발견한 문제점들을 각자 파트에서 찾아서 개선하기로 했다.
+
+## 메인 비디오, 댓글 창 - 정두영
+
+## 좌측 채널정보, 토글 메뉴 - 김정원
+
+### 개요
+
+내가 담당한 부분은 페이지에서 좌측에 위치하고 있는 채널 정보 페이지이다. 해당 영역은 데스크톱, 태블릿 상태일 때는 좌측에 고정폭으로 위치하고 있다가, 모바일 상태일 때 햄버거 메뉴로 변경되어 나타난다. 미디어쿼리를 적당히 사용하면 어렵지 않게 구성할 수 있을 것 같다.
+
+### HTML
+
+먼저 채널 영역을 만들어야 한다.
+모바일 에서 햄버거 메뉴로 보면 다음과 같다
+
+<img src="./img/md_channel_mobile.png" alt=""  />
+
+단순하게 하나의 컨테이너로 처리하면 될 것 같지만 데스크톱 상태의 채널 영역을 보면 아래와 같은 형태다.
+
+<img src="./img/md_channel_desktop.png" alt=""  />
+
+두 단계로 감싸서 한 부분은 채널정보를 컨테이닝 하고 아래 게시판 영역은 컨테이너영역 밖에서 처리해야 한다.
+
+## 추천 영상 - 김영종
