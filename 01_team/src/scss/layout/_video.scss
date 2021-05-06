@@ -135,12 +135,32 @@
       &-item {
         display: flex;
         align-items: center;
+
         a {
           display: inline-block;
         }
 
         svg {
           vertical-align: middle;
+        }
+
+        &--related button,
+        &--channel button {
+          @include buttonBox;
+          width: 1px;
+          height: 1px;
+          text-indent: 10px;
+          overflow: hidden;
+        }
+
+        &--related button:focus,
+        &--channel button:focus {
+          text-align: center;
+          line-height: rem(30px);
+          width: rem(130px);
+          height: rem(30px);
+          text-indent: 0%;
+          overflow: visible;
         }
       }
 
