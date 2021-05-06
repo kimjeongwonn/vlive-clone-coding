@@ -140,7 +140,7 @@ ul {
     overflow: hidden;
   }
   &__detail {
-    color: #777;
+    color: $dark-gray;
     font-size: rem(12px);
     display: flex;
     align-items: center;
@@ -233,6 +233,7 @@ ul {
     }
     &box {
       text-align: right;
+      line-height: rem(19px);
       font-size: rem(14px);
       @include mobile {
         display: none;

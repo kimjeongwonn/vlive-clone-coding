@@ -1,7 +1,7 @@
 .comments {
   @include box;
   grid-area: comments;
-  padding: 0 rem(25px) rem(30px) rem(25px);
+  padding: rem(15px) rem(10px);
 
   &__live {
     @include buttonBox;
@@ -120,6 +120,9 @@
 
       & button {
         @include buttonBox;
+        &:hover {
+          background: none;
+        }
         font-size: rem(12px);
         margin-left: rem(10px);
       }
@@ -171,6 +174,7 @@
 
     &-button {
       @include buttonBox;
+      border-radius: 0;
       &:hover {
         background: none;
       }
@@ -197,6 +201,7 @@
   }
   &__button--circle {
     @include buttonBox;
+    border-radius: 0;
     width: rem(24px);
     height: rem(24px);
 
