@@ -1,7 +1,7 @@
 .comments {
   @include box;
   grid-area: comments;
-  padding: 0 rem(25px) rem(30px) rem(25px);
+  padding: rem(15px) rem(10px);
 
   &__live {
     @include buttonBox;

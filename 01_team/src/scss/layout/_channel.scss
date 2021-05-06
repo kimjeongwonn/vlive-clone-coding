@@ -21,6 +21,7 @@
       @include spriteIcon(18px, 18px, 182px, 498px);
     }
     &--write {
+      filter: brightness(75%);
       margin-right: rem(6px);
       @include spriteIcon(15px, 15px, 465px, 498px);
     }
@@ -149,7 +150,7 @@
     margin: rem(20px) rem(20px);
     margin-bottom: 0;
     padding: rem(15px);
-    color: $primary-color;
+    color: darken($primary-color, 20);
     font-size: rem(14px);
     font-weight: 500;
   }

@@ -68,7 +68,7 @@
       font-size: rem(13px);
       font-weight: 600;
       padding: rem(8px) rem(16px);
-      color: $primary-color;
+      color: darken($primary-color, 20);
       @include desktop {
         display: none;
       }
