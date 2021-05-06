@@ -1,7 +1,7 @@
 .comments {
   @include box;
   grid-area: comments;
-  padding: 0 rem(25px);
+  padding: 0 rem(25px) rem(30px) rem(25px);
 
   &__live {
     @include buttonBox;
@@ -18,11 +18,15 @@
   }
 
   &__field {
+    font-size: rem(14px);
+    min-width: 0;
     padding: rem(10px);
-    margin: 0fr;
+    box-sizing: border-box;
+    margin: 0;
     border: none;
     background-color: $light-gray;
     border-radius: rem(20px);
+    width: 100%;
     height: rem(50px);
     overflow: hidden;
     box-sizing: border-box;
@@ -43,10 +47,19 @@
     display: flex;
     align-items: center;
     margin-bottom: rem(20px);
+
+    & svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &__form {
+    width: 100%;
   }
 
   &__form-input {
     flex-grow: 1;
+    min-width: 0;
     border: none;
     height: 100%;
     background: none;
@@ -61,6 +74,7 @@
     display: block;
     width: rem(26px);
     height: rem(26px);
+    flex-shrink: 0;
     background: url(../img/default.png) no-repeat center;
     background-size: cover;
     border-radius: 50%;
@@ -94,19 +108,32 @@
 
     &-title {
       font-weight: 700;
+      font-size: rem(15px);
       flex-grow: 1;
+      margin: 0;
+      line-height: 40px;
     }
 
-    &-detail button {
-      @include buttonBox;
-      margin-left: rem(10px);
+    &-detail {
+      margin: 0;
+      line-height: 40px;
+
+      & button {
+        @include buttonBox;
+        font-size: rem(12px);
+        margin-left: rem(10px);
+      }
     }
+  }
+
+  &__list {
+    margin-top: rem(15px);
   }
 
   &__item {
     padding-left: rem(40px);
     position: relative;
-    margin-top: rem(30px);
+    margin-bottom: rem(30px);
 
     &-avatar {
       position: absolute;
@@ -121,17 +148,25 @@
 
     &-writer {
       font-weight: 700;
+      font-size: rem(14px);
       margin-right: rem(5px);
     }
 
     &-time {
       font-size: 0.8rem;
+      font-size: rem(12px);
       color: $dark-gray;
     }
 
     &-content {
+      font-size: rem(14px);
       margin: 0;
       padding: rem(15px) 0;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
     }
 
     &-button {
@@ -139,11 +174,19 @@
       &:hover {
         background: none;
       }
+      font-size: rem(13px);
     }
 
     &-icon {
-      vertical-align: middle;
+      font-size: rem(13px);
+      vertical-align: bottom;
       margin-right: rem(10px);
+      display: flex;
+      align-items: flex-end;
+
+      svg {
+        margin-right: rem(2px);
+      }
     }
 
     &-more {

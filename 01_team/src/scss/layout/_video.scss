@@ -1,7 +1,6 @@
 .video {
   $video-height: calc(100% * (9 / 16));
   $header-height: rem(64px);
-
   @include box;
   grid-area: video;
 
@@ -20,13 +19,14 @@
       }
     }
     background: $white;
+    border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: rem(64px);
-    padding: 0 rem(15px);
 
     &-channel {
+      padding-left: rem(15px);
       width: 60%;
       min-width: rem(200px);
     }
@@ -34,8 +34,10 @@
     &-btn {
       @include buttonBox($isCircle: true);
       &:hover {
-        background-color: $gray;
+        background: none;
       }
+
+      margin-right: rem(15px);
     }
   }
 
@@ -87,6 +89,7 @@
 
   &__player {
     position: absolute;
+    border: 0;
     display: block;
     height: 100%;
     width: 100%;
@@ -128,11 +131,11 @@
     &-list {
       display: flex;
       justify-content: flex-end;
-      // align-items: center;
 
       &-item {
         display: flex;
         align-items: center;
+
         a {
           display: inline-block;
         }
@@ -140,9 +143,27 @@
         svg {
           vertical-align: middle;
         }
+
+        &--related button,
+        &--channel button {
+          @include buttonBox;
+          width: 1px;
+          height: 1px;
+          text-indent: 10px;
+          overflow: hidden;
+        }
+
+        &--related button:focus,
+        &--channel button:focus {
+          text-align: center;
+          line-height: rem(30px);
+          width: rem(130px);
+          height: rem(30px);
+          text-indent: 0%;
+          overflow: visible;
+        }
       }
 
-      // TODO: 최적화 nth-child
       &-item:nth-child(3) {
         flex-grow: 1;
         justify-content: flex-end;
