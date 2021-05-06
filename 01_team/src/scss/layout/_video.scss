@@ -5,17 +5,15 @@
   grid-area: video;
 
   &__header {
-    @include sticky {
-      &.is-fixed {
-        position: fixed;
-        top: 50px;
-        width: 100%;
-        z-index: 2;
+    &.is-fixed {
+      position: fixed;
+      top: 50px;
+      width: 100%;
+      z-index: 2;
 
-        & + .video__main {
-          margin-top: $header-height;
-          padding-top: 100vw * (9/16);
-        }
+      & + .video__main {
+        margin-top: $header-height;
+        padding-top: 100vw * (9/16);
       }
     }
     background: $white;
@@ -73,13 +71,11 @@
   }
 
   &__content {
-    @include sticky {
-      &.is-fixed {
-        position: fixed;
-        top: 114px;
-        width: 100%;
-        z-index: 2;
-      }
+    &.is-fixed {
+      position: fixed;
+      top: 114px;
+      width: 100%;
+      z-index: 2;
     }
     order: -1;
     width: 100%;
