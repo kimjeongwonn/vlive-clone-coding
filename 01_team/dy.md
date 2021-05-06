@@ -112,7 +112,3 @@ document.addEventListener("scroll", (e) => {
 <br>
 
 <img src="./img/ppt_comment_2.gif" width=600/>
-
-- 탭으로 이동하는 것
-- 댓글창 애니메이션
-- 비디오 스티키
