@@ -21,7 +21,8 @@
 
   @include desktop {
     width: 1250px;
-    margin-top: 30px;
+    margin-top: rem(30px);
+    margin-bottom: rem(40px);
     grid-template:
       "channel board related" 54px
       "channel video related" auto

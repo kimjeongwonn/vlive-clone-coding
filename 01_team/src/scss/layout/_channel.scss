@@ -46,6 +46,9 @@
     margin-bottom: rem(10px);
     > a {
       display: block;
+      &:hover .channel__name {
+        color: $primary-color;
+      }
     }
   }
 
@@ -96,12 +99,12 @@
     padding-bottom: rem(27px);
     border-bottom: 1px solid $light-gray;
     a {
-      display: block;
+      display: inline-block;
       font-size: rem(14px);
       font-weight: 500;
-    }
-    &:hover {
-      color: $primary-color;
+      &:hover {
+        color: $primary-color;
+      }
     }
     &-text {
       vertical-align: middle;
@@ -129,6 +132,7 @@
       }
     }
     &-item {
+      margin: 0 rem(2px);
       a {
         display: block;
         padding: rem(10.5px) rem(20px);
@@ -163,6 +167,9 @@
       &--l1 {
         margin-top: rem(20px);
       }
+      &--l2 {
+        margin: 0 rem(2px);
+      }
     }
     &-link {
       @include buttonBox;
@@ -171,9 +178,14 @@
       line-height: 20px;
       font-size: rem(14px);
       border-radius: rem(8px);
-      padding: rem(8px) rem(20px);
+      padding: rem(8px) rem(18px);
       svg {
         vertical-align: middle;
+      }
+      @include mobile {
+        &:hover {
+          background-color: initial;
+        }
       }
     }
     &-text {
@@ -202,11 +214,12 @@
   background-color: $white;
   position: fixed;
   top: 0;
+  bottom: 0;
+  left: 0;
   visibility: hidden;
   transform: translateX(-101%);
   transition: transform 0.3s, visibility 0.3s;
   z-index: 5;
-  height: 100vh;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -215,12 +228,17 @@
   &.is-active {
     visibility: visible;
     transform: translateX(0);
+    transition: transform 0.3s, visibility 0s;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   @include desktop {
     position: static;
-    width: initial;
-    background-color: initial;
+    width: 210px;
+    background-color: transparent;
     grid-area: channel;
     visibility: visible;
     transform: translateX(0);
