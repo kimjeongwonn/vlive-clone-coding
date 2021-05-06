@@ -1,54 +1,99 @@
-ul{
+@use "sass:map";
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .related {
-  @include box;
-  grid-area: related;
-  
+  @include box();
+  &-outer {
+    grid-area: related;
+  }
   // 공통
   padding: rem(15px) rem(15px) rem(20px) rem(15px);
+  @include tablet {
+    padding: rem(15px) 0 rem(20px) 0;
+  }
   position: relative;
-  .is-disabled{
+  .is-disabled {
     cursor: default !important;
-    path{
+    path {
       stroke: #ccc;
     }
   }
-    // 헤더
-  &__header{
-    // display: inline-block;
+  // 헤더
+  &__header {
     font-size: rem(14px);
     margin: 0;
     margin-bottom: rem(3px);
+    @include tablet {
+      padding-bottom: 0;
+      border: none;
+      &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding: 0 rem(18px);
+      }
+    }
+    @include desktop {
+      padding-bottom: rem(16px);
+      border-bottom: 1px solid #f2f2f2;
+      &-wrapper {
+        margin-bottom: 15px;
+      }
+    }
   }
   // 아이템 레이아웃
-  &__link{
+  &__link {
     display: flex;
     cursor: pointer;
+    @include desktop {
+      flex-direction: column;
+      &:hover {
+        .related__thumbnail {
+          transform: scale(1.05);
+        }
+        .related__title {
+          text-decoration: underline;
+        }
+      }
+    }
   }
   // 썸네일
-  &__thumbnail{
-    &-wrapper{
+  &__thumbnail {
+    &-wrapper {
       order: -1;
       position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      @include mobile {
+        margin-right: rem(15px);
+      }
+      @include desktop {
+        width: 100%;
+      }
     }
     display: inline-block;
     vertical-align: middle;
     width: rem(138px);
     min-height: rem(77px);
     height: 100%;
-    background: #ccc url("https://v-phinf.pstatic.net/20201231_237/16094087104600tzHh_JPEG/9c26744f-4b4e-11eb-bbff-505dac8c3639_03.jpg?type=f276_154") no-repeat;
-    background-size: cover;
-    background-position: center;
+    @include tablet {
+      min-height: rem(120px);
+    }
+    @include desktop {
+      min-height: rem(128px);
+      transition: transform 0.2s ease-in;
+      width: 100%;
+    }
   }
-  &__play-time{
+  &__play-time {
     position: absolute;
-    background-color: rgba(17,17,17,.7);
+    background-color: rgba(17, 17, 17, 0.7);
     border-radius: 4px;
     right: rem(5px);
     bottom: rem(5px);
@@ -59,13 +104,29 @@ ul{
     line-height: 20px;
   }
   // 영상 디테일 정보
-  &__item{
-    margin-top: rem(15px);
+  &__item {
+    @include mobile {
+      margin-top: rem(18px);
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+    @include tablet {
+      box-sizing: content-box;
+      width: 30%;
+      margin-top: rem(25px);
+      &:nth-child(6) {
+        display: block;
+      }
+    }
+    @include desktop {
+      margin-bottom: rem(20px);
+      &:nth-child(6) {
+        display: none;
+      }
+    }
   }
-  &__info{
-    padding-top: rem(10px);
-  }
-  &__title{
+  &__title {
     text-overflow: ellipsis;
     font-size: rem(15px);
     font-weight: 400;
@@ -78,157 +139,70 @@ ul{
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  &__detail{
-    color: #777 ;
+  &__detail {
+    color: #777;
     font-size: rem(12px);
     display: flex;
     align-items: center;
-    &::before{
+    &::before {
       content: "";
       display: inline-block;
-      background-color:#e6e6e6;
+      background-color: #e6e6e6;
       width: rem(3px);
       height: rem(3px);
       margin: 0 rem(5px);
       border-radius: 50%;
     }
   }
-  &__group-name{
+  &__group-name {
     font-style: normal;
     order: -1;
   }
-  &__upload-date{
+  &__upload-date {
     vertical-align: center;
   }
-  &__reactions{
+  &__reactions {
     font-size: rem(13px);
+    color: #444;
     margin-top: rem(5px);
+    > *:not(:last-child) {
+      padding-right: 12px;
+    }
   }
 
   // 버튼
-  &__buttons{
+  &__buttons {
     position: absolute;
     top: 7px;
     right: 4px;
+    font-size: 0;
+    @include tablet {
+      position: static;
+    }
   }
-  &__button{
+  &__button {
     &--next,
-    &--prev{
+    &--prev {
       @include buttonBox;
       width: rem(30px);
       height: rem(30px);
       &:hover {
         background: none;
+        @include desktop {
+          background-color: mix(transparent, rgba(0, 0, 0, 0.15));
+          border-radius: 50%;
+        }
       }
     }
-    &--prev{
-      svg{
+    &--prev {
+      svg {
         transform: rotate(180deg);
       }
     }
-  }
-  // 자동 재생 체크박스
-  &__check{
-    vertical-align: -4px;
-    // padding-right: rem(5px);
-    &box{
-      text-align: right;
-      font-size: rem(14px);
-    }
-    &:checked{
-      + label{
-        &::before{
-          transform: translateX(rem(13px));
-          background-color: $primary-color;
-        }
-        &::after{
-          background-color: $primary-sub-color;
-        }
-      }
-    }
-    &-lb{
-      cursor: pointer;
-      user-select: none;
-      vertical-align: middle;
-      color: #555;
-      &::before{
-        content: "";
-        position:absolute;
-        height: rem(18px);
-        width: rem(18px);
-        background: $light-gray;
-        border-radius: 50%;
-        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%);
-        transition: all 0.1s;
-      }
-      &::after{
-        content: "";
-        display: inline-block;
-        width: rem(30px);
-        height: rem(12px);
-        background-color: $white-gray;
-        vertical-align: -1px;
-        border-radius: 6px;
-        transition: all 0.1s;
-      }
-    }
-  }
-}
-// 모바일
-@include mobile{
-  .related{
-    &__thumbnail{
-      &-wrapper{
-        margin-right: rem(15px);
-      }
-    }
-    &__checkbox{
-      display: none;
-    }
-  }
-}
-// 태블릿
-@include tablet{
-  .related{
-    // 공통
-    padding: rem(15px) rem(18px) rem(20px) rem(18px);
-    // 헤더
-    &__header{
-      padding-bottom: 0;
-      border: none;
-    }
-    // 리스트 레이아웃
-    &__list{
-      display: flex;
-    }
-    // 영상 디테일 디자인
-    &__item{
-      box-sizing: content-box;
-      width: 33.333%;
-      &:nth-child(3n+1),
-      &:nth-child(3n+2){
-        padding-right: rem(20px);
-      }
-    }
-    &__link{
-      flex-direction: column;
-    }
-    // 영상 정보 디테일
-    &__thumbnail{
-      height: rem(120px);
-      width: 100%;
-      &-wrapper{
-        width: 100%;
-      }
-    }
-    // 버튼
-    &__buttons{
-      position: static;
-    }
-    &__button{
+    @include tablet {
       &--prev,
-      &--next{
-        @include buttonBox($isCircle:true, $size: 40px, $bg: #fff);
+      &--next {
+        @include buttonBox($isCircle: true, $size: 40px, $bg: #fff);
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -238,70 +212,133 @@ ul{
           background-color: #f2f2f2;
         }
       }
-      &--next{
+      &--next {
         right: rem(-19px);
       }
     }
-    // 자동 재생 체크박스
-    &__check{
-      &box{
+  }
+  // 자동 재생 체크박스
+  &__check {
+    vertical-align: -4px;
+    width: 90px;
+    position: absolute;
+    appearance: none;
+    height: 19px;
+    &:focus {
+      outline: 2px solid black;
+    }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    &box {
+      text-align: right;
+      font-size: rem(14px);
+      @include mobile {
+        display: none;
+      }
+      @include tablet {
         margin: 0;
       }
-      &-lb{
-        &::before{
-          right: rem(31px);
-        }
-      }
-    }
-  }
-  .is-disabled{
-    display: none;
-  }
-}
-// 데스크탑
-@include desktop{
-  .related{
-    &__header{
-      padding-bottom: rem(16px);
-      border-bottom: 1px solid #f2f2f2;
-    }
-    // 아이템 레이아웃 및 디자인
-    &__item{
-      &:nth-child(1){
-        .related__thumbnail-wrapper{
-          border: 5px solid $primary-color;
-        }
-        .related__title{
-          font-weight: 700;
-        }
-      }
-    }
-    &__link{
-      flex-direction: column;
-      &:hover{
-        .related__thumbnail{
-          transform: scale(1.05);
-        }
-        .related__title{
-          text-decoration: underline;
-        }
-      }
-    }
-    // 썸네일
-    &__thumbnail{
-      transition: transform 0.2s ease-in;
-      min-height: rem(128px);
-      width: 100%;
-    }
-    &__check{
-      &box{
+      @include desktop {
         margin-top: rem(13px);
       }
-      &-lb{
-        &::before{
+    }
+    &:checked {
+      + label {
+        &::before {
+          transform: translateX(rem(13px));
+          background-color: $primary-color;
+        }
+        &::after {
+          background-color: $primary-sub-color;
+        }
+      }
+    }
+    &-lb {
+      cursor: pointer;
+      user-select: none;
+      vertical-align: middle;
+      color: #555;
+      &::before {
+        content: "";
+        position: absolute;
+        height: rem(18px);
+        width: rem(18px);
+        background: $third-gray;
+        border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%);
+        transition: all 0.1s;
+        @include tablet {
+          right: rem(31px);
+        }
+        @include desktop {
           right: rem(28px);
         }
       }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: rem(30px);
+        height: rem(12px);
+        background-color: $second-gray;
+        vertical-align: -1px;
+        border-radius: 6px;
+        transition: all 0.1s;
+      }
     }
+  }
+}
+
+@include tablet {
+  .related {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      @include tablet {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .is-disabled {
+    display: none;
+  }
+}
+@include desktop {
+  .related {
+    &__info {
+      padding-top: rem(10px);
+    }
+  }
+}
+
+$items: (
+  (
+    "id": 1,
+    "link": "../img/thumbnail1.jpg",
+    "title":
+      "TWICE REALITY “TIME TO TWICE” TDOONG Entertainment Season 2 TEASER",
+    "group": "TWICE",
+    "date": "2020.4.30",
+    "playtimes": "42만",
+    "likes": "12.7만",
+    "comments": "14.5만",
+  ),
+  (
+    "id": 2,
+    "link": "../img/voice_only.jpg",
+    "title": "쯔모닝🌞💗",
+    "group": "TWICE",
+    "date": "2020.5.2",
+    "playtimes": "45.4만",
+    "likes": "1,511만",
+    "comments": "18.4만",
+  )
+);
+
+@each $item in $items {
+  $id: map.get($item, "id");
+  $bg: map.get($item, "link");
+  .related__item:nth-child(#{$id}) .related__thumbnail {
+    background: #ccc url($bg) no-repeat center / cover;
   }
 }

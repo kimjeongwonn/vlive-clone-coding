@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   padding: 0 rem(10px) 0 rem(20px);
-  border-bottom: 1px solid $white-gray;
+  border-bottom: 1px solid $second-gray;
 
   @include desktop {
     border-bottom: none;
