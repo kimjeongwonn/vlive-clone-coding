@@ -1,5 +1,6 @@
 import "../scss/main.scss";
-import "./dy";
+
+console.log("js loaded!");
 
 const menuToggle = document.getElementById("menuToggle");
 const menuCloseButton = document.getElementById("channelCloseButton");
@@ -7,7 +8,10 @@ const menu = document.getElementsByClassName("channel")[0];
 const backdrop = document.getElementsByClassName("backdrop")[0];
 const focusToChannel = document.getElementById("focusToChannel");
 const focusToRelated = document.getElementById("focusToRelated");
-const related = document.getElementsByClassName("related__header-wrapper")[0];
+const header = document.getElementsByClassName("video__header")[0];
+const video = document.getElementsByClassName("video__content")[0];
+const board = document.getElementsByClassName("board")[0];
+let isFixed = null;
 
 function classToggleHandler(e, element, className, method = "toggle") {
   switch (method) {
@@ -73,24 +77,30 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-focusToChannel.addEventListener("click", () => {
-  menu.focus();
+focusToChannel.addEventListener("click", (e) => {
+  document.querySelector(".channel__info > a").focus();
 });
-focusToRelated.addEventListener("click", () => {
-  related.focus();
+focusToRelated.addEventListener("click", (e) => {
+  document.querySelector("#related__check").focus();
 });
-
-const header = document.getElementsByClassName("video__header")[0];
-const video = document.getElementsByClassName("video__content")[0];
 
 document.addEventListener("scroll", (e) => {
-  const bodyRect = document.body.getBoundingClientRect();
-
-  if (bodyRect.y <= -60) {
-    header.classList.add("is-fixed");
-    video.classList.add("is-fixed");
+  isFixed = window.innerWidth < 1024 && window.innerWidth <= window.innerHeight;
+  const scroll = Number(document.documentElement.scrollTop);
+  if (isFixed && scroll > 50) {
+    classToggleHandler(e, board, "is-fixed", "on");
   } else {
-    header.classList.remove("is-fixed");
-    video.classList.remove("is-fixed");
+    classToggleHandler(e, board, "is-fixed", "off");
   }
+  if (isFixed && scroll > 60) {
+    classToggleHandler(e, header, "is-fixed", "on");
+    classToggleHandler(e, video, "is-fixed", "on");
+  } else {
+    classToggleHandler(e, header, "is-fixed", "off");
+    classToggleHandler(e, video, "is-fixed", "off");
+  }
+});
+
+window.addEventListener("resize", (e) => {
+  isFixed = window.innerWidth < 1024;
 });
