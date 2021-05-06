@@ -1,6 +1,6 @@
 // 박스 생성
 @mixin box($color: $white, $width: auto) {
-  background-color: $white;
+  background-color: $color;
   width: $width;
   @include desktop {
     border-radius: 15px;
