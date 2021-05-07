@@ -220,20 +220,21 @@ ul {
   // 자동 재생 체크박스
   &__check {
     vertical-align: -4px;
-    width: 90px;
-    position: absolute;
-    appearance: none;
-    height: 19px;
-    cursor: pointer;
-    &:focus {
-      outline: 2px solid black;
-    }
-    &:focus:not(:focus-visible) {
-      outline: none;
+    @include desktop {
+      @include a11yHidden;
+      &:focus {
+        + .related__check-lb {
+          outline: 2px solid black;
+        }
+      }
+      &:focus:not(:focus-visible) {
+        + .related__check-lb {
+          outline: none;
+        }
+      }
     }
     &box {
       text-align: right;
-      line-height: rem(19px);
       font-size: rem(14px);
       @include mobile {
         display: none;
@@ -350,5 +351,10 @@ $items: (
   /* IE10+ CSS styles go here */
   .related__check {
     @include a11yHidden;
+    &:focus {
+      + .related__check-lb {
+        outline: none;
+      }
+    }
   }
 }
