@@ -2,6 +2,8 @@
 
 ## 기획
 
+<img src="./img/md_origin_site.png" width="400" alt=""/>
+
 우리는 클론프로젝트를 진행할 사이트로 VLIVE 페이지를 선정했다. 이유는 VLIVE는 요즘 KPOP의 기류에 맞춰 굉장히 글로벌한 이용자를 가지고 있는 사이트임에도 접근성 측면에서(특히 탭 순서와 관련하여) 아쉬운 부분이 있었기 때문이다. 또한 HTML/CSS 기술 측면에서도 지금까지 배운 기술들을 다양하게 활용할 수 있는 컴포넌트들을 갖고 있었다.
 
 ## 사용 기술
@@ -17,10 +19,10 @@ CSS 전처리에는 SCSS(SASS), 후처리에는 PostCSS의 autoprefixer, postcss
 ## HTML
 
 데스크톱 레이아웃은 다음과 같다
-<img src="./img/md_layout_pc.png" alt=""/>
+<img src="./img/md_layout_pc.png" width="400" alt=""/>
 평범한 3단 구조 레이아웃이기 때문에 Flex를 사용해서 배치해도 될 것 같지만, 디바이스가 달라지면 다음과 같이 변한다.
 
-<img src="./img/md_responesive_layout.gif" alt=""/>
+<img src="./img/md_responesive_layout.gif" width="400" alt=""/>
 구조가 변하면서 우측에 있던 추천 영상이 영상과 댓글 사이로 이동한다. 이런 구현은 flex만으로는 어렵다고 판단했다.
 
 그래서 나온 방법이 추천영상 부분을 Desktop 상태일 때만 float:right를 이용해서 오른쪽으로 뽑아내는 방법이었다. 하지만 팀원 중 한명이 적극적으로 레이아웃 구성에 float를 사용하는 것을 지양하자는 주장을 했었고, grid 레이아웃을 사용하는 것이 더 바람직하다는 의견이 통일되어 grid 레이아웃을 통해 레이아웃을 구성하기로 했다.
@@ -79,7 +81,7 @@ Mobile-first 방식으로 미디어쿼리를 구성했기 때문에 기본적으
 ## 접근성
 
 먼저 VLIVE 사이트의 접근성 점수를 LightHouse에서 확인 해 보니 다음과 같은 점수가 나왔다.
-<img src="./img/md_origin_lighthouse.png" alt=""/>
+<img src="./img/md_origin_lighthouse.png" alt="" width="400"/>
 
 하나씩 문제를 살펴보면
 
@@ -99,3 +101,11 @@ Mobile-first 방식으로 미디어쿼리를 구성했기 때문에 기본적으
 - [좌측 채널정보, 토글 메뉴 - 김정원](./jw.md)
 
 - [추천 영상 - 김영종](./yj-readme.md)
+
+최종적으로 다음과 같은 LightHouse 점수를 받을 수 있었다.
+
+<img src="./img/md_lighthouse_after.png" alt="" width="400"/>
+
+- iframe 태그를 사용해서 아쉽게도 만점을 받지는 못했다.
+
+또한 HTML 문법검사도 문제없이 통과할 수 있었다.

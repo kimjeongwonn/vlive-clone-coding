@@ -100,7 +100,11 @@ img[alt~="right"] {
 
 ---
 
+<!-- _class: lead -->
+
 # 완성 페이지 접속 링크
+
+#### https://bit.ly/3vMnOe3
 
 ---
 
@@ -110,27 +114,30 @@ img[alt~="right"] {
 
 ---
 
-# 개요 - 선정이유
+# 개요
 
-- V LIVE 사이트를 클론코딩 하기로 선정.
+![width:600px left](./img/md_origin_site.png)
 
-- V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최근 K-POP의 열풍 덕분에 글로벌 트래픽 증가
+V LIVE 사이트를 클론코딩 하기로 선정.
 
-- 하지만 글로벌하게 서비스함에도 접근성에 대해 아쉬운 부분이 존재.
+V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최근 K-POP의 열풍 덕분에 글로벌 트래픽 증가
 
-![width:600px](./img/ppt_lighthous_before.png)
+하지만 글로벌하게 서비스함에도 접근성에 대해 아쉬운 부분이 존재.
+
 기존 VLIVE의 LightHouse 점수
+![width:400px left](./img/ppt_lighthous_before.png)
 
 ---
 
-# 개요 - 완성된 사이트
+# 개요
+
+![width:600px left](./img/md_clone_site.png)
 
 마크업 설계부터 접근성을 고려하여 사이트를 재설계
 
-![width:600px](./img/ppt_lighthouse_after.jpg)
 새롭게 만든 VLIVE의 LightHouse 점수
-
-- 동영상을 IFRAME으로 삽입하여 만점을 받지는 못했다.
+(동영상을 IFRAME으로 삽입하여 만점을 받지는 못했다.)
+![width:400px left](./img/ppt_lighthouse_after.jpg)
 
 ---
 
@@ -219,7 +226,8 @@ img[alt~="right"] {
 
 ---
 
-전체적인 순서
+# 레이아웃 순서
+
 ![width:500px center](./img/md_layout_pc.png)
 
 ---
