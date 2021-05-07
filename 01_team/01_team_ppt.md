@@ -169,8 +169,6 @@ V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최
 
 ![width:400px right](./img/ppt_grid_code2.png)![width:400px right](./img/ppt_grid_code1.png)
 
-# 마크업
-
 ## grid 코드
 
 ---
@@ -259,7 +257,7 @@ V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최
 
 ![width:200px right](./img/ppt_parcel_logo.webp)![width:300px right](./img/ppt_yarn_logo.png)
 
-# 개발 환경 / 사용 기술
+# 개발 환경
 
 - Yarn
 - Parcel

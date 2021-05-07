@@ -109,3 +109,5 @@ Mobile-first 방식으로 미디어쿼리를 구성했기 때문에 기본적으
 - iframe 태그를 사용해서 아쉽게도 만점을 받지는 못했다.
 
 또한 HTML 문법검사도 문제없이 통과할 수 있었다.
+
+<img src="./img/html_validate.png" alt="" width="400"/>

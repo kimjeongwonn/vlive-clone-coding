@@ -11,7 +11,13 @@ const focusToRelated = document.getElementById("focusToRelated");
 const header = document.getElementsByClassName("video__header")[0];
 const video = document.getElementsByClassName("video__content")[0];
 const board = document.getElementsByClassName("board")[0];
-let isFixed = null;
+let isFixed = window.innerWidth < 1024;
+
+if (isFixed) {
+  focusToChannel.setAttribute("tabindex", "-1");
+} else {
+  focusToChannel.removeAttribute("tabindex");
+}
 
 function classToggleHandler(e, element, className, method = "toggle") {
   switch (method) {
@@ -81,7 +87,7 @@ focusToChannel.addEventListener("click", (e) => {
   document.querySelector(".channel__info > a").focus();
 });
 focusToRelated.addEventListener("click", (e) => {
-  document.querySelector("#related__check").focus();
+  document.querySelector(".related__link").focus();
 });
 
 document.addEventListener("scroll", (e) => {
@@ -103,4 +109,9 @@ document.addEventListener("scroll", (e) => {
 
 window.addEventListener("resize", (e) => {
   isFixed = window.innerWidth < 1024;
+  if (isFixed) {
+    focusToChannel.setAttribute("tabindex", "-1");
+  } else {
+    focusToChannel.removeAttribute("tabindex");
+  }
 });
