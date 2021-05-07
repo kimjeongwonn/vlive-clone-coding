@@ -4,6 +4,7 @@ theme: gaia
 _class:
   - lead
 paginate: true
+auto-scaling: code
 backgroundColor: #f5f0fd
 ---
 
@@ -22,6 +23,11 @@ pre code{
    color: #eee;
    background: #333;
    border-radius: 10px;
+}
+
+pre {
+   font-size: 24px;
+   line-height: 1.5;
 }
 
 h1{
@@ -43,6 +49,7 @@ h4{
 li, p{
    font-size: 24px;
    font-weight: 700;
+   line-height: 1.5
 }
 img{
    border-radius: 10px;
@@ -77,222 +84,180 @@ img[alt~="right"] {
 # 목차
 
 1. 개요
-   1.1 기획
-   1.2 개발 환경
-2. VLIVE 페이지 분석
-   2.1 마크업 & 스타일
-   2.2 웹준과 접근성
-3. 프로젝트
-   3.1 마크업 구조
-   3.2 결과 및 시연
-4. 이슈
-   4.1 접근성 이슈
-   4.2
-5. 결론
+   1. 구성
+   2. 기획
+2. 설계
+   1. 마크업 & 스타일
+   2. 웹표준과 접근성
+3. 개발
+   1. 개발 환경
+   2. 메인 비디오 - 정두영
+   3. 좌측 채널정보 - 김정원
+   4. 우측 추천영상 - 김영종
+4. 결론과 느낀점
 
 ---
 
-# 누구누구
+# 완성 페이지 접속 링크
 
 ---
 
-# 문제점
+<!-- _class: lead -->
 
-1. layout 구성시 `float` 속성을 사용하지 않고 `grid`를 선택한 이유
-1. IE 에서 `is-fixed` 가 제대로 동작하지 않은 이유
-1. Safari mobile 환경에서 댓글창 크기가 제대로 동작하지 않음
+#### 개요
 
 ---
 
-# 접근성 관련 이슈
+# 개요 - 선정이유
 
-1. sliding menu 내에서 닫기 버튼의 부재
-2. tab index의 불합리성
+- V LIVE 사이트를 클론코딩 하기로 선정.
 
----
+- V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최근 K-POP의 열풍 덕분에 글로벌 트래픽 증가
 
-# 접근성 향상 사례
+- 하지만 글로벌하게 서비스함에도 접근성에 대해 아쉬운 부분이 존재.
 
-## 1. Tab navigation
-
-![width:800px right](./img/ppt_desktop.png)
-
-- 주황색 다음 영역 선택 불가능
-- _비디오(주황색)_
-- _채널(빨강)_
-- _추천 영상(초록)_
+![width:600px](./img/ppt_lighthous_before.png)
+기존 VLIVE의 LightHouse 점수
 
 ---
 
-# 접근성 향상 사례
+# 개요 - 완성된 사이트
 
-## 1. Tab navigation
+마크업 설계부터 접근성을 고려하여 사이트를 재설계
 
-![width:500px](./img/ppt_a11y_tab_1.gif)
+![width:600px](./img/ppt_lighthouse_after.jpg)
+새롭게 만든 VLIVE의 LightHouse 점수
 
-Video Container의 탐색이 끝난 후 채널로 갈지, 추천 영상으로 갈지 선택 가능
-
----
-
-# Video
-
-![width:550px right](./img/ppt_video.png)
-
-## 비디오 부분 마크업
-
-- header 부분
-
-- video 부분(video content와 video detail)
-
-- 하트와 댓글을 남길 수 있는 video post 부분
-
-나중에 `video__header` 와 `video__content` 를  
-상단에 sticky 하도록 구현
+- 동영상을 IFRAME으로 삽입하여 만점을 받지는 못했다.
 
 ---
 
-![width:800px right](./img/ppt_desktop.png)
+# 개요 - 구성
 
-# Video
+페이지의 구성은 크게 3단으로 되어있으며 데스크탑, 타블렛, 모바일에 따라 레이아웃이 달라진다.
 
-## 비디오 부분 디자인
-
-### 논리적인 흐름:
-
-1. 동영상 info를 동영상 player보다 먼저 마크업
-
-2. 사용자가 직접 순서를 선택
-
-   2.1 채널 보기
-   2.2 추천 영상 보기
-
-![width:700px right](./img/ppt_a11y_tab_1.gif)
+![width:800px center](./img/md_responesive_layout.gif)
 
 ---
 
-![width:400px right](./img/ppt_scroll.gif)
+<!-- _class: lead -->
 
-# Video
-
-## 비디오 부분 디자인
-
-### Sticky
-
-- sticky가 적용된 상태로 아래에 있는 댓글을 읽을 수 없음.
-- 동적으로 `is-fixed` 클래스 부여해 `position: fixed` 처리
-
-### Issue
-
-- 목표: `video__header` 와 `video__content` 상단 sticky
-- IE 호환성 문제
+#### 설계
 
 ---
 
-# Video
+# 마크업
 
-## 비디오 부분 디자인
+반응형 레이아웃을 위한 설계 방법을 고민
 
-### IE 호환성 문제
+- float를 통한 레이아웃 구성
+- flex를 통한 레이아웃 구성
+- grid를 통한 레이아웃 구성
+
+다양한 의견을 팀원들과 이야기하여 grid를 통해 레이아웃을 구성하면 적합하다고 판단하여 그리드를 사용
+
+---
+
+![width:400px right](./img/ppt_grid_code2.png)![width:400px right](./img/ppt_grid_code1.png)
+
+# 마크업
+
+## grid 코드
+
+---
+
+# SCSS
+
+공통적으로 사용되는 스타일과 컴포넌트는 믹스인을 미리 설계하여 팀원들과 함께 사용했다.
+
+## 박스 믹스인
 
 ```scss
-&__content {
-  @include sticky {        // 미디어 쿼리
-    &.is-fixed {           // 동적인 클래스 추가
-      position: fixed;     // 위 두가지가 한번에 주어졌을 때 IE에서 이를 인식하지 못함
-      top: 114px;
-      width: 100%;
-      z-index: 2;
-    }
-  }
-```
-
-![width:600px](./img/ppt_position.png)
-
----
-
-# Video
-
-## 비디오 부분 디자인
-
-### IE 호환성 문제
-
-```scss
-&__content {
-  &.is-fixed {
-    position: fixed; // 이렇게 미디어 쿼리를 제거해주고,
-    top: 114px; // 그 대신에 javaScript로 미디어 쿼리 조건을 체크해줌
-    width: 100%;
-    z-index: 2;
+@mixin box($color: $white, $width: auto) {
+  background-color: $color;
+  width: $width;
+  @include desktop {
+    border-radius: 15px;
   }
 }
 ```
 
 ---
 
-![width:400px height:500px right](./img/ppt_comment.png)
+## 버튼 믹스인
 
-# Comments
-
-## 댓글 부분 마크업
-
-- 댓글을 다는 `form`
-
-- 작성된 댓글들을 확인할 수 있는 `comments__container`
-
-- 각각의 댓글들
-
----
-
-![width:700px right](./img/ppt_comment_3.gif)
-![width:700px right](./img/ppt_comment_1.png)
-
-# Comments
-
-## 댓글 부분 마크업
-
-### 논리적인 구조 - Tab
-
-1. 댓글 입려칸(입력칸 -> 이모티콘  
-   -> 취소 -> 등록)
-2. 최신순(정렬) -> 전체 언어 (언어
-   설정)
-3. 언어 설정 -> 더보기
-4. 댓글들(작성자 ->
-   좋아요 -> 답글 쓰기)
-
-댓글: 좌, 우 `position: absolute`
+```scss
+@mixin buttonBox($isCircle: false, $size: rem(30px), $bg: transparent) {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: rem(8px);
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  background-color: $bg;
+  @if $isCircle {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+  &:hover {
+    background-color: mix($bg, rgba(0, 0, 0, 0.15));
+  }
+}
+```
 
 ---
 
-# Comments
+## 접근성
 
-## 댓글 부분 스타일링
+- 접근성을 고려해 설계해야 하기 때문에 레이아웃부터 논리적인 순서를 고려해 마크업했다.
 
-### 원본
-
-![width:700px right](./img/ppt_comment_2.gif)
-
-- `fieldset` 에 애니메이션을 적용
-  (`focus-within`)
-- 사용자가 댓글을 입력하고자 할 때 댓글 입력창을 유동적으로 변경
+- 보이는 순서는 GRID를 통해 정렬되기 때문에 논리적인 마크업에 집중할 수 있었다.
 
 ---
 
-# Comments
-
-## 댓글 부분 스타일링
-
-![width:800px center](./img/ppt_comment.gif)
-
-<br>
-
-### focus-within
-
-- `comments__field` 에 `height`, `border`, `background` 변화
-- 댓글창 우측의 아이콘 `display: none;`
-- 아래 버튼 3개 `display: block;`
+전체적인 순서
+![width:500px center](./img/md_layout_pc.png)
 
 ---
 
-- 두영: safari 댓글창 width
-  - critical mistake: restore .
+## 문제점 1
+
+- 탭을 통해 이동시 동영상 섹션을 모두 탐색해야 이동할 수 있는데, 그러기에는 댓글이 너무많다!
+
+  - 동영상 섹션 마지막에 포커싱을 이동할 수 있도록 기능을 추가하여 해결
+  - 자세한 내용은 개발 파트에서 설명
+
+---
+
+## 문제점 2
+
+![width:400px right](./img/md_channel_tabindex_fail.gif)
+
+- 모바일 환경에서는 메뉴에 탭 접근이 엉망..
+  - 자바스크립트를 통해 해결
+  - 자세한 내용은 개발 파트에서 설명
+
+---
+
+<!-- _class: lead -->
+
+#### 개발
+
+---
+
+![width:200px right](./img/ppt_parcel_logo.webp)![width:300px right](./img/ppt_yarn_logo.png)
+
+# 개발 환경 / 사용 기술
+
+- Yarn
+- Parcel
+  ![width:180px right](./img/ppt_sass_logo.png)
+- SCSS(SASS)
+  ![width:300px right](./img/ppt_postcss_logo.png)
+- PostCSS
+  - autoprefixer
+  - postcss-combine-media-query
+- Prettier
+  ![width:100px right](./img/ppt_prettier_logo.png)
