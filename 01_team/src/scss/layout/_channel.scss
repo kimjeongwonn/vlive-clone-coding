@@ -127,7 +127,7 @@
         &--#{$name}:hover {
           color: $primary-color;
           > .icon--#{$name} {
-            background-position-x: calc(#{$x} + 19px);
+            background-position-x: $x + 19px;
           }
         }
       }
