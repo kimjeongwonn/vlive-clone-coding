@@ -304,7 +304,7 @@ img[alt~="right"] {
 
 ---
 
-![width:400px right](./img/ppt_sticky_1.gif)
+![width:450px right](./img/ppt_sticky_1.gif)
 
 ## 비디오 부분 마크업 & 디자인
 
@@ -317,7 +317,7 @@ img[alt~="right"] {
 
 <br>
 
-## Why?
+### Why?
 
 ---
 
@@ -355,7 +355,7 @@ img[alt~="right"] {
 
 ## 비디오 부분 디자인
 
-### IE 호환성 문제
+### IE 호환성 문제 - 코드 수정
 
 ```scss
 &__content {
@@ -368,14 +368,6 @@ img[alt~="right"] {
   }
 }
 ```
-
----
-
-## 비디오 부분 디자인
-
-### IE 호환성 문제 - 코드 수정
-
-<br>
 
 ```scss
 &__content {
@@ -390,7 +382,7 @@ img[alt~="right"] {
 
 ![width:450px right](./img/ppt_sticky_2.gif)
 
-## 비디오 부분 디자인
+# 비디오 부분 디자인
 
 <br>
 
@@ -406,6 +398,8 @@ img[alt~="right"] {
 ![width:780px right](./img/ppt_desktop.png)
 
 ### 논리적인 흐름:
+
+- WCAG 1.3.2 Meaningful Sequence
 
 - 동영상 정보를 동영상 플레이어보다 먼저 마크업
 
@@ -425,6 +419,7 @@ img[alt~="right"] {
   탭이 어디 위치하고 있는지 전혀 알 수 없음
 
 - 그러다가 갑자기 추천영상으로 탭이가서 혼란스러움
+- WCAG 2.1 - 2.4 Navigable
 
 <!-- 2. 사용자가 직접 순서를 선택
 
@@ -441,9 +436,12 @@ img[alt~="right"] {
 
 ### 접근성 향상 결과:
 
+- WCAG 2.4.7 Focus Visible
+
 - 채널 아바타부터 시작해 탭을 누를 때, 탭이 어디에 위치해 있는지 명확하게 보여줌
 
 - 그 다음으로 어디를 탐색하고 싶은지 정할 수 있도록 함
+
   - 디폴트는 댓글 쓰는 입력칸으로 tab 이동
 
 ---
@@ -451,6 +449,8 @@ img[alt~="right"] {
 ## 비디오 부분 접근성
 
 ### 접근성 향상 결과: 추가적인 탭 탐색 기능 구현
+
+- WCAG 2.4.1 Bypass Blocks
 
 1. 채널 보기
 2. 추천 동영상 보기
@@ -461,7 +461,9 @@ img[alt~="right"] {
 
 ## 비디오 부분 접근성
 
-### 명도 대비
+### 원본: 명도 대비
+
+WCAG 1.4 Distinguishable 의 Contrast 기준을 만족하지 못함
 
 ![width:340px left](./img/ppt_video_contrast_1.png)
 
@@ -469,13 +471,19 @@ img[alt~="right"] {
 
 ![width:340px left](./img/ppt_video_contrast_3.png)
 
-명도 대비가 AA 기준을 만족하지 못하고 있다.
+<br>
+
+![width:340px left](./img/ppt_contrast_1.png)
+![width:340px left](./img/ppt_contrast_2.png)
+![width:340px left](./img/ppt_contrast_3.png)
 
 ---
 
 ## 비디오 부분 접근성
 
-### 명도 대비
+### 접근성 향상 후: 명도 대비
+
+WCAG 1.4.6 Contrast (Enhanced) 명도 대비 확실하게 접근성을 향상시킴
 
 ![width:340px left](./img/ppt_video_contrast_4.png)
 
@@ -483,7 +491,11 @@ img[alt~="right"] {
 
 ![width:340px left](./img/ppt_video_contrast_6.png)
 
-명도 대비를 확실하게 차이를 주어서 접근성을 향상시킴
+<br>
+
+![width:340px left](./img/ppt_contrast_4.png)
+![width:340px left](./img/ppt_contrast_5.png)
+![width:340px left](./img/ppt_contrast_6.png)
 
 ---
 
@@ -525,11 +537,9 @@ img[alt~="right"] {
 
 ## 댓글 부분 마크업 & 디자인
 
-### 결과
+### 결과 - "focus-within" 사용
 
 ![width:800px center](./img/ppt_comment.gif)
-
-- `focus-within`
 
 ---
 
@@ -540,6 +550,10 @@ img[alt~="right"] {
 ## 댓글 부분 접근성
 
 ### 탭의 불합리성
+
+- WCAG 2.4.3 Focus Order
+
+- WCAG 2.4.7 Focus Visible
 
 - 댓글 입력칸부터 차례대로 tab
 
