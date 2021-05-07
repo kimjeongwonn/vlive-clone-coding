@@ -284,7 +284,7 @@ img[alt~="right"] {
 
 - 하트와 댓글을 남길 수 있는 video post 부분
 
-## content와 video post ?
+### content와 video post ?
 
 나중에 `video__header` 와 `video__content` 를  
 상단에 sticky 하도록 구현
