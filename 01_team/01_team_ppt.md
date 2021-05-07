@@ -845,19 +845,23 @@ menuToggle.addEventListener("click", (e) => {
 ---
 
 - 논리적으로 배치 되었는가?
-  - 영상 정보는 제목이 가장 중요하기 때문에 제목(부가정보), 썸네일 순으로 배치
+  - 영상에 대한 정보는 제목이 가장 중요하다. 중요도에 마크업 순서 변경
 
-```html
-<strong class="related__title" lang="en"></strong>
-<div class="related__detail"></div>
-<div class="related__reactions"></div>
-```
+기존 마크업 순서
+
+1. 썸네일
+2. 제목(부가정보)
+
+변경 마크업 순서
+
+1. 제목(부가정보)
+2. 썸네일
 
 ---
 
 스크린리더 사용자를 위한 마크업 배치 고려
 
-- 일반적으로 리스트에 포함된 영상을 본 후에 보고싶은 영상이 없다면 다음 리스트를 보여준다.
+- 일반적으로 사용자는 리스트에 포함된 영상을 본 후에 보고싶은 영상이 없다면 다음 리스트 버튼을 클릭한다.
 
 ![width:800px right](./img/yj/org_markup.png)
 
@@ -867,9 +871,9 @@ menuToggle.addEventListener("click", (e) => {
 2. 버튼
 3. 추천 영상 리스트
 
-<br/><br/><br/><br/>
+<br/><br/>
 
-### 문제점
+문제점
 
 영상에 대한 정보를 모두 듣고나서 버튼을 클릭하기 위해 위쪽으로 올라와 버튼을 클릭해야 한다.
 
