@@ -221,13 +221,15 @@ ul {
   &__check {
     vertical-align: -4px;
     @include desktop {
-      @include a11yHidden;
+      @include a11yHidden; // 체크박스 숨김처리
       &:focus {
+        // 포커스가 되면 레이블 태그 아웃라인 부여
         + .related__check-lb {
           outline: 2px solid black;
         }
       }
       &:focus:not(:focus-visible) {
+        // 탭으로 선택되는 경우가 아니면 아웃라인 제거
         + .related__check-lb {
           outline: none;
         }
@@ -297,9 +299,7 @@ ul {
     &__list {
       display: flex;
       justify-content: space-evenly;
-      @include tablet {
-        flex-wrap: wrap;
-      }
+      flex-wrap: wrap;
     }
   }
   .is-disabled {
