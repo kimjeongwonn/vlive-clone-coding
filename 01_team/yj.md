@@ -191,7 +191,10 @@ img[alt~="right"] {
 
 ---
 
-![width:800px center](./img/yj/auto.gif)
+# 접근성
+
+구현 결과: 마우스로 포커스 된 경우는 아웃라인이 표시되지 않는다.
+![width:600px center](./img/yj/auto.gif)
 
 ---
 
@@ -215,10 +218,31 @@ img[alt~="right"] {
 
 ---
 
-### 3. 부분언어 적용 - WCGA 이해성 성공 기준 3.1.2
+### 3. 부분언어 적용 - WCAG 이해성 성공 기준 3.1.2
 
-글로벌 서비스이기 때문에 영어로 제목이 올라오는 경우가 다수 있었다. 부분적으로 언어속성을 적용해서 사용자 에이전트가 언어의 정보를 올바르게 읽을 수 있도록 설정했다.
+글로벌 서비스기 때문에 영어로 제목이 올라오는 경우가 다수 있었다. 부분적으로 언어속성을 적용해서 사용자 에이전트가 언어의 정보를 올바르게 읽을 수 있도록 설정했다.
 
 ```html
 <p class="video__title" lang="en">SANA’s TW-LOG with SECRET FRIEND</p>
 ```
+
+---
+
+### 4. 정보에 대한 라벨 누락 - WCAG 이해성 성공 기준 3.3.2
+
+부가 정보를 읽어줄 때, 각 정보에 라벨이 붙어있지 않아 어떤 정보인지 구분하기 힘든 문제점이 있었다.
+
+```html
+<em class="related__group-name">
+  <span class="a11y-hidden">그룹 명</span>
+  TWICE
+</em>
+<div>
+  <span class="a11y-hidden">등록일</span>
+  <time class="related__upload-date" datetime="2020-04-30T18:10">
+    2020.4.30.
+  </time>
+</div>
+```
+
+위와 같이 각 정보마다 해당 라벨을 span 태그로 삽입해서 어떤 정보인지 구분할 수 있도록 해주었다.
