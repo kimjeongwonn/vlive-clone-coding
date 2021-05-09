@@ -1002,8 +1002,6 @@ menuToggle.addEventListener("click", (e) => {
 
 ---
 
-# 결론
-
----
-
 <!-- _class: lead -->
+
+#### 결론과 느낀점
