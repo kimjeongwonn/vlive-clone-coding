@@ -12,30 +12,32 @@
   width: 100%;
   margin: 0 auto;
   grid-template:
-    'board' 50px
-    'video' auto
-    'related' auto
-    'comments' auto
+    "board" 50px
+    "video" auto
+    "related" auto
+    "comments" auto
     / 100%;
   gap: 10px;
 
   @include desktop {
     width: 1250px;
-    margin-top: 30px;
+    margin-top: rem(30px);
+    margin-bottom: rem(40px);
     grid-template:
-      'channel board related' 60px
-      'channel video related' auto
-      'channel comments related' auto
+      "channel board related" 54px
+      "channel video related" auto
+      "channel comments related" auto
       / 210px 1fr 260px;
     gap: 15px 26px;
   }
   @include tablet {
     width: 964px;
     grid-template:
-      'channel board' 60px
-      'channel video' auto
-      'channel related' auto
-      'channel comments' auto
+      "channel board" 54px
+      "channel video" auto
+      "channel related" auto
+      "channel comments" auto
       / 210px 1fr;
+    gap: 15px 26px;
   }
 }

@@ -1,0 +1,250 @@
+.channel {
+  @at-root .icon {
+    &--plus {
+      @include spriteIcon(18px, 18px, 201px, 498px);
+      margin-right: rem(5px);
+    }
+    &--home {
+      @include spriteIcon(18px, 18px, 473px, 467px);
+      margin-right: rem(10px);
+    }
+    &--store {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 277px, 498px);
+    }
+    &--schedule {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 239px, 498px);
+    }
+    &--my {
+      margin-right: rem(10px);
+      @include spriteIcon(18px, 18px, 182px, 498px);
+    }
+    &--write {
+      filter: brightness(75%);
+      margin-right: rem(6px);
+      @include spriteIcon(15px, 15px, 465px, 498px);
+    }
+    &--star {
+      margin-right: rem(6px);
+      @include spriteIcon(15px, 15px, 465px, 498px);
+    }
+    &--vlive-plus {
+      @include spriteIcon(38px, 14px, 338px, 440px);
+    }
+  }
+
+  &__container {
+    @include box;
+    padding: rem(20px) 0 0;
+    @include desktop {
+      padding: rem(20px) 0 rem(22px);
+    }
+  }
+
+  &__info {
+    padding: 0 rem(20px);
+    margin-bottom: rem(10px);
+    > a {
+      display: block;
+      &:hover .channel__name {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__logo {
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+    width: rem(38px);
+    height: rem(38px);
+    border-radius: rem(7px);
+    margin-right: rem(15px);
+    float: left;
+    @include desktop {
+      width: rem(76px);
+      height: rem(76px);
+      border-radius: rem(15px);
+      float: none;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    line-height: rem(38px);
+    font-weight: 700;
+    font-size: rem(17px);
+    @include desktop {
+      display: block;
+      margin-top: rem(18px);
+      font-size: rem(23px);
+      line-height: initial;
+    }
+  }
+
+  &__member-count {
+    display: none;
+    font-size: rem(14px);
+    color: $dark-gray;
+    margin-top: rem(8px);
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__signup {
+    position: relative;
+    display: none;
+    margin-top: rem(16px);
+
+    margin-bottom: rem(15px);
+    padding-bottom: rem(27px);
+    border-bottom: 1px solid $light-gray;
+    a {
+      display: inline-block;
+      font-size: rem(14px);
+      font-weight: 500;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    &-text {
+      vertical-align: middle;
+    }
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__menu {
+    $icon-list: (
+      home: -473px,
+      store: -277px,
+      schedule: -239px,
+      my: -182px,
+    );
+    &-link {
+      @each $name, $x in $icon-list {
+        &--#{$name}:hover {
+          color: $primary-color;
+          > .icon--#{$name} {
+            background-position-x: $x + 19px;
+          }
+        }
+      }
+    }
+    &-item {
+      margin: 0 rem(2px);
+      a {
+        display: block;
+        padding: rem(10.5px) rem(20px);
+      }
+      &--middle {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__button--write {
+    @include buttonBox($bg: $primary-background-color);
+    width: calc(100% - 40px);
+    margin: rem(20px) rem(20px);
+    margin-bottom: 0;
+    padding: rem(15px);
+    color: darken($primary-color, 20);
+    font-size: rem(14px);
+    font-weight: 500;
+  }
+
+  &__board {
+    &-header {
+      font-size: rem(14px);
+      padding: 0 rem(20px);
+      margin: 0 0 rem(10px);
+      &:not(:first-child) {
+        margin: rem(10px) 0;
+      }
+    }
+    &-item {
+      &--l1 {
+        margin-top: rem(20px);
+      }
+      &--l2 {
+        margin: 0 rem(2px);
+      }
+    }
+    &-link {
+      @include buttonBox;
+      display: inline-block;
+      width: 100%;
+      line-height: 20px;
+      font-size: rem(14px);
+      border-radius: rem(8px);
+      padding: rem(8px) rem(18px);
+      svg {
+        vertical-align: middle;
+      }
+      @include mobile {
+        &:hover {
+          background-color: initial;
+        }
+      }
+    }
+    &-text {
+      margin-left: rem(8px);
+      vertical-align: middle;
+    }
+    @include desktop {
+      margin-top: rem(30px);
+    }
+  }
+
+  &__button--close {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    @include buttonBox($isCircle: true);
+    svg {
+      vertical-align: middle;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+
+  width: 250px;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  transform: translateX(-101%);
+  transition: transform 0.3s, visibility 0.3s;
+  z-index: 5;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.is-active {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s, visibility 0s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include desktop {
+    position: static;
+    width: 210px;
+    background-color: transparent;
+    grid-area: channel;
+    visibility: visible;
+    transform: translateX(0);
+    transition: none;
+    height: initial;
+    overflow-y: auto;
+  }
+}

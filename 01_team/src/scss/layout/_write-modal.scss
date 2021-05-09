@@ -1,0 +1,29 @@
+.write-modal {
+  @include box;
+  width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  box-shadow: 0 2px 10px 0 rgb($black, 8%);
+  z-index: 5;
+
+  &__header {
+    padding: 10px;
+  }
+  &__heading {
+    display: inline-block;
+    font-size: rem(17px);
+    margin: 0;
+    padding: rem(22px) rem(20px) rem(18px);
+  }
+  &__channel-name {
+    display: inline-block;
+    font-size: rem(15px);
+    color: $gray;
+  }
+  &.is-active {
+    display: block;
+  }
+}

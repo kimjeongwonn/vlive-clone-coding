@@ -1,0 +1,807 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwIDEtNS01VjIwYTUgNSAwIDAgMSA1LTVoNjBhNSA1IDAgMCAxIDUgNXY1TTMwIDg1aDYwIi8+PHJlY3QgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiLz48cmVjdCBjbGFzcz0iYSIgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1Ii8+PHBhdGggY2xhc3M9ImEiIGQ9Ik00MCA1MGg0ME00MCA2MGgzMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{-webkit-animation-name:__bespoke_marp__!important;animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template-areas:"current next" "current note" "info    note";grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,93.3%,.5) transparent;box-sizing:border-box;font-size:1.1em;height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93.3%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section .hljs{display:block;overflow-x:auto;padding:.5em;background:#000;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-comment,div#p>svg>foreignObject>section .hljs-quote{color:#aeaeae;font-style:italic}div#p>svg>foreignObject>section .hljs-keyword,div#p>svg>foreignObject>section .hljs-selector-tag,div#p>svg>foreignObject>section .hljs-type{color:#e28964}div#p>svg>foreignObject>section .hljs-string{color:#65b042}div#p>svg>foreignObject>section .hljs-subst{color:#daefa3}div#p>svg>foreignObject>section .hljs-link,div#p>svg>foreignObject>section .hljs-regexp{color:#e9c062}div#p>svg>foreignObject>section .hljs-name,div#p>svg>foreignObject>section .hljs-section,div#p>svg>foreignObject>section .hljs-tag,div#p>svg>foreignObject>section .hljs-title{color:#89bdff}div#p>svg>foreignObject>section .hljs-class .hljs-title,div#p>svg>foreignObject>section .hljs-doctag{text-decoration:underline}div#p>svg>foreignObject>section .hljs-bullet,div#p>svg>foreignObject>section .hljs-number,div#p>svg>foreignObject>section .hljs-symbol{color:#3387cc}div#p>svg>foreignObject>section .hljs-params,div#p>svg>foreignObject>section .hljs-template-variable,div#p>svg>foreignObject>section .hljs-variable{color:#3e87e3}div#p>svg>foreignObject>section .hljs-attribute{color:#cda869}div#p>svg>foreignObject>section .hljs-meta{color:#8996a8}div#p>svg>foreignObject>section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#p>svg>foreignObject>section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-selector-class{color:#9b703f}div#p>svg>foreignObject>section .hljs-selector-id{color:#8b98ab}div#p>svg>foreignObject>section .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section .hljs-strong{font-weight:700}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:580px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin:.5em 0 0}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{font-weight:inherit}div#p>svg>foreignObject>section h1{font-size:1.8em}div#p>svg>foreignObject>section h2{font-size:1.5em}div#p>svg>foreignObject>section h3{font-size:1.3em}div#p>svg>foreignObject>section h4{font-size:1.1em}div#p>svg>foreignObject>section h5{font-size:1em}div#p>svg>foreignObject>section h6{font-size:.9em}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:1em 0 0}div#p>svg>foreignObject>section ol>li,div#p>svg>foreignObject>section ul>li{margin:.3em 0 0}div#p>svg>foreignObject>section ol>li>p,div#p>svg>foreignObject>section ul>li>p{margin:.6em 0 0}div#p>svg>foreignObject>section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#p>svg>foreignObject>section pre{display:block;margin:1em 0 0;min-height:1em;overflow:visible}div#p>svg>foreignObject>section pre code{box-sizing:border-box;margin:0;min-width:100%;padding:.5em;font-size:.7em}div#p>svg>foreignObject>section pre code svg[data-marp-fitting=svg]{max-height:calc(580px - 1em)}div#p>svg>foreignObject>section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#p>svg>foreignObject>section blockquote:before{top:0;left:0}div#p>svg>foreignObject>section blockquote:after{right:0;bottom:0;transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#p>svg>foreignObject>section mark{background:transparent}div#p>svg>foreignObject>section table{border-spacing:0;border-collapse:collapse;margin:1em 0 0}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{padding:.2em .4em;border-width:1px;border-style:solid}div#p>svg>foreignObject>section:after,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#p>svg>foreignObject>section:after{--marpit-root-font-size:66%}div#p>svg>foreignObject>section header{top:0}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{left:0;right:0}div#p>svg>foreignObject>section footer{bottom:0}div#p>svg>foreignObject>section{background-color:var(--color-background);background-image:linear-gradient(135deg,hsla(0,0%,53.3%,0),hsla(0,0%,53.3%,.02) 50%,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.05));color:var(--color-foreground);font-size:35px;font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;height:720px;line-height:1.35;letter-spacing:1.25px;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,0.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1}div#p>svg>foreignObject>section{--marpit-root-font-size:35px}div#p>svg>foreignObject>section:after{right:0;bottom:0;font-size:80%}div#p>svg>foreignObject>section:after{--marpit-root-font-size:80%}div#p>svg>foreignObject>section a,div#p>svg>foreignObject>section mark{color:var(--color-highlight)}div#p>svg>foreignObject>section code{background:var(--color-dimmed);color:var(--color-background)}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{color:var(--color-highlight)}div#p>svg>foreignObject>section pre>code{background:var(--color-foreground)}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header,div#p>svg>foreignObject>section section:after{color:var(--color-dimmed)}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{border-color:var(--color-foreground)}div#p>svg>foreignObject>section table thead th{background:var(--color-foreground);color:var(--color-background)}div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) td,div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe,transparent)}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#p>svg>foreignObject>section.invert{--color-background:#455a64;--color-background-stripe:rgba(255,248,225,0.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa}div#p>svg>foreignObject>section.gaia{--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,0.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa}div#p>svg>foreignObject>section.lead{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.lead h4,div#p>svg>foreignObject>section.lead h5,div#p>svg>foreignObject>section.lead h6{text-align:center}div#p>svg>foreignObject>section.lead h1 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h2 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h3 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h4 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h5 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h6 svg[data-marp-fitting=svg]{--preserve-aspect-ratio:xMidYMid meet}div#p>svg>foreignObject>section.lead p{text-align:center}div#p>svg>foreignObject>section.lead blockquote>h1,div#p>svg>foreignObject>section.lead blockquote>h2,div#p>svg>foreignObject>section.lead blockquote>h3,div#p>svg>foreignObject>section.lead blockquote>h4,div#p>svg>foreignObject>section.lead blockquote>h5,div#p>svg>foreignObject>section.lead blockquote>h6,div#p>svg>foreignObject>section.lead blockquote>p{text-align:left}div#p>svg>foreignObject>section.lead blockquote svg[data-marp-fitting=svg]:not([data-marp-fitting-math]){--preserve-aspect-ratio:xMinYMin meet}div#p>svg>foreignObject>section.lead ol>li>p,div#p>svg>foreignObject>section.lead ul>li>p{text-align:left}div#p>svg>foreignObject>section.lead table{margin-left:auto;margin-right:auto}div#p>svg>foreignObject>section{font-family:'Nanum Gothic',sans-serif;word-break:keep-all}div#p>svg>foreignObject>section code{background:#8d54e6;padding:2px 10px;border-radius:5px}div#p>svg>foreignObject>section pre code{color:#eee;background:#333;border-radius:10px}div#p>svg>foreignObject>section pre{display:flow-root;font-size:24px;line-height:1.5}div#p>svg>foreignObject>section h1{font-size:40px}div#p>svg>foreignObject>section h2{font-size:34px}div#p>svg>foreignObject>section h3{font-size:27px}div#p>svg>foreignObject>section h4{font-size:56px}div#p>svg>foreignObject>section li,div#p>svg>foreignObject>section p{font-size:24px;font-weight:700;line-height:1.5}div#p>svg>foreignObject>section img{border-radius:10px}div#p>svg>foreignObject>section img[alt~=center]{display:block;margin:0 auto}div#p>svg>foreignObject>section img[alt~=left]{float:left;margin-right:20px}div#p>svg>foreignObject>section img[alt~=right]{float:right;margin-left:20px}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="1" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;./img/ppt_vlive.png&quot;);background-size:60%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="1" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="1" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;--marpit-advanced-background-split:40%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h4>VLIVE</h4>
+
+<h2>웹표준과 접근성을 중심으로</h2>
+<p>성수동 비타민 - 김영종, 김정원, 정두영</p>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="lead" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="1" data-marpit-pagination-total="67"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>목차</h1>
+<ol>
+<li>개요
+<ol>
+<li>구성</li>
+<li>기획</li>
+</ol>
+</li>
+<li>설계
+<ol>
+<li>마크업 &amp; 스타일</li>
+<li>웹표준과 접근성</li>
+</ol>
+</li>
+<li>개발
+<ol>
+<li>개발 환경</li>
+<li>메인 비디오 - 정두영</li>
+<li>좌측 채널정보 - 김정원</li>
+<li>우측 추천영상 - 김영종</li>
+</ol>
+</li>
+<li>결론과 느낀점</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="3" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>완성 페이지 접속 링크</h1>
+<h4><a href="https://bit.ly/3vMnOe3">https://bit.ly/3vMnOe3</a></h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="4" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h4>개요</h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>개요</h1>
+<p><img src="./img/md_origin_site.png" alt="width:600px left" style="width:600px;" /></p>
+<p>V LIVE 사이트를 클론코딩 하기로 선정.</p>
+<p>V LIVE는 K-POP STAR들의 라이브 방송을 송출해 주는 서비스로 최근 K-POP의 열풍 덕분에 글로벌 트래픽 증가</p>
+<p>하지만 글로벌하게 서비스함에도 접근성에 대해 아쉬운 부분이 존재.</p>
+<p>기존 VLIVE의 LightHouse 점수<br />
+<img src="./img/ppt_lighthous_before.png" alt="width:400px left" style="width:400px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>개요</h1>
+<p><img src="./img/md_clone_site.png" alt="width:600px left" style="width:600px;" /></p>
+<p>마크업 설계부터 접근성을 고려하여 사이트를 재설계</p>
+<p>새롭게 만든 VLIVE의 LightHouse 점수<br />
+(동영상을 IFRAME으로 삽입하여 만점을 받지는 못했다.)<br />
+<img src="./img/ppt_lighthouse_after.jpg" alt="width:400px left" style="width:400px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>개요 - 구성</h1>
+<p>페이지의 구성은 크게 3단으로 되어있으며 데스크탑, 타블렛, 모바일에 따라 레이아웃이 달라진다.</p>
+<p><img src="./img/md_responesive_layout.gif" alt="width:800px center" style="width:800px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="8" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h4>설계</h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>마크업</h1>
+<p>반응형 레이아웃을 위한 설계 방법을 고민</p>
+<ul>
+<li>float를 통한 레이아웃 구성</li>
+<li>flex를 통한 레이아웃 구성</li>
+<li>grid를 통한 레이아웃 구성</li>
+</ul>
+<p>다양한 의견을 팀원들과 이야기하여 grid를 통해 레이아웃을 구성하면 적합하다고 판단하여 그리드를 사용</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_grid_code2.png" alt="width:400px right" style="width:400px;" /><img src="./img/ppt_grid_code1.png" alt="width:400px right" style="width:400px;" /></p>
+<h2>grid 코드</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>SCSS</h1>
+<p>공통적으로 사용되는 스타일과 컴포넌트는 믹스인을 미리 설계하여 팀원들과 함께 사용했다.</p>
+<h2>박스 믹스인</h2>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">@mixin</span> box(<span class="hljs-variable">$color</span>: <span class="hljs-variable">$white</span>, <span class="hljs-variable">$width</span>: auto) {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$color</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-variable">$width</span>;
+  <span class="hljs-keyword">@include</span> desktop {
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">15px</span>;
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>버튼 믹스인</h2>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">@mixin</span> buttonBox(<span class="hljs-variable">$isCircle</span>: false, <span class="hljs-variable">$size</span>: rem(<span class="hljs-number">30px</span>), <span class="hljs-variable">$bg</span>: transparent) {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: rem(<span class="hljs-number">8px</span>);
+  appearance: none;
+  <span class="hljs-attribute">background</span>: none;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$bg</span>;
+  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$isCircle</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$size</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-variable">$size</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  }
+  &amp;<span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>: mix(<span class="hljs-variable">$bg</span>, rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.15</span>));
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>접근성</h2>
+<ul>
+<li>
+<p>접근성을 고려해 설계해야 하기 때문에 레이아웃부터 논리적인 순서를 고려해 마크업했다.</p>
+</li>
+<li>
+<p>보이는 순서는 GRID를 통해 정렬되기 때문에 논리적인 마크업에 집중할 수 있었다.</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>레이아웃 순서</h1>
+<p><img src="./img/md_layout_pc.png" alt="width:500px center" style="width:500px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>문제점 1</h2>
+<ul>
+<li>
+<p>탭을 통해 이동시 동영상 섹션을 모두 탐색해야 이동할 수 있는데, 그러기에는 댓글이 너무많다!</p>
+<ul>
+<li>동영상 섹션 마지막에 포커싱을 이동할 수 있도록 기능을 추가하여 해결</li>
+<li>자세한 내용은 개발 파트에서 설명</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>문제점 2</h2>
+<p><img src="./img/md_channel_tabindex_fail.gif" alt="width:400px right" style="width:400px;" /></p>
+<ul>
+<li>모바일 환경에서는 메뉴에 탭 접근이 엉망..
+<ul>
+<li>자바스크립트를 통해 해결</li>
+<li>자세한 내용은 개발 파트에서 설명</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="17" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h4>개발</h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_parcel_logo.webp" alt="width:200px right" style="width:200px;" /><img src="./img/ppt_yarn_logo.png" alt="width:300px right" style="width:300px;" /></p>
+<h1>개발 환경</h1>
+<ul>
+<li>Yarn</li>
+<li>Parcel<br />
+<img src="./img/ppt_sass_logo.png" alt="width:180px right" style="width:180px;" /></li>
+<li>SCSS(SASS)<br />
+<img src="./img/ppt_postcss_logo.png" alt="width:300px right" style="width:300px;" /></li>
+<li>PostCSS
+<ul>
+<li>autoprefixer</li>
+<li>postcss-combine-media-query</li>
+</ul>
+</li>
+<li>Prettier<br />
+<img src="./img/ppt_prettier_logo.png" alt="width:100px right" style="width:100px;" /></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="19" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>메인 비디오, 댓글 파트</h1>
+<h3>정두영</h3>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_video.png" alt="width:550px right" style="width:550px;" /></p>
+<h1>비디오 부분 마크업 &amp; 디자인</h1>
+<ul>
+<li>
+<p>header 부분</p>
+</li>
+<li>
+<p>video 부분(video content와 video detail)</p>
+</li>
+<li>
+<p>하트와 댓글을 남길 수 있는 video post 부분</p>
+</li>
+</ul>
+<h2>content와 video post ?</h2>
+<p>나중에 <code>video__header</code> 와 <code>video__content</code> 를<br />
+상단에 sticky 하도록 구현</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_sticky.gif" alt="width:400px right" style="width:400px;" /></p>
+<h1>비디오 부분 마크업 &amp; 디자인</h1>
+<h3>Sticky...?</h3>
+<p><img src="./img/ppt_box_2.png" alt="width:600px" style="width:600px;" /></p>
+<p><code>video__header</code> -&gt; position: sticky;<br />
+<code>video__content</code> -&gt; position: sticky;</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_sticky_1.gif" alt="width:450px right" style="width:450px;" /></p>
+<h2>비디오 부분 마크업 &amp; 디자인</h2>
+<br />
+<h3>Sticky 문제점</h3>
+<ul>
+<li>원하는대로 동작하지 않음</li>
+<li>sticky가 적용된 상태로 아래에 있는 댓글을 읽을 수 없음</li>
+</ul>
+<br />
+<h3>Why?</h3>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_sticky_3.gif" alt="width:550px right" style="width:550px;" /></p>
+<h1>비디오 부분 디자인</h1>
+<h3>CodePen 실험</h3>
+<p><img src="./img/ppt_box.png" alt="width:300px" style="width:300px;" /></p>
+<ul>
+<li><code>position: sticky</code>는 부모 컨테이너<br />
+내부에서만 동작</li>
+<li>따라서 원하던 기능을 구현할 수 없음</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_sticky_4.gif" alt="width:350px right" style="width:350px;" /></p>
+<h1>비디오 부분 디자인</h1>
+<h3>해결 방안</h3>
+<ul>
+<li>
+<p>javascript로 <code>is-fixed</code> 클래스를 동적으로 부여</p>
+</li>
+<li>
+<p><code>is-fixed</code> 일 때 <code>position: fixed</code></p>
+</li>
+</ul>
+<h3>하지만 ...</h3>
+<ul>
+<li>IE 호환성 문제</li>
+</ul>
+<p><img src="./img/ppt_position.png" alt="width:600px" style="width:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>비디오 부분 디자인</h2>
+<h3>IE 호환성 문제 - 코드 수정</h3>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>&amp;__content {
+  <span class="hljs-comment">// 미디어 쿼리, 동적인 클래스 추가</span>
+  <span class="hljs-keyword">@include</span> sticky {
+    &amp;<span class="hljs-selector-class">.is-fixed</span> {
+      <span class="hljs-attribute">position</span>: fixed; <span class="hljs-comment">// 위 두가지가 한번에 주어졌을 때 IE에서 이를 인식하지 못하는 문제 발생</span>
+      ...
+    }
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>&amp;__content {
+  &amp;<span class="hljs-selector-class">.is-fixed</span> {
+    <span class="hljs-attribute">position</span>: fixed; <span class="hljs-comment">// 이렇게 미디어 쿼리를 제거해주고,</span>
+    ...              <span class="hljs-comment">// 그 대신에 javaScript로 미디어 쿼리 조건을 체크해줌</span>
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_sticky_2.gif" alt="width:450px right" style="width:450px;" /></p>
+<h1>비디오 부분 디자인</h1>
+<br />
+<h3>해결 결과</h3>
+<ul>
+<li>미디어 쿼리 대신 javaScript <code>window.innerWidth</code>사용</li>
+<li>동적으로 <code>is-fixed</code> 클래스를 부여해 <code>position: fixed</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="27" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>비디오 부분 접근성</h2>
+<p><img src="./img/ppt_desktop.png" alt="width:780px right" style="width:780px;" /></p>
+<h3>논리적인 흐름:</h3>
+<ul>
+<li>
+<p>WCAG 1.3.2 Meaningful Sequence</p>
+</li>
+<li>
+<p>동영상 정보를 동영상 플레이어보다 먼저 마크업</p>
+</li>
+<li>
+<p>스크린 리더 고려</p>
+</li>
+<li>
+<p>탭의 자연스러운 이동</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="28" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_video_tab.gif" alt="width:410px right" style="width:410px;" /></p>
+<h2>비디오 부분 접근성</h2>
+<h3>탭 아웃라인의 부재:</h3>
+<ul>
+<li>
+<p>채널 아바타부터 시작해 탭을 누르고 있지만<br />
+탭이 어디 위치하고 있는지 전혀 알 수 없음</p>
+</li>
+<li>
+<p>그러다가 갑자기 추천영상으로 탭이가서 혼란스러움</p>
+</li>
+<li>
+<p>WCAG 2.1 - 2.4 Navigable</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="29" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_video_tab_1.gif" alt="width:400px right" style="width:400px;" /></p>
+<h2>비디오 부분 접근성</h2>
+<h3>접근성 향상 결과:</h3>
+<ul>
+<li>
+<p>WCAG 2.4.7 Focus Visible</p>
+</li>
+<li>
+<p>채널 아바타부터 시작해 탭을 누를 때, 탭이 어디에 위치해 있는지 명확하게 보여줌</p>
+</li>
+<li>
+<p>그 다음으로 어디를 탐색하고 싶은지 정할 수 있도록 함</p>
+<ul>
+<li>디폴트는 댓글 쓰는 입력칸으로 tab 이동</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>비디오 부분 접근성</h2>
+<h3>접근성 향상 결과: 추가적인 탭 탐색 기능 구현</h3>
+<ul>
+<li>WCAG 2.4.1 Bypass Blocks</li>
+</ul>
+<ol>
+<li>채널 보기</li>
+<li>추천 동영상 보기</li>
+</ol>
+<p><img src="./img/ppt_scroll.gif" alt="width:900px center" style="width:900px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="31" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>비디오 부분 접근성</h2>
+<h3>원본: 명도 대비</h3>
+<p>WCAG 1.4 Distinguishable 의 Contrast 기준을 만족하지 못함</p>
+<p><img src="./img/ppt_video_contrast_1.png" alt="width:340px left" style="width:340px;" /></p>
+<p><img src="./img/ppt_video_contrast_2.png" alt="width:400px left" style="width:400px;" /></p>
+<p><img src="./img/ppt_video_contrast_3.png" alt="width:340px left" style="width:340px;" /></p>
+<br />
+<p><img src="./img/ppt_contrast_1.png" alt="width:340px left" style="width:340px;" /><br />
+<img src="./img/ppt_contrast_2.png" alt="width:340px left" style="width:340px;" /><br />
+<img src="./img/ppt_contrast_3.png" alt="width:340px left" style="width:340px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="32" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>비디오 부분 접근성</h2>
+<h3>접근성 향상 후: 명도 대비</h3>
+<p>WCAG 1.4.6 Contrast (Enhanced) 명도 대비 확실하게 접근성을 향상시킴</p>
+<p><img src="./img/ppt_video_contrast_4.png" alt="width:340px left" style="width:340px;" /></p>
+<p><img src="./img/ppt_video_contrast_5.png" alt="width:400px left" style="width:400px;" /></p>
+<p><img src="./img/ppt_video_contrast_6.png" alt="width:340px left" style="width:340px;" /></p>
+<br />
+<p><img src="./img/ppt_contrast_4.png" alt="width:340px left" style="width:340px;" /><br />
+<img src="./img/ppt_contrast_5.png" alt="width:340px left" style="width:340px;" /><br />
+<img src="./img/ppt_contrast_6.png" alt="width:340px left" style="width:340px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="33" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_comment.png" alt="width:400px height:500px right" style="width:400px;height:500px;" /></p>
+<h1>Comments</h1>
+<h2>댓글 부분 마크업 &amp; 디자인</h2>
+<ul>
+<li>
+<p>댓글을 다는 <code>form</code></p>
+</li>
+<li>
+<p>작성된 댓글들을 확인할 수 있는 <code>comments__container</code></p>
+</li>
+<li>
+<p>각각의 댓글들</p>
+ <br />
+<p>댓글: 좌, 우 <code>position: absolute</code></p>
+<p><img src="./img/ppt_comment_1.png" alt="width:660px left" style="width:660px;" /></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="34" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>Comments</h1>
+<h2>댓글 부분 마크업 &amp; 디자인</h2>
+<h3>원본</h3>
+<p><img src="./img/ppt_comment_2.gif" alt="width:700px right" style="width:700px;" /></p>
+<ul>
+<li><code>fieldset</code> 에 애니메이션을 적용<br />
+(<code>focus-within</code>)</li>
+<li>사용자가 댓글을 입력하고자 할 때 댓글 입력창을 유동적으로 변경</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="35" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>Comments</h1>
+<h2>댓글 부분 마크업 &amp; 디자인</h2>
+<h3>결과 - &quot;focus-within&quot; 사용</h3>
+<p><img src="./img/ppt_comment.gif" alt="width:800px center" style="width:800px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p><img src="./img/ppt_comment_tab_1.gif" alt="width:700px right" style="width:700px;" /></p>
+<h1>Comments</h1>
+<h2>댓글 부분 접근성</h2>
+<h3>탭의 불합리성</h3>
+<ul>
+<li>
+<p>WCAG 2.4.3 Focus Order</p>
+</li>
+<li>
+<p>WCAG 2.4.7 Focus Visible</p>
+</li>
+<li>
+<p>댓글 입력칸부터 차례대로 tab</p>
+</li>
+<li>
+<p>탭 아웃라인이 중간중간 제대로 보이지 않음</p>
+</li>
+<li>
+<p>탭의 순서: 아바타, 작성자, 좋아요, 답글 쓰기, 언어 설정, 더보기</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="37" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>Comments</h1>
+<p><img src="./img/ppt_comment_3.gif" alt="width:740px right" style="width:740px;" /></p>
+<h2>댓글 부분 접근성</h2>
+<h3>논리적인 구조</h3>
+<ul>
+<li>
+<p>댓글 입력칸부터 차례대로 tab</p>
+</li>
+<li>
+<p>탭의 아웃라인을 확실히 보여줌</p>
+</li>
+<li>
+<p>탭의 순서</p>
+<ol>
+<li>
+<p>댓글 입려칸(입력칸 -&gt;<br />
+이모티콘 -&gt; 취소 -&gt; 등록)</p>
+</li>
+<li>
+<p>최신순(정렬) -&gt; 전체 언어</p>
+</li>
+<li>
+<p>언어 설정 -&gt; 더보기</p>
+</li>
+<li>
+<p>댓글들(작성자 -&gt;<br />
+좋아요 -&gt; 답글 쓰기)</p>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="38" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>채널 정보 파트</h1>
+<h3>김정원</h3>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="39" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>구성</h1>
+<ul>
+<li>데스크톱, 타블렛 뷰포트에선 화면 좌측에 고정</li>
+<li>모바일 상태에는 버튼으로 호출하는 슬라이딩 메뉴</li>
+</ul>
+<p>두 상태를 고려해서 마크업을 진행</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="40" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>HTML</h1>
+<p><img src="./img/md_channel_desktop.png" alt="width:150px right" style="width:150px;" /><img src="./img/md_channel_mobile.png" alt="width:150px right" style="width:150px;" /></p>
+<ul>
+<li>모바일일때는 하나의 컨테이너 같지만 데스크톱과 타블렛을 보면 두개의 영역으로 분리되어 있음</li>
+<li>두가지 상태 모두 표현할 수 있도록 채널 정보만 있는 부분을 한 번 더 컨테이너로 묶어서 진행</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="41" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>SCSS</h1>
+<ul>
+<li>메뉴의 아이콘중 일부가 스프라이트 이미지로 구성. 반복되어 사용될 것을 고려하여 스프라이트 이미지를 보여주는 믹스인을 제작해서 재사용</li>
+</ul>
+<p><img src="./img/ppt_channel_sprite1.png" alt="width:200px center" style="width:200px;" /><br />
+<img src="./img/ppt_channel_sprite2.png" alt="width:200px center" style="width:200px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">@mixin</span> spriteIcon(<span class="hljs-variable">$w</span>, <span class="hljs-variable">$h</span>, <span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span>) {
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">vertical-align</span>: middle;
+  <span class="hljs-attribute">width</span>: rem(<span class="hljs-variable">$w</span>);
+  <span class="hljs-attribute">height</span>: rem(<span class="hljs-variable">$h</span>);
+  <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;/src/img/vlive_sprite.png&quot;</span>);
+  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">538px</span> <span class="hljs-number">518px</span>;
+  <span class="hljs-attribute">background-position</span>: (<span class="hljs-variable">$x</span> * -<span class="hljs-number">1</span>) (<span class="hljs-variable">$y</span> * -<span class="hljs-number">1</span>);
+}
+</span></span></foreignObject></svg></code></pre>
+<p>해당 믹스인은 다음과 같이 적용</p>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">//...</span>
+<span class="hljs-keyword">@at-root</span> .icon {
+    &amp;--plus {
+      <span class="hljs-keyword">@include</span> spriteIcon(<span class="hljs-number">18px</span>, <span class="hljs-number">18px</span>, <span class="hljs-number">201px</span>, <span class="hljs-number">498px</span>);
+      <span class="hljs-attribute">margin-right</span>: rem(<span class="hljs-number">5px</span>);
+    }
+    &amp;--home {
+      <span class="hljs-keyword">@include</span> spriteIcon(<span class="hljs-number">18px</span>, <span class="hljs-number">18px</span>, <span class="hljs-number">473px</span>, <span class="hljs-number">467px</span>);
+      <span class="hljs-attribute">margin-right</span>: rem(<span class="hljs-number">10px</span>);
+    }
+<span class="hljs-comment">//...</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="43" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>SCSS</h1>
+<ul>
+<li>각 스프라이트 아이콘은 버튼이 호버되었을 때 다른 영역을 보여줘야 함</li>
+<li>이를 일일히 선택자를 사용해 위치를 다시 잡아줄 수도 있었지만 SCSS의 <code>@each</code> 반복문을 활용했다.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="44" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-variable">$icon-list</span>: (
+  home: -<span class="hljs-number">473px</span>,
+  store: -<span class="hljs-number">277px</span>,
+  schedule: -<span class="hljs-number">239px</span>,
+  my: -<span class="hljs-number">182px</span>,
+);
+
+&amp;-link {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$x</span> in <span class="hljs-variable">$icon-list</span> {
+    <span class="hljs-comment">// 아이콘 이름과 X좌표를 받는다.</span>
+    &amp;--#{<span class="hljs-variable">$name</span>}<span class="hljs-selector-pseudo">:hover</span> {
+      <span class="hljs-comment">// 각 이름에 해당하는 링크에 호버시</span>
+      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$primary-color</span>;
+      &gt; <span class="hljs-selector-class">.icon--</span>#{<span class="hljs-variable">$name</span>} {
+        <span class="hljs-comment">// 각 이름에 해당하는 아이콘의 속성을 변경한다.</span>
+        <span class="hljs-attribute">background-position</span>-x: <span class="hljs-variable">$x</span> + <span class="hljs-number">19px</span>;
+        <span class="hljs-comment">// 입력받은 x좌표에 19px를 추가</span>
+      }
+    }
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="45" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<p><img src="./img/md_channel_focus.gif" alt="width:180px right" style="width:180px;" /></p>
+<h3>포커스와 아웃라인</h3>
+<p>WCAG 성공기준 &quot;2.4.7 식별 가능한 포커스&quot;에 준하기 위해서는 탭으로 포커스를 할 때 반드시 시각적으로 포커싱 되어있음이 확인되어야 한다.</p>
+<p>하지만 중간중간 아웃라인이 보이지 않는 영역과 아웃라인이 잘려 보이는 부분이 존재.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="46" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<p><img src="./img/md_channel_focus_observe.gif" alt="width:200px right" style="width:200px;" /></p>
+<h3>포커스와 아웃라인</h3>
+<p>스타일 속성을 통해 포커스시 아웃라인을 지우지 않도록 하여 모든 포커스 아웃라인이 정상 출력되도록 유지 했다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="47" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>영역에 대한 헤딩</h3>
+<p>WCAG 성공기준 &quot;2.4.10 섹션(section) 헤딩&quot;에 준하기 위해서는 각 콘텐츠의 섹션별로 식별 가능한 이름이 제공되어야 함</p>
+<p>하지만 채널 정보에 대한 헤딩이 존재하지 않음</p>
+<p><img src="./img/md_channel_nolabel.jpg" alt="width:400px center" style="width:400px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="48" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>영역에 대한 헤딩</h3>
+<p>다음과 같이 섹션의 라벨을 지정해줘서 해결했다.</p>
+<p><img src="./img/md_channel_label_observe.png" alt="width:400px right" style="width:400px;" /></p>
+<pre><code class="language-html"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">&lt;!-- ... --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;channel&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;channelLabel&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;channel__container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;channel__heading a11y-hidden&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;channelLabel&quot;</span>&gt;</span>채널 정보<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- ... --&gt;</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="49" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>모바일 뷰포트 환경</h3>
+<p>모바일에서 탭을 사용하지 않을거라 생각하겠지만 저시력자들의 경우 화면을 확대하여 사용</p>
+<p>WCAG 성공기준 &quot;1.4.10 재배치&quot;에 의거 반응형 사이트의 경우 화면을 확대하여 상대적으로 뷰포트의 사이즈가 줄어들었을 때 스크롤이 생기지 않게하기 위해 모바일 레이아웃으로 페이지를 탐색할 수 있어야 함</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="50" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>모바일 메뉴버튼 접근</h3>
+<p><img src="./img/md_channel_menu_tree.png" alt="width:400px right" style="width:400px;" />메뉴 토글버튼이 좌측 채널정보보다 뒤에 마크업 되어있고, 채널정보에 포커스가 가능해서 모든 채널 정보를 순회하고 겨우 메뉴를 열 수 있음</p>
+<ul>
+<li>마크업 구조를 개선하여 버튼을 먼저 배치</li>
+<li>메뉴가 나타나지 않을 때는 visibility: hidden을 추가하여 포커스되지 않도록 설정</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="51" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>모바일 메뉴버튼 토글 이후 포커스 문제</h3>
+<p><img src="./img/md_channel_tabindex_fail.gif" alt="width:300px right" style="width:300px;" /> 메뉴 토글버튼을 포커스하여 메뉴를 열어도 탭을 이용하면 메뉴버튼 아래로 포커스가 이어진다. 메뉴를 열어도 메뉴 안쪽으로 포커스가 어려운 문제가 있다.</p>
+<p>&quot;성공기준 2.4.3 포커스 순서&quot;에 준하기 위해서는 이런 문제를 해결해야 한다</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="52" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>모바일 메뉴버튼 토글 이후 포커스 문제</h3>
+<p>이 문제는 JS를 사용해야만 해결할 수 있었기 때문에 토글 기능에 다음과 같은 코드를 추가했다.</p>
+<pre><code class="language-js"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>menuToggle.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+  classToggleHandler(e, menu, <span class="hljs-string">&quot;is-active&quot;</span>, <span class="hljs-string">&quot;on&quot;</span>);
+  classToggleHandler(e, backdrop, <span class="hljs-string">&quot;is-active&quot;</span>, <span class="hljs-string">&quot;on&quot;</span>);
+  menu.setAttribute(<span class="hljs-string">&quot;tabindex&quot;</span>, <span class="hljs-string">&quot;0&quot;</span>);
+  <span class="hljs-comment">// 메뉴가 열리면 탭인덱스 속성을 추가</span>
+  menu.setAttribute(<span class="hljs-string">&quot;role&quot;</span>, <span class="hljs-string">&quot;dialog&quot;</span>);
+  <span class="hljs-comment">// 메뉴가 열리면 role속성으로 dialog를 추가</span>
+  menu.setAttribute(<span class="hljs-string">&quot;aria-labelledby&quot;</span>, <span class="hljs-string">&quot;channelLabel&quot;</span>);
+  <span class="hljs-comment">// dialog의 label을 지정</span>
+  menu.focus();
+  <span class="hljs-comment">// tabindex가 지정된 메뉴로 포커스</span>
+});
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="53" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h3>모바일 메뉴버튼 토글 이후 포커스 문제</h3>
+<p><img src="./img/md_channel_tabindex_observe.gif" alt="width:300px right" style="width:300px;" /><br />
+다음과 같은 순서로 문제를 해결했다.</p>
+<ul>
+<li>메뉴버튼을 토글하면 메뉴에 탭인덱스 속성을 줘서 포커스 가능하게 설정</li>
+<li>dialog role을 지정 및 label을 지정</li>
+<li>메뉴가 열리면 바로 menu로 포커스가 가도록 설정</li>
+</ul>
+<p>추가로 키보드 인터렉션을 통해 메뉴를 닫을 때 다시 버튼으로 포커스가 갈 수 있도록 설정하여 &quot;3.2.5 요구에 의한 변경&quot;도 충족할 수 있었다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="54" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>추천영상 파트</h1>
+<h3>김영종</h3>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="55" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>결과</h1>
+<p><img src="./img/yj/layout.png" alt="width:1000px center" style="width:1000px;" /></p>
+<p>데스크탑, 테블릿, 모바일을 기준으로 상당 부분 레이아웃이 변경된다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="56" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>마크업</h1>
+<ul>
+<li>정보가 쌓이는 방향 고려(데스크탑 모바일)<br />
+<img src="./img/yj/direction.png" alt="width:600px" style="width:600px;" /><br />
+디바이스의 크기에 따라서 추천영상의 레이아웃을 3단계로 변경해 주어야 한다. 기준이 필요하기 때문에 공통으로 적용되는 부분중 가장 겹치는 부분이 많은 모바일과 데스크 탑을 기준으로 마크업 작성</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="57" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<ul>
+<li>논리적으로 배치 되었는가?
+<ul>
+<li>영상에 대한 정보는 제목이 가장 중요하다. 중요도에 마크업 순서 변경</li>
+</ul>
+</li>
+</ul>
+<p>기존 마크업 순서</p>
+<ol>
+<li>썸네일</li>
+<li>제목(부가정보)</li>
+</ol>
+<p>변경 마크업 순서</p>
+<ol>
+<li>제목(부가정보)</li>
+<li>썸네일</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="58" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<p>스크린리더 사용자를 위한 마크업 배치 고려</p>
+<ul>
+<li>일반적으로 사용자는 리스트에 포함된 영상을 본 후에 보고싶은 영상이 없다면 다음 리스트 버튼을 클릭한다.</li>
+</ul>
+<p><img src="./img/yj/org_markup.png" alt="width:800px right" style="width:800px;" /></p>
+<p>기존 마크업 순서</p>
+<ol>
+<li>헤더</li>
+<li>버튼</li>
+<li>추천 영상 리스트</li>
+</ol>
+<p><br /><br /></p>
+<p>문제점</p>
+<p>영상에 대한 정보를 모두 듣고나서 버튼을 클릭하기 위해 위쪽으로 올라와 버튼을 클릭해야 한다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="59" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h3>수정된 마크업 순서</h3>
+<p><img src="./img/yj/markup.png" alt="width:800px right" style="width:800px;" /></p>
+<ol>
+<li>헤더</li>
+<li>추천 영상 리스트</li>
+<li>버튼</li>
+</ol>
+<br />
+<br />
+<br />
+<p>다음 리스트 보기 버튼 을 최하단에 배치했다. 추천 영상 목록에 있는 영상들을 먼저 읽어준 후에 다음 리스트 보기 버튼을 클릭할 수 있도록 구성하는 것이<br />
+사용자의 입장에서 더 편리할 것이라 생각했기 때문이다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="60" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>스타일</h1>
+<ol>
+<li>영상이 쌓이는 방향</li>
+</ol>
+<ul>
+<li>모바일, 데스크탑: 영상이 수직 방향으로 쌓인다.</li>
+<li>테블릿: 영상이 수평 방향으로 쌓인다.</li>
+</ul>
+<ol start="2">
+<li>썸네일과 부가정보의 배치</li>
+</ol>
+<ul>
+<li>테블릿, 데스크탑: 썸네일이 상단에, 부가정보는 하단에 배치된다.</li>
+<li>모바일: 썸네일이 왼쪽에, 부가정보는 오른쪽에 배치된다.</li>
+</ul>
+<ol start="3">
+<li>부가정보가 배치되는 순서</li>
+</ol>
+<ul>
+<li>수직 방향으로 쌓인다.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="61" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<blockquote>
+<p>참고: flex 속성을 사용하면 인라인, 블록 요소에 상관없이 쌓이는 흐름을 제어할 수 있다.</p>
+</blockquote>
+
+<p><img src="./img/yj/m_d.png" alt="width:500px left" style="width:500px;" /><br />
+<img src="./img/yj/t.png" alt="width:500px right" style="width:500px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="62" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<h5>1. 부분 포커스 아웃라인</h5>
+<p>기존 사이트: 자동 재생 버튼에 아웃라인이 적용되어 있지 않음</p>
+<ul>
+<li>입력장치에 별로 접근성을 고려한다면 탭을 통해서만 아웃라인이 보여지도록 만들어야 한다.</li>
+</ul>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>&amp;<span class="hljs-selector-pseudo">:focus</span> {
+  + <span class="hljs-selector-class">.related__check-lb</span> {
+    <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid black;
+  }
+}
+&amp;<span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">:not</span>(:focus-visible) {
+  + <span class="hljs-selector-class">.related__check-lb</span> {
+    <span class="hljs-attribute">outline</span>: none;
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="63" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h1>접근성</h1>
+<p>구현 결과: 마우스로 포커스 된 경우는 아웃라인이 표시되지 않는다.<br />
+<img src="./img/yj/auto.gif" alt="width:600px center" style="width:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="64" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h2>IE에서는 <code>focus-visible</code>을 지원하지 않기 때문에 크로스 브라우징 이슈가 있었다.</h2>
+<p>크로스 브라우징에 완벽히 대응하지는 못했지만, 아래 코드를 활용하면 각각의 브라우저 별로 미디어 쿼리를 적용할 수 있다는 사실을 알아냈다.</p>
+<pre><code class="language-scss"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">@media</span> all <span class="hljs-keyword">and</span> (<span class="hljs-attribute">-ms-high-contrast</span>: none) {
+  <span class="hljs-comment">/* IE10+ CSS styles go here */</span>
+  <span class="hljs-selector-class">.related__check</span> {
+    <span class="hljs-keyword">@include</span> a11yHidden;
+    &amp;<span class="hljs-selector-pseudo">:focus</span> {
+      + <span class="hljs-selector-class">.related__check-lb</span> {
+        <span class="hljs-attribute">outline</span>: none;
+      }
+    }
+  }
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="65" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h3>3. 부분언어 적용 - WCAG 이해성 성공 기준 3.1.2</h3>
+<p>글로벌 서비스기 때문에 영어로 제목이 올라오는 경우가 다수 있었다. 부분적으로 언어속성을 적용해서 사용자 에이전트가 언어의 정보를 올바르게 읽을 수 있도록 설정했다.</p>
+<pre><code class="language-html"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;video__title&quot;</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>SANA’s TW-LOG with SECRET FRIEND<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-paginate="true" data-background-color="#f5f0fd" data-theme="gaia" data-marpit-pagination="66" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h3>4. 정보에 대한 라벨 누락 - WCAG 이해성 성공 기준 3.3.2</h3>
+<p>부가 정보를 읽어줄 때, 각 정보에 라벨이 붙어있지 않아 어떤 정보인지 구분하기 힘든 문제점이 있었다.</p>
+<pre><code class="language-html"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">em</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;related__group-name&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;a11y-hidden&quot;</span>&gt;</span>그룹 명<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  TWICE
+<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;a11y-hidden&quot;</span>&gt;</span>등록일<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;related__upload-date&quot;</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">&quot;2020-04-30T18:10&quot;</span>&gt;</span>
+    2020.4.30.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></span></foreignObject></svg></code></pre>
+<p>위와 같이 각 정보마다 해당 라벨을 span 태그로 삽입해서 어떤 정보인지 구분할 수 있도록 해주었다.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-paginate="true" data-background-color="#f5f0fd" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="67" data-marpit-pagination-total="67" style="--paginate:true;--background-color:#f5f0fd;--class:lead;--theme:gaia;background-color:#f5f0fd;background-image:none;">
+<h4>결론과 느낀점</h4>
+</section>
+<script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let r,o;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",(({data:e,origin:r})=>{if(r===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),r=Number.parseFloat(t);Number.isNaN(r)||(o=r)}}catch(t){console.error(t)}})));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||o||t.currentScale||1;r!==c&&(r=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let r=0;r<u;r+=1){const o=t.children[r],a=o.getScreenCTM();if(a){const t=null!==(n=null===(e=o.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,r=null!==(s=null===(i=o.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=o.firstElementChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-r}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}})),!1!==l&&Array.from(i.querySelectorAll("iframe"),(({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)}))}r=1,o=void 0;const i=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function a({once:t=!1,target:e=document}={}){const r="Apple Computer, Inc."===navigator.vendor?[n]:[];let o=!t;const a=()=>{for(const t of r)t({target:e});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),(t=>{var e;const r=t.firstChild,o=r.firstChild,{scrollWidth:n,scrollHeight:a}=o;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(r,"width",`${c}`),i(r,"height",`${d}`),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")}))}(e),o&&window.requestAnimationFrame(a)};return a(),()=>{o=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),r=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:r})})(s?s.getRootNode():document)}();
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="27" tabindex="0"><p>2. 사용자가 직접 순서를 선택
+
+   2.1 채널 보기
+   2.2 추천 영상 보기</p><p>![width:680px](./img/ppt_scroll.gif)</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@1.0.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),i=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},a=function(e,t){return(t=t||{}).index=i.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){i[e]&&(n&&l("deactivate",a(n,t)),n=i[e],l("activate",a(n,t)))},d=function(e,t){var r=i.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return i.indexOf(n);l("slide",a(i[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:i,destroy:function(e){l("destroy",a(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach((e=>e.classList.add("bespoke-marp-slide"))),e.on("activate",(t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach((e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")})),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))}))}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],i=(r,i)=>{t=r,n=i,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=i;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===i?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")}))})),e.fragmentIndex=i;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:i};e.fire("fragment",s)};e.on("next",(({fragment:s=!0})=>{if(s){if(r(1))return i(t,n+1),!1;const s=t+1;e.fragments[s]&&i(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return i(t,r-1),!1;const s=e.fragments[t+1];s&&i(t+1,s.length-1)}})),e.on("prev",(({fragment:s=!0})=>{if(r(-1)&&s)return i(t,n-1),!1;const a=t-1;e.fragments[a]&&i(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const i=e.fragments[t];if(i){const{length:e}=i;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}i(t,r)})),i(0,0)}var r,i=(function(e){!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,i=n.length,s={};r<i;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)s[n[0][r]]=e[r];return s}return!1}(),i={change:r.fullscreenchange,error:r.fullscreenerror},s={request:function(e,n){return new Promise(function(i,s){var a=function(){this.off("change",a),i()}.bind(this);this.on("change",a);var o=(e=e||t.documentElement)[r.requestFullscreen](n);o instanceof Promise&&o.then(a).catch(s)}.bind(this))},exit:function(){return new Promise(function(e,n){if(this.isFullscreen){var i=function(){this.off("change",i),e()}.bind(this);this.on("change",i);var s=t[r.exitFullscreen]();s instanceof Promise&&s.then(i).catch(n)}else e()}.bind(this))},toggle:function(e,t){return this.isFullscreen?this.exit():this.request(e,t)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=i[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=i[e];r&&t.removeEventListener(r,n,!1)},raw:r};r?(Object.defineProperties(s,{isFullscreen:{get:function(){return Boolean(t[r.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[r.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(t[r.fullscreenEnabled])}}}),n?e.exports=s:window.screenfull=s):n?e.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}()}(r={exports:{}},r.exports),r.exports);function s(e){e.fullscreen=()=>{i.isEnabled&&i.toggle(document.body)},document.addEventListener("keydown",(t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!i.isEnabled||(e.fullscreen(),t.preventDefault())}))}function a(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout((()=>{t.parent.classList.add("bespoke-marp-inactive"),t.fire("marp-inactive")}),e),t.parent.classList.contains("bespoke-marp-inactive")&&(t.parent.classList.remove("bespoke-marp-inactive"),t.fire("marp-active"))}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const o=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function l(e){e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(o.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))}function c(e){window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}}))}var d;function u({interval:e=200}={}){return t=>{document.addEventListener("keydown",(e=>{if(32===e.which&&e.shiftKey)t.prev();else if(33===e.which||37===e.which||38===e.which)t.prev({fragment:!e.shiftKey});else if(32!==e.which||e.shiftKey)if(34===e.which||39===e.which||40===e.which)t.next({fragment:!e.shiftKey});else if(35===e.which)t.slide(t.slides.length-1,{fragment:-1});else{if(36!==e.which)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,i=0;t.parent.addEventListener("wheel",(s=>{let a=!1;const o=(e,t)=>{e&&(a=a||function(e,t){return function(e,t){const n=t===d.X?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]}(e,t)&&function(e,t){const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&o(e.parentElement,t)};if(0!==s.deltaX&&o(s.target,d.X),0!==s.deltaY&&o(s.target,d.Y),a)return;s.preventDefault(),r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const l=Date.now()-i<e,c=Math.sqrt(Math.pow(s.deltaX,2)+Math.pow(s.deltaY,2)),u=c<=n;if(n=c,l||u)return;let f;(s.deltaX>0||s.deltaY>0)&&(f="next"),(s.deltaX<0||s.deltaY<0)&&(f="prev"),f&&(t[f](),i=Date.now())}))}}!function(e){e.X="X",e.Y="Y"}(d||(d={}));const f=(...e)=>history.replaceState(...e),p="data-bespoke-view",m="presenter",h="next",g=["",m,h],v=(e,{protocol:t,host:n,pathname:r,hash:i}=location)=>{const s=e.toString();return`${t}//${n}${r}${s?"?":""}${s}${i}`},b=()=>{const e=document.body.getAttribute(p);if(g.includes(e))return e;throw new Error("View mode is not assigned.")},w=e=>new URLSearchParams(location.search).get(e),y=(e,t={})=>{var n;const r=Object.assign({location:location,setter:f},t),i=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{r.setter(Object.assign({},null!==(n=window.history.state)&&void 0!==n?n:{}),"",v(i,r.location))}catch(e){console.error(e)}},x={available:(()=>{try{return localStorage.setItem("bespoke-marp","bespoke-marp"),localStorage.removeItem("bespoke-marp"),!0}catch(e){return console.warn("Warning: Using localStorage is restricted in the current host so some features may not work."),!1}})(),get:e=>{try{return localStorage.getItem(e)}catch(e){return null}},set:(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},remove:e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}}};function E(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return i.isEnabled||n("fullscreen",(e=>e.style.display="none")),x.available||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next({fragment:!t.shiftKey});break;case"prev":e.prev({fragment:!t.shiftKey});break;case"fullscreen":"function"==typeof e.fullscreen&&i.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:i})=>{n("prev",(e=>e.disabled=0===t&&0===i)),n("next",(n=>n.disabled=t===e.slides.length-1&&i===r.length-1))})),e.on("marp-active",(()=>t.removeAttribute("aria-hidden"))),e.on("marp-inactive",(()=>t.setAttribute("aria-hidden","true"))),i.isEnabled&&i.onchange((()=>n("fullscreen",(e=>e.classList.toggle("exit",i.isEnabled&&i.isFullscreen)))))}}function k(e){window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let i=Number.parseInt(t,10),s=Number.parseInt(n,10)+1;s>=e.fragments[i].length&&(i+=1,s=0),e.slide(i,{fragment:s})}}))}function L(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:S},presenterUrl:{enumerable:!0,get:I}}),x.available&&document.addEventListener("keydown",(t=>{80!==t.which||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))}function S(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,`bespoke-marp-presenter-${this.syncKey}`,`width=${e},height=${t},menubar=no,toolbar=no`)}function I(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),v(e)}var M=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let P=e=>String(e).replace(/[&<>"']/g,(e=>`&${O[e]};`)),O={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",$={className:"class",htmlFor:"for"},q={};function K(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==F&&(r+=` ${$[e]?$[e]:P(e)}="${P(t[e])}"`);r+=">"}if(-1===M.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===q[e]?e:P(e)}r+=e?`</${e}>`:""}return q[r]=!0,r}const T=({children:e})=>K(null,null,...e),A="bespoke-marp-presenter-container",N="bespoke-marp-presenter-next",C="bespoke-marp-presenter-next-container",j="bespoke-marp-presenter-note-container",D="bespoke-marp-presenter-info-container",R="bespoke-marp-presenter-info-page",X="bespoke-marp-presenter-info-page-text",B="bespoke-marp-presenter-info-page-prev",U="bespoke-marp-presenter-info-page-next",V="bespoke-marp-presenter-info-time",Y="bespoke-marp-presenter-info-timer";function z(e){const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=A,t.appendChild(e),t.insertAdjacentHTML("beforeend",K(T,null,K("div",{class:C},K("iframe",{class:N,src:"?view=next"})),K("div",{class:j}),K("div",{class:D},K("div",{class:R},K("button",{class:B,tabindex:"-1",title:"Previous"},"Previous"),K("span",{class:X}),K("button",{class:U,tabindex:"-1",title:"Next"},"Next")),K("time",{class:V,title:"Current time"}),K("div",{class:Y})))),t})(e.parent)),(e=>{r(C).addEventListener("click",(()=>e.next()));const t=r(N),n=(i=t,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;t.addEventListener("load",(()=>{r(C).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>n(e,t)))}));const s=document.querySelectorAll(".bespoke-marp-note");s.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(j).appendChild(e)})),e.on("activate",(()=>s.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide()))))),e.on("activate",(({index:t})=>{r(X).textContent=`${t+1} / ${e.slides.length}`}));const a=r(B),o=r(U);a.addEventListener("click",(t=>{a.blur(),e.prev({fragment:!t.shiftKey})})),o.addEventListener("click",(t=>{o.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{a.disabled=0===t&&0===r,o.disabled=t===e.slides.length-1&&r===n.length-1}));const l=()=>r(V).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function H(e){const t=b();return t===h&&e.appendChild(document.createElement("span")),{"":L,[m]:z,[h]:k}[t]}function J(e){e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))}const W=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function _(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},i=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:i}=e,s=Math.max(0,Math.min(t,i.length-1)),a=Math.max(0,Math.min(n||0,r[s].length-1));s===e.slide()&&a===e.fragmentIndex||e.slide(s,{fragment:a})})((W(location.hash.slice(1))||1)-1,t.fragment?W(w("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||y({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:`#${e+1}`}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{i(),window.addEventListener("hashchange",(()=>r((()=>{i({fragment:!1}),y({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>i()))})),n=!1}),0)}}function G(e={}){var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var i;i={marpBespokeSyncKey:n},y({},{setter:(e,...t)=>f(Object.assign(Object.assign({},e),i),...t)});const s=()=>{const e=x.get(r);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=s(),n=Object.assign(Object.assign({},t),e(t));return x.set(r,JSON.stringify(n)),n},o=()=>{window.removeEventListener("pageshow",o),a((e=>({reference:(e.reference||0)+1})))};return e=>{o(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&a((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),i=JSON.parse(n.newValue);if(r.index!==i.index||r.fragmentIndex!==i.fragmentIndex)try{t=!1,e.slide(i.index,{fragment:i.fragmentIndex})}finally{t=!0}}}));const i=()=>{const{reference:e}=s();void 0===e||e<=1?x.remove(r):a((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",o),i()})),e.on("destroy",i)}}function Q({slope:e=Math.tan(-35*Math.PI/180),swipeThreshold:t=30}={}){return n=>{let r;const i=n.parent,s=e=>{const t=i.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};i.addEventListener("touchstart",(e=>{r=1===e.touches.length?s(e.touches[0]):void 0}),{passive:!0}),i.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),n=t.x-r.x,i=t.y-r.y;r.delta=Math.sqrt(Math.pow(Math.abs(n),2)+Math.pow(Math.abs(i),2)),r.radian=Math.atan2(n,i)}else r=void 0})),i.addEventListener("touchend",(i=>{if(r){if(r.delta&&r.delta>=t&&r.radian){let t=r.radian-e;t=(t+Math.PI)%(2*Math.PI)-Math.PI,n[t<0?"next":"prev"](),i.stopPropagation()}r=void 0}}),{passive:!0})}}function Z(e,t,n,r){return new(n||(n=Promise))((function(i,s){function a(e){try{l(r.next(e))}catch(e){s(e)}}function o(e){try{l(r.throw(e))}catch(e){s(e)}}function l(e){var t;e.done?i(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(a,o)}l((r=r.apply(e,t||[])).next())}))}let ee;const te=()=>(void 0===ee&&(ee="wakeLock"in navigator&&navigator.wakeLock),ee),ne=()=>Z(void 0,void 0,void 0,(function*(){const e=te();if(e)try{return yield e.request("screen")}catch(e){console.warn(e)}return null}));function re(){return Z(this,void 0,void 0,(function*(){if(!te())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&ne()};return document.addEventListener("visibilitychange",t),document.addEventListener("fullscreenchange",t),e=yield ne(),e}))}!function(r=document.getElementById("p")){document.body.setAttribute(p,(()=>{const e=w("view");return e===h||e===m?e:""})());const i=(e=>{const t=w(e);return y({[e]:void 0}),t})("sync")||void 0,o=!1,d=!0;e(r,((...e)=>{const t=g.findIndex((e=>b()===e));if(t<0)throw new Error("Invalid view");return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[d,d,o],G({key:i})],[[d,d,d],H(r)],[[d,d,o],l],[[d,d,d],t],[[d,o,o],a()],[[d,d,d],c],[[d,d,d],_({history:!1})],[[d,d,o],u()],[[d,d,o],s],[[d,o,o],J],[[d,d,o],Q()],[[d,o,o],E()],[[d,d,d],n],[[d,d,o],re]))}()}();</script></body></html>

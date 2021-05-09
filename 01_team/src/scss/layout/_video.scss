@@ -1,0 +1,177 @@
+.video {
+  $video-height: calc(100% * (9 / 16));
+  $header-height: rem(64px);
+  @include box;
+  grid-area: video;
+
+  &__header {
+    &.is-fixed {
+      position: fixed;
+      top: 50px;
+      width: 100%;
+      z-index: 2;
+
+      & + .video__main {
+        margin-top: $header-height;
+        padding-top: 100vw * (9/16);
+      }
+    }
+    background: $white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: rem(64px);
+
+    &-channel {
+      padding-left: rem(15px);
+      width: 60%;
+      min-width: rem(200px);
+    }
+
+    &-btn {
+      @include buttonBox($isCircle: true);
+      &:hover {
+        background: none;
+      }
+
+      margin-right: rem(15px);
+    }
+  }
+
+  &__channel {
+    &-logo {
+      width: rem(29px);
+      height: rem(29px);
+      float: left;
+      background: url("../img/twice_logo.png") no-repeat center;
+      background-size: cover;
+      border-radius: 50%;
+      border: 1px solid $gray;
+      margin-right: rem(5px);
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: rem(2px);
+      display: inline;
+    }
+
+    &-time {
+      font-size: rem(13px);
+      display: block;
+      width: auto;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+
+  &__content {
+    &.is-fixed {
+      position: fixed;
+      top: 114px;
+      width: 100%;
+      z-index: 2;
+    }
+    order: -1;
+    width: 100%;
+    position: relative;
+    padding-top: $video-height;
+  }
+
+  &__player {
+    position: absolute;
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+
+  &__info {
+    padding: rem(15px);
+  }
+
+  &__title,
+  &__detail {
+    margin: 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    padding: rem(5px) 0;
+  }
+
+  &__detail {
+    font-size: rem(13px);
+    padding: rem(5px) 0;
+    color: $dark-gray;
+  }
+
+  &__post {
+    padding: rem(15px);
+    padding-top: 0;
+    margin-bottom: rem(5px);
+    &-button {
+      @include buttonBox;
+      font-size: rem(13px);
+      font-weight: 700;
+      &:hover {
+        background: none;
+      }
+      span {
+        vertical-align: middle;
+      }
+      margin-right: rem(10px);
+    }
+
+    &-list {
+      display: flex;
+      justify-content: flex-end;
+
+      &-item {
+        &:nth-child(3) .video__post-button {
+          margin-right: 0;
+        }
+        display: flex;
+        align-items: center;
+
+        a {
+          display: inline-block;
+        }
+
+        svg {
+          vertical-align: middle;
+        }
+
+        &--related button,
+        &--channel button {
+          @include buttonBox;
+          width: 1px;
+          height: 1px;
+          text-indent: 10px;
+          overflow: hidden;
+        }
+
+        &--related button:focus,
+        &--channel button:focus {
+          text-align: center;
+          line-height: rem(30px);
+          width: rem(150px);
+          height: rem(30px);
+          text-indent: 0%;
+          overflow: visible;
+        }
+      }
+
+      &-item:nth-child(3) {
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

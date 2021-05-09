@@ -1,11 +1,17 @@
-@import 'a11y';
-@import 'nomalize';
-@import 'asset';
+@import "a11y";
+@import "nomalize";
+@import "asset";
+html {
+  font-size: 16px;
+}
 
 body {
   background-color: $background-color;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Helvetica,
+    Arial, NanumGothic, "나눔고딕", Malgun Gothic, "맑은 고딕", Dotum,
+    sans-serif;
 }
+
 [class] {
   box-sizing: border-box;
 }
@@ -16,6 +22,11 @@ a {
     text-decoration: inherit;
     color: inherit;
   }
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 // 정원 시작

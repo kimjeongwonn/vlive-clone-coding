@@ -1,0 +1,360 @@
+@use "sass:map";
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.related {
+  @include box();
+  &-outer {
+    grid-area: related;
+  }
+  // 공통
+  padding: rem(15px) rem(15px) rem(20px) rem(15px);
+  @include tablet {
+    padding: rem(15px) 0 rem(20px) 0;
+  }
+  position: relative;
+  .is-disabled {
+    cursor: default !important;
+    path {
+      stroke: #ccc;
+    }
+  }
+  // 헤더
+  &__header {
+    font-size: rem(14px);
+    margin: 0;
+    margin-bottom: rem(3px);
+    @include tablet {
+      padding-bottom: 0;
+      border: none;
+      &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding: 0 rem(18px);
+      }
+    }
+    @include desktop {
+      padding-bottom: rem(16px);
+      border-bottom: 1px solid #f2f2f2;
+      &-wrapper {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  // 아이템 레이아웃
+  &__link {
+    display: flex;
+    cursor: pointer;
+    @include desktop {
+      flex-direction: column;
+      &:hover {
+        .related__thumbnail {
+          transform: scale(1.05);
+        }
+        .related__title {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  // 썸네일
+  &__thumbnail {
+    &-wrapper {
+      order: -1;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      @include mobile {
+        margin-right: rem(15px);
+      }
+      @include desktop {
+        width: 100%;
+      }
+    }
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(138px);
+    min-height: rem(77px);
+    height: 100%;
+    @include tablet {
+      min-height: rem(120px);
+    }
+    @include desktop {
+      min-height: rem(128px);
+      transition: transform 0.2s ease-in;
+      width: 100%;
+    }
+  }
+  &__play-time {
+    position: absolute;
+    background-color: rgba(17, 17, 17, 0.7);
+    border-radius: 4px;
+    right: rem(5px);
+    bottom: rem(5px);
+    font-size: rem(11px);
+    color: #fff;
+    padding: 0 5px;
+    height: 20px;
+    line-height: 20px;
+  }
+  // 영상 디테일 정보
+  &__item {
+    @include mobile {
+      margin-top: rem(18px);
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+    @include tablet {
+      box-sizing: content-box;
+      width: 30%;
+      margin-top: rem(25px);
+      &:nth-child(6) {
+        display: block;
+      }
+    }
+    @include desktop {
+      margin-bottom: rem(20px);
+      &:nth-child(6) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    text-overflow: ellipsis;
+    font-size: rem(15px);
+    font-weight: 400;
+    line-height: 19px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    // 텍스트 생략
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__detail {
+    color: $dark-gray;
+    font-size: rem(12px);
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: inline-block;
+      background-color: #e6e6e6;
+      width: rem(3px);
+      height: rem(3px);
+      margin: 0 rem(5px);
+      border-radius: 50%;
+    }
+  }
+  &__group-name {
+    font-style: normal;
+    order: -1;
+  }
+  &__upload-date {
+    vertical-align: center;
+  }
+  &__reactions {
+    font-size: rem(13px);
+    color: #444;
+    margin-top: rem(5px);
+    > *:not(:last-child) {
+      padding-right: 12px;
+    }
+  }
+
+  // 버튼
+  &__buttons {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+    font-size: 0;
+    @include tablet {
+      position: static;
+    }
+  }
+  &__button {
+    &--next,
+    &--prev {
+      @include buttonBox;
+      width: rem(30px);
+      height: rem(30px);
+      &:hover {
+        background: none;
+        @include desktop {
+          background-color: mix(transparent, rgba(0, 0, 0, 0.15));
+          border-radius: 50%;
+        }
+      }
+    }
+    &--prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    @include tablet {
+      &--prev,
+      &--next {
+        @include buttonBox($isCircle: true, $size: 40px, $bg: #fff);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+        z-index: 1;
+        &:hover {
+          background-color: #f2f2f2;
+        }
+      }
+      &--next {
+        right: rem(-19px);
+      }
+    }
+  }
+  // 자동 재생 체크박스
+  &__check {
+    vertical-align: -4px;
+    @include desktop {
+      @include a11yHidden; // 체크박스 숨김처리
+      &:focus {
+        // 포커스가 되면 레이블 태그 아웃라인 부여
+        + .related__check-lb {
+          outline: 2px solid black;
+        }
+      }
+      &:focus:not(:focus-visible) {
+        // 탭으로 선택되는 경우가 아니면 아웃라인 제거
+        + .related__check-lb {
+          outline: none;
+        }
+      }
+    }
+    &box {
+      text-align: right;
+      font-size: rem(14px);
+      @include mobile {
+        display: none;
+      }
+      @include tablet {
+        margin: 0;
+      }
+      @include desktop {
+        margin-top: rem(13px);
+      }
+    }
+    &:checked {
+      + label {
+        &::before {
+          transform: translateX(rem(13px));
+          background-color: $primary-color;
+        }
+        &::after {
+          background-color: $primary-sub-color;
+        }
+      }
+    }
+    &-lb {
+      cursor: pointer;
+      user-select: none;
+      vertical-align: middle;
+      color: #555;
+      &::before {
+        content: "";
+        position: absolute;
+        height: rem(18px);
+        width: rem(18px);
+        background: $third-gray;
+        border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%);
+        transition: all 0.1s;
+        @include tablet {
+          right: rem(31px);
+        }
+        @include desktop {
+          right: rem(28px);
+        }
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: rem(30px);
+        height: rem(12px);
+        background-color: $second-gray;
+        vertical-align: -1px;
+        border-radius: 6px;
+        transition: all 0.1s;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .related {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+  .is-disabled {
+    display: none;
+  }
+}
+@include desktop {
+  .related {
+    &__info {
+      padding-top: rem(10px);
+    }
+  }
+}
+
+$items: (
+    "id": 1,
+    "link": "../img/thumbnail1.jpg",
+  ),
+  (
+    "id": 2,
+    "link": "../img/voice_only.jpg",
+  ),
+  (
+    "id": 3,
+    "link": "../img/thumbnail2.jpg",
+  ),
+  (
+    "id": 4,
+    "link": "../img/thumbnail3.jpg",
+  ),
+  (
+    "id": 5,
+    "link": "../img/thumbnail4.png",
+  ),
+  (
+    "id": 6,
+    "link": "../img/thumbnail5.png",
+  );
+
+@each $item in $items {
+  $id: map.get($item, "id");
+  $bg: map.get($item, "link");
+  .related__item:nth-child(#{$id}) .related__thumbnail {
+    background: #ccc url($bg) no-repeat center / cover;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  /* IE10+ CSS styles go here */
+  .related__check {
+    @include a11yHidden;
+    &:focus {
+      + .related__check-lb {
+        outline: none;
+      }
+    }
+  }
+}

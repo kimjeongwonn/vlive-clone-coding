@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  padding: 0 rem(10px) 0 rem(10px);
+  border-bottom: 1px solid $second-gray;
+
+  @include desktop {
+    border-bottom: none;
+    height: 60px;
+    padding-left: rem(20px);
+  }
+
+  &__logo {
+    margin: 0;
+    flex-grow: 1;
+    line-height: rem(25px);
+    @at-root .svg--logo {
+      vertical-align: middle;
+      height: rem(25px);
+      @include desktop {
+        height: rem(30px);
+      }
+    }
+  }
+
+  &__toggle {
+    @include buttonBox;
+    padding: rem(9px) rem(10px) rem(8px) rem(10px);
+    display: none;
+    margin-right: rem(10px);
+
+    @include tablet {
+      display: block;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__lang {
+    @include buttonBox;
+    padding: rem(14px) rem(10px);
+    font-size: rem(14px);
+
+    svg {
+      vertical-align: middle;
+      margin-left: rem(2px);
+    }
+  }
+}

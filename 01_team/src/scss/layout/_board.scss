@@ -1,0 +1,81 @@
+.board {
+  @include box;
+  grid-area: board;
+  display: flex;
+  padding: 0 rem(12px);
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+  }
+  &__button--toggle-menu {
+    order: -1;
+    @include buttonBox($isCircle: true);
+    @include desktop {
+      display: none;
+    }
+    &:hover {
+      background-color: initial;
+    }
+    // &:focus:not(:focus-visible) {
+    //   outline: none;
+    // }
+  }
+  &__heading-wrapper {
+    text-align: center;
+    margin-left: rem(54.5px - 30px);
+    @include desktop {
+      margin-left: 0;
+    }
+  }
+  &__heading {
+    font-size: rem(17px);
+    margin: 0;
+    padding: 0;
+  }
+  &__channel-name {
+    display: block;
+    margin: 0;
+    margin-top: rem(2px);
+    padding: 0;
+    font-size: rem(11px);
+    font-weight: 400;
+    color: $dark-gray;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    &--list {
+      @include buttonBox;
+      display: none;
+      @include desktop {
+        display: block;
+        font-size: rem(14px);
+        padding: rem(10px);
+      }
+    }
+    &--signup {
+      @include buttonBox($bg: $primary-background-color);
+      display: block;
+      font-size: rem(13px);
+      font-weight: 600;
+      padding: rem(8px) rem(16px);
+      color: darken($primary-color, 20);
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+  @include desktop {
+    padding: 0 rem(10px) 0 rem(20px);
+    position: static;
+  }
+}
